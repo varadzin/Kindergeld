@@ -98,6 +98,7 @@ class StartVC: UIViewController {
         let SKBtn = UIButton()
         view.addSubview(SKBtn)
         SKBtn.setBackgroundImage(UIImage(named: "SlovakiaFlag"), for: .normal)
+        SKBtn.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
         
         
         SKBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -125,6 +126,7 @@ class StartVC: UIViewController {
         let GEBtn = UIButton()
         view.addSubview(GEBtn)
         GEBtn.setBackgroundImage(UIImage(named: "GermanyFlag"), for: .normal)
+        GEBtn.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
         
         
         GEBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -152,7 +154,7 @@ class StartVC: UIViewController {
         let GBBtn = UIButton()
         view.addSubview(GBBtn)
         GBBtn.setBackgroundImage(UIImage(named: "GBFlag"), for: .normal)
-        
+        GBBtn.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
         
         GBBtn.translatesAutoresizingMaskIntoConstraints = false
         
@@ -177,6 +179,10 @@ class StartVC: UIViewController {
         
     }
     
+    @objc func goToInfoVC() {
+        navigationController?.pushViewController(CustomTabBar(), animated: true)
+        
+    }
     
     
 }
