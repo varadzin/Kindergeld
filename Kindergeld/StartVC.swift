@@ -79,6 +79,18 @@ class StartVC: UIViewController {
             coinsImg.heightAnchor.constraint(equalToConstant: 97)
         ])
         
+        view.addSubview(babyImg)
+        
+        babyImg.image = UIImage(named: "babyImg")
+        babyImg.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            babyImg.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 70),
+            babyImg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            babyImg.widthAnchor.constraint(equalToConstant: 245),
+            babyImg.heightAnchor.constraint(equalToConstant: 240)
+        ])
+        
         
         
     }
