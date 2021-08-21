@@ -9,23 +9,21 @@
 /* Begin PBXBuildFile section */
 		09DBE02626D111F900218F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE02526D111F900218F87 /* AppDelegate.swift */; };
 		09DBE02826D111F900218F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE02726D111F900218F87 /* SceneDelegate.swift */; };
-		09DBE02A26D111F900218F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE02926D111F900218F87 /* ViewController.swift */; };
-		09DBE02D26D111F900218F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DBE02B26D111F900218F87 /* Main.storyboard */; };
 		09DBE03026D111F900218F87 /* Kindergeld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE02E26D111F900218F87 /* Kindergeld.xcdatamodeld */; };
 		09DBE03226D111FE00218F87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DBE03126D111FE00218F87 /* Assets.xcassets */; };
 		09DBE03526D111FE00218F87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DBE03326D111FE00218F87 /* LaunchScreen.storyboard */; };
+		09DBE03D26D113B100218F87 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE03C26D113B100218F87 /* StartVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		09DBE02226D111F900218F87 /* Kindergeld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kindergeld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DBE02526D111F900218F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09DBE02726D111F900218F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		09DBE02926D111F900218F87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		09DBE02C26D111F900218F87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09DBE02F26D111F900218F87 /* Kindergeld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kindergeld.xcdatamodel; sourceTree = "<group>"; };
 		09DBE03126D111FE00218F87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09DBE03426D111FE00218F87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09DBE03626D111FE00218F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09DBE03C26D113B100218F87 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +58,11 @@
 			children = (
 				09DBE02526D111F900218F87 /* AppDelegate.swift */,
 				09DBE02726D111F900218F87 /* SceneDelegate.swift */,
-				09DBE02926D111F900218F87 /* ViewController.swift */,
-				09DBE02B26D111F900218F87 /* Main.storyboard */,
 				09DBE03126D111FE00218F87 /* Assets.xcassets */,
 				09DBE03326D111FE00218F87 /* LaunchScreen.storyboard */,
 				09DBE03626D111FE00218F87 /* Info.plist */,
 				09DBE02E26D111F900218F87 /* Kindergeld.xcdatamodeld */,
+				09DBE03C26D113B100218F87 /* StartVC.swift */,
 			);
 			path = Kindergeld;
 			sourceTree = "<group>";
@@ -129,7 +126,6 @@
 			files = (
 				09DBE03526D111FE00218F87 /* LaunchScreen.storyboard in Resources */,
 				09DBE03226D111FE00218F87 /* Assets.xcassets in Resources */,
-				09DBE02D26D111F900218F87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DBE03D26D113B100218F87 /* StartVC.swift in Sources */,
 				09DBE03026D111F900218F87 /* Kindergeld.xcdatamodeld in Sources */,
-				09DBE02A26D111F900218F87 /* ViewController.swift in Sources */,
 				09DBE02626D111F900218F87 /* AppDelegate.swift in Sources */,
 				09DBE02826D111F900218F87 /* SceneDelegate.swift in Sources */,
 			);
@@ -150,14 +146,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		09DBE02B26D111F900218F87 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09DBE02C26D111F900218F87 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		09DBE03326D111FE00218F87 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,7 +288,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.varadzin.Kindergeld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,7 +307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.varadzin.Kindergeld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
