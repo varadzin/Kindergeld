@@ -12,7 +12,7 @@ class InfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
- title = "Informácie"
+
     }
     
     func configVC() {
