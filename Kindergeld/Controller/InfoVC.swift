@@ -13,6 +13,7 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     let subTitle = UILabel()
     let textField = UILabel()
     let scrollView = UIScrollView()
+    let nextButton = UIButton()
     
     
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         configTitle()
         configSubTitle()
         configTextField()
+        configNextBtn()
         configBottomInstructions()
        
 
@@ -34,19 +36,11 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     
     func configScrollView() {
         view.addSubview(scrollView)
-//        scrollView.translatesAutoresizingMaskIntoConstraints = false
+
         scrollView.frame = view.bounds
         scrollView.contentSize = CGSize(width: view.frame.size.width, height:view.frame.size.height)
-        scrollView.alwaysBounceVertical = true
-
-        
-//        NSLayoutConstraint.activate([
-//            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-//                    ])
-    }
+//        scrollView.alwaysBounceVertical = true
+ }
     
   
     func configTitle() {
@@ -91,11 +85,11 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         
         textField.font = UIFont(name: "Times New Roman", size: 18)
         textField.numberOfLines = 0
+        textField.textAlignment = .center
         textField.text = """
 Pomocou tejto aplikácie vieš vyplniť formuláre pre žiadosť o prídavky na deti v Nemecku. O prídavky na deti možeš požiadať aj sám/sama. Nepotrebuješ na to žiadnu agentúru, ktorej zbytočne zaplatíš desiatky €. To čo zadáš pri vypĺňaní formuláru sa ti zobrazí v žiadosti.
 
 Podmienky používania aplikácie Kindergeld:
-
 Autor aplikácie nenesie zodpovednosť za akékoľvek škody, straty alebo ujmy spôsobené používaním aplikácie, najmä za škodu spôsobenú nesprávnym vyplnením formulárov, prípadne uvedením nepravdivých údajov pri žiadosti o prídavky.
 
 Ochrana osobných údajov:
@@ -115,6 +109,30 @@ Všetky údaje zadané užívateľom ostávajú v telefóne. Aplikácia sa nepri
         
     }
     
+    func configNextBtn() {
+        scrollView.addSubview(nextButton)
+        
+        nextButton.setTitle("ďalej ->>", for: .normal)
+        nextButton.backgroundColor = .systemOrange
+        nextButton.layer.cornerRadius = 10
+        nextButton.addTarget(self, action: #selector(goToMoreInfoVC), for: .touchUpInside)
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            nextButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 10),
+            nextButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            nextButton.widthAnchor.constraint(equalToConstant: 120),
+            nextButton.heightAnchor.constraint(equalToConstant: 40)
+          
+        ])
+        
+    }
+    
+    @objc func goToMoreInfoVC() {
+        navigationController?.pushViewController(moreInfoVC(), animated: true)
+        
+    }
+    
     func configBottomInstructions() {
         let infoImg = UIImageView()
         scrollView.addSubview(infoImg)
@@ -123,7 +141,7 @@ Všetky údaje zadané užívateľom ostávajú v telefóne. Aplikácia sa nepri
         infoImg.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            infoImg.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 80),
+            infoImg.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 90),
             infoImg.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 8),
             infoImg.widthAnchor.constraint(equalToConstant: 65),
             infoImg.heightAnchor.constraint(equalToConstant: 59)
@@ -137,7 +155,7 @@ Všetky údaje zadané užívateľom ostávajú v telefóne. Aplikácia sa nepri
         fillFormImg.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            fillFormImg.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 80),
+            fillFormImg.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 90),
             fillFormImg.leadingAnchor.constraint(equalTo: infoImg.trailingAnchor, constant: 7),
             fillFormImg.widthAnchor.constraint(equalToConstant: 65),
             fillFormImg.heightAnchor.constraint(equalToConstant: 59)
@@ -151,7 +169,7 @@ Všetky údaje zadané užívateľom ostávajú v telefóne. Aplikácia sa nepri
         payDaysImg.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            payDaysImg.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 80),
+            payDaysImg.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 90),
             payDaysImg.leadingAnchor.constraint(equalTo: fillFormImg.trailingAnchor, constant: 12),
             payDaysImg.widthAnchor.constraint(equalToConstant: 65),
             payDaysImg.heightAnchor.constraint(equalToConstant: 59)
@@ -165,7 +183,7 @@ Všetky údaje zadané užívateľom ostávajú v telefóne. Aplikácia sa nepri
         settingsImg.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            settingsImg.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 80),
+            settingsImg.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 90),
             settingsImg.leadingAnchor.constraint(equalTo: payDaysImg.trailingAnchor, constant: 10),
             settingsImg.widthAnchor.constraint(equalToConstant: 65),
             settingsImg.heightAnchor.constraint(equalToConstant: 48)
@@ -179,7 +197,7 @@ Všetky údaje zadané užívateľom ostávajú v telefóne. Aplikácia sa nepri
         pdfImg.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            pdfImg.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: 80),
+            pdfImg.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 90),
             pdfImg.leadingAnchor.constraint(equalTo: settingsImg.trailingAnchor, constant: 9),
             pdfImg.widthAnchor.constraint(equalToConstant: 65),
             pdfImg.heightAnchor.constraint(equalToConstant: 75)

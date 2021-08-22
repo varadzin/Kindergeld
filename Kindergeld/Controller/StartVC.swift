@@ -74,7 +74,7 @@ class StartVC: UIViewController {
         coinsImg.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            coinsImg.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 50),
+            coinsImg.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             coinsImg.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             coinsImg.widthAnchor.constraint(equalToConstant: 86),
             coinsImg.heightAnchor.constraint(equalToConstant: 97)
@@ -86,7 +86,7 @@ class StartVC: UIViewController {
         babyImg.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            babyImg.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 70),
+            babyImg.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
             babyImg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             babyImg.widthAnchor.constraint(equalToConstant: 245),
             babyImg.heightAnchor.constraint(equalToConstant: 240)
