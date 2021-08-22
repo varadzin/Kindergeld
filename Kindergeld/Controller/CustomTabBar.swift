@@ -25,6 +25,7 @@ class CustomTabBar: UITabBarController {
         let navController = UINavigationController(rootViewController: vc)
         navController.title = title
         navController.tabBarItem.image = image
+  
         return navController
     }
     
