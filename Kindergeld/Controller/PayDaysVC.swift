@@ -126,7 +126,6 @@ class PayDaysVC: UIViewController {
     func configExplainLabel(lastChar: String) {
         let lastChar0 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
- 
     3. September
     5. Október
     4. November
@@ -135,7 +134,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar1 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-  
     7. September
     7. Október
     5. November
@@ -144,7 +142,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar2 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-  
     8. September
     8. Október
     8. November
@@ -153,7 +150,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar3 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-  
     8. September
     8. Október
     8. November
@@ -162,7 +158,6 @@ class PayDaysVC: UIViewController {
       
         let lastChar4 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-
     8. September
     8. Október
     8. November
@@ -171,7 +166,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar5 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-
     8. September
     8. Október
     8. November
@@ -180,7 +174,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar6 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-
     8. September
     8. Október
     8. November
@@ -189,7 +182,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar7 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-    
     8. September
     8. Október
     8. November
@@ -198,7 +190,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar8 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
- 
     8. September
     8. Október
     8. November
@@ -207,7 +198,6 @@ class PayDaysVC: UIViewController {
         
         let lastChar9 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-  
     8. September
     8. Október
     8. November
