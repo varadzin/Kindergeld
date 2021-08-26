@@ -12,7 +12,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
     var titleKG = UILabel()
-  
+    let tableViewArray = ["Language / Jazyk / Jezyk / Sprache", "Pravidlá používania"]
     
     
     override func viewDidLoad() {
@@ -46,6 +46,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func configTableView() {
     let tableView = UITableView()
+    
         view.addSubview(tableView)
  
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -64,15 +65,32 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        tableViewArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = tableViewArray[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       
+        if indexPath.row == 0 {
+            let newVC = LanguageVC()
+            navigationController?.pushViewController(newVC, animated: true)
+        } else {
+            let newVC = DisclaimerVC()
+            navigationController?.pushViewController(newVC, animated: true)
+        }
+        
+      
+        
     }
     
 }

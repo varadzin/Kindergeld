@@ -18,6 +18,7 @@ class PayDaysVC: UIViewController {
     var KGNumber : String?
     var lastNumberIs0 = [String]()
     var NumberForPayDays = Int()
+    let infoLabel = UILabel()
     
     
     
@@ -35,6 +36,9 @@ class PayDaysVC: UIViewController {
         configSubTitle()
         configKGNumberTextField()
         configButton()
+        showPayDays()
+        configInfoLabel()
+       
      
         createDismissKeyboardTapGesture()
         
@@ -78,20 +82,7 @@ class PayDaysVC: UIViewController {
             subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             
         ])
-        
-        
-//        view.addSubview(textLabelYourNummber)
-//
-//        textLabelYourNummber.text = "Tvoje Kindergeld číslo:"
-//        textLabelYourNummber.font = UIFont(name: "Times New Roman", size: 18)
-//
-//        textLabelYourNummber.textColor = .secondaryLabel
-//        textLabelYourNummber.translatesAutoresizingMaskIntoConstraints = false
-//
-//        NSLayoutConstraint.activate([
-//            textLabelYourNummber.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-//            textLabelYourNummber.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-//        ])
+     
     }
     
     func configKGNumberTextField() {
@@ -126,54 +117,61 @@ class PayDaysVC: UIViewController {
     func configExplainLabel(lastChar: String) {
         let lastChar0 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-    3. September
-    5. Október
-    4. November
-    3. December
+    
+    3. September 2021
+    5. Október 2021
+    4. November 2021
+    3. December 2021
     """)
         
         let lastChar1 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-    7. September
-    7. Október
-    5. November
-    6. December
+    
+    7. September 2021
+    7. Október 2021
+    5. November 2021
+    6. December 2021
     """)
         
         let lastChar2 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-    8. September
-    8. Október
-    8. November
-    7. December
+    
+    8. September 2021
+    8. Október 2021
+    8. November 2021
+    7. December 2021
     """)
         
         let lastChar3 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-    8. September
-    8. Október
-    8. November
-    7. December
+    
+    8. September 2021
+    8. Október 2021
+    8. November 2021
+    7. December 2021
     """)
       
         let lastChar4 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-    8. September
-    8. Október
-    8. November
-    7. December
+    
+    8. September 2021
+    8. Október 2021
+    8. November 2021
+    7. December 2021
     """)
         
         let lastChar5 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
-    8. September
-    8. Október
-    8. November
-    7. December
+    
+    8. September 2021
+    8. Október 2021
+    8. November 2021
+    7. December 2021
     """)
         
         let lastChar6 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+    
     8. September
     8. Október
     8. November
@@ -182,6 +180,7 @@ class PayDaysVC: UIViewController {
         
         let lastChar7 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+    
     8. September
     8. Október
     8. November
@@ -190,6 +189,7 @@ class PayDaysVC: UIViewController {
         
         let lastChar8 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+    
     8. September
     8. Október
     8. November
@@ -198,6 +198,7 @@ class PayDaysVC: UIViewController {
         
         let lastChar9 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+    
     8. September
     8. Október
     8. November
@@ -205,15 +206,13 @@ class PayDaysVC: UIViewController {
     """)
         
    
-    
-    
-        
         view.addSubview(explainLabel)
         
-        explainLabel.textAlignment = .left
+        explainLabel.textAlignment = .center
         explainLabel.font = UIFont.preferredFont(forTextStyle: .body)
         explainLabel.textColor = .secondaryLabel
         explainLabel.numberOfLines = 0
+        infoLabel.isHidden = false
      
         switch lastChar {
         case "0":
@@ -244,6 +243,8 @@ Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
 
 Číslo ti bude pridelené, po podaní žiadosti a nájdeš ho vpravo hore v každom dokumente od Famillienkasse.
 """
+            infoLabel.isHidden = true
+            
         }
         explainLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -275,54 +276,13 @@ Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
     
     let lastChar = (KGNumber?.last.map{String($0)} ?? "a")!
     
-
-   
-  
-    
-    
     configExplainLabel(lastChar: lastChar)
-    
-    
-    
-
         
     }
         
     
     
   
-        
-//
-//    func configPayDaysInfo(lastChar: Int) -> String? {
-//
-//        switch lastChar {
-//        case 0:
-//            return "lastChar0"
-//        case 1:
-//            return "lastChar1"
-//        case 2:
-//            return "lastChar2"
-//        case 3:
-//            return "lastChar3"
-//        case 4:
-//            return "lastChar4"
-//        case 5:
-//            return "lastChar5"
-//        case 6:
-//            return "lastChar6"
-//        case 7:
-//            return "lastChar7"
-//        case 8:
-//            return "lastChar8"
-//        case 9:
-//            return "lastChar9"
-//
-//        default:
-//            return "test"
-//        }
-//
-//    }
-    
     func showAlert() {
         let alert = UIAlertController(title: "Pozor", message: "číslo Kindergeld je v tvare XXXFKXXXXXX tzn. tri čísla, potom písmená FK a potom šesť čísel, všetko písané spolu", preferredStyle: .alert)
        
@@ -336,6 +296,30 @@ Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
         view.addGestureRecognizer(tap)
     }
     
+    func configInfoLabel() {
+      
+        
+        view.addSubview(infoLabel)
+     
+        infoLabel.numberOfLines = 0
+        infoLabel.textAlignment = .center
+        infoLabel.textColor = .secondaryLabel
+        infoLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        
+        infoLabel.text = "Nasledujúce prídavky na deti ti budú vyplatené o 25 dní."
+        
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            infoLabel.topAnchor.constraint(equalTo: explainLabel.bottomAnchor,constant: 15),
+            infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+        ])
+     
+        
+    }
+    
+    
     
 }
 
@@ -345,8 +329,4 @@ extension PayDaysVC: UITextFieldDelegate {
         return true
     }
 }
-//extension String {
-//    subscript(idx: Int) -> String {
-//        String(self[index(startIndex, offsetBy: idx)])
-//    }
-//}
+
