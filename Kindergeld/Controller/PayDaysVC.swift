@@ -15,23 +15,11 @@ class PayDaysVC: UIViewController {
     let KGNumberTextField = KGTextField()
     let CTAButton = KGButton(title: "Ok")
     let explainLabel = UILabel()
-    var KGNumber = String()
+    var KGNumber : String?
     var lastNumberIs0 = [String]()
+    var NumberForPayDays = Int()
     
-    let lastChar0 = ("""
-5.Januar
-5.Februar
-3.März
-7.April
-5.Mai
-2.Juni
-5.Juli
-5.August
-3.September
-5.Oktober
-4.November
-3.Dezember
-""")
+    
     
     
     
@@ -47,7 +35,7 @@ class PayDaysVC: UIViewController {
         configSubTitle()
         configKGNumberTextField()
         configButton()
-        configExplainLabel()
+     
         createDismissKeyboardTapGesture()
         
     }
@@ -133,7 +121,103 @@ class PayDaysVC: UIViewController {
         ])
     }
     
-    func configExplainLabel() {
+    
+    
+    func configExplainLabel(lastChar: String) {
+        let lastChar0 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+ 
+    3. September
+    5. Október
+    4. November
+    3. December
+    """)
+        
+        let lastChar1 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+  
+    7. September
+    7. Október
+    5. November
+    6. December
+    """)
+        
+        let lastChar2 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+  
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+        
+        let lastChar3 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+  
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+      
+        let lastChar4 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+        
+        let lastChar5 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+        
+        let lastChar6 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+        
+        let lastChar7 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+    
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+        
+        let lastChar8 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+ 
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+        
+        let lastChar9 = ("""
+    Pre zadané Kindergeld číslo platia tieto výplatné termíny:
+  
+    8. September
+    8. Október
+    8. November
+    7. December
+    """)
+        
+   
+    
+    
+        
         view.addSubview(explainLabel)
         
         explainLabel.textAlignment = .left
@@ -141,14 +225,36 @@ class PayDaysVC: UIViewController {
         explainLabel.textColor = .secondaryLabel
         explainLabel.numberOfLines = 0
      
-        explainLabel.text = """
+        switch lastChar {
+        case "0":
+            explainLabel.text = lastChar0
+        case "1":
+            explainLabel.text = lastChar1
+        case "2":
+            explainLabel.text = lastChar2
+        case "3":
+            explainLabel.text = lastChar3
+        case "4":
+            explainLabel.text = lastChar4
+        case "5":
+            explainLabel.text = lastChar5
+        case "6":
+            explainLabel.text = lastChar6
+        case "7":
+            explainLabel.text = lastChar7
+        case "8":
+            explainLabel.text = lastChar8
+        case "9":
+            explainLabel.text = lastChar9
+        default:
+            explainLabel.text = """
 Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
 
 003FK123456
 
 Číslo ti bude pridelené, po podaní žiadosti a nájdeš ho vpravo hore v každom dokumente od Famillienkasse.
 """
-   
+        }
         explainLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -161,36 +267,68 @@ Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
     
     //check if enteres string has 11 characters
   @objc func showPayDays() {
+    
     KGNumber = KGNumberTextField.text!
-    if KGNumber.count == 11 {
-        showPayDaysText()
-    } else {
+    
+  if KGNumber == nil {
         showAlert()
-    }
-        
-    }
-        
-    func showPayDaysText() {
-        let lastChar = KGNumber.last
-        print(lastChar!)
-        
+        return
     }
     
 
+ guard KGNumber?.count != 11 else {
+    showAlert()
+    return
+}
+  
     
     
-//    func configPayDaysInfo(lastChar: Int) {
+    let lastChar = (KGNumber?.last.map{String($0)} ?? "a")!
+    
+
+   
+  
+    
+    
+    configExplainLabel(lastChar: lastChar)
+    
+    
+    
+
+        
+    }
+        
+    
+    
+  
+        
 //
-//
-//
-//
-//
+//    func configPayDaysInfo(lastChar: Int) -> String? {
 //
 //        switch lastChar {
 //        case 0:
-//            return
+//            return "lastChar0"
+//        case 1:
+//            return "lastChar1"
+//        case 2:
+//            return "lastChar2"
+//        case 3:
+//            return "lastChar3"
+//        case 4:
+//            return "lastChar4"
+//        case 5:
+//            return "lastChar5"
+//        case 6:
+//            return "lastChar6"
+//        case 7:
+//            return "lastChar7"
+//        case 8:
+//            return "lastChar8"
+//        case 9:
+//            return "lastChar9"
+//
 //        default:
-//            <#code#>
+//            return "test"
 //        }
 //
 //    }
@@ -217,3 +355,8 @@ extension PayDaysVC: UITextFieldDelegate {
         return true
     }
 }
+//extension String {
+//    subscript(idx: Int) -> String {
+//        String(self[index(startIndex, offsetBy: idx)])
+//    }
+//}
