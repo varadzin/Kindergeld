@@ -12,7 +12,7 @@ class PayDaysVC: UIViewController {
     let titleKG = UILabel()
     let subTitle = UILabel()
 //    let textLabelYourNummber = UILabel()
-    let KGNumberTextField = KGTextField()
+    let KGNumberTextField = KGTextField(placeholder: "Zadaj Kindergeld číslo")
     let CTAButton = KGButton(title: "Ok")
     let explainLabel = UILabel()
     var KGNumber : String?
@@ -21,7 +21,7 @@ class PayDaysVC: UIViewController {
     let infoLabel = UILabel()
     
     
-    
+   
     
     
 //    var isKGNumberEntered: Bool { return !KGNumberTextField.text!.isEmpty }

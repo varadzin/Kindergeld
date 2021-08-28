@@ -18,6 +18,12 @@ class KGTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
+    convenience init(placeholder: String) {
+        self.init(frame: .zero)
+        self.placeholder = placeholder
+     
+    }
+    
     private func configure() {
     
         translatesAutoresizingMaskIntoConstraints = false
@@ -31,12 +37,14 @@ class KGTextField: UITextField {
         adjustsFontSizeToFitWidth = true
         minimumFontSize = 12
         
-        backgroundColor = .systemGray4
+        backgroundColor = .systemGray6
         autocorrectionType = .no
         returnKeyType = .go
         keyboardType = .numbersAndPunctuation
         clearButtonMode = .whileEditing
-        placeholder = "Zadaj Kindergeld číslo"
+        
+       
+       
         
         
         
