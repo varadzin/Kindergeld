@@ -24,7 +24,9 @@ class FormVC: UIViewController {
         configTitle()
         configSubTitle()
 //        explainComment()
+        configExplainButton()
         configQ1()
+        configNextButton()
 
     }
     
@@ -64,7 +66,7 @@ class FormVC: UIViewController {
         view.addSubview(subTitle)
         
         subTitle.text = "Údaje žiadateľa"
-        subTitle.font = UIFont(name: "Times New Roman", size: 18)
+        subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
@@ -99,13 +101,29 @@ class FormVC: UIViewController {
     
     func configExplainButton() {
         view.addSubview(explainButton)
+        
+        explainButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
+        
+        
+        NSLayoutConstraint.activate([
+            explainButton.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
+            explainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            explainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            explainButton.heightAnchor.constraint(equalToConstant: 50)
+               ])
     }
     
     
-    
+    @objc func showExplanation() {
+        let destVC = KGExplainVC()
+        destVC.title = "Žiadateľ o Kindergeld"
+        let navCon = UINavigationController(rootViewController: destVC)
+        present(navCon, animated: true)
+        
+    }
     
     func configQ1() {
-        let nameQ = KGTextField(placeholder: "Zadaj krstné meno")
+        let nameQ = KGTextField(placeholder: "Zadaj krstné meno žiadateľa")
         view.addSubview(nameQ)
         
         nameQ.keyboardType = .alphabet
@@ -117,20 +135,43 @@ class FormVC: UIViewController {
             nameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        let surnameQ = KGTextField(placeholder: "Zadaj priezvisko")
-        view.addSubview(surnameQ)
+        let surenameQ = KGTextField(placeholder: "Zadaj priezvisko žiadateľa")
+        view.addSubview(surenameQ)
         
-        surnameQ.keyboardType = .alphabet
+        surenameQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            surnameQ.topAnchor.constraint(equalTo: nameQ.bottomAnchor, constant: 15),
-            surnameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            surnameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            surnameQ.heightAnchor.constraint(equalToConstant: 50)
+            surenameQ.topAnchor.constraint(equalTo: nameQ.bottomAnchor, constant: 15),
+            surenameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            surenameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            surenameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         
+        let maidenNameQ = KGTextField(placeholder: "Zadaj rodné priezvisko žiadateľa")
+        view.addSubview(maidenNameQ)
+        
+        maidenNameQ.keyboardType = .alphabet
+        
+        NSLayoutConstraint.activate([
+            maidenNameQ.topAnchor.constraint(equalTo: surenameQ.bottomAnchor, constant: 15),
+            maidenNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            maidenNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            maidenNameQ.heightAnchor.constraint(equalToConstant: 50)
+        ])
         
     }
     
+    func configNextButton() {
+        let nextButton = KGButton(title: "ďalej ->>")
+        view.addSubview(nextButton)
+        
+        NSLayoutConstraint.activate([
+            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -220),
+            nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
+            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            nextButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+    }
     
 }

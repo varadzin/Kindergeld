@@ -29,6 +29,8 @@ class KGTextField: UITextField {
         translatesAutoresizingMaskIntoConstraints = false
         
         layer.cornerRadius = 12
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.systemGray3.cgColor
         
         textColor = .label
         tintColor = .label
