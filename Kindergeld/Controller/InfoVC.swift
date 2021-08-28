@@ -89,11 +89,8 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         textField.text = """
 Pomocou tejto aplikácie vieš vyplniť formuláre pre žiadosť o prídavky na deti v Nemecku. O prídavky na deti možeš požiadať aj sám/sama. Nepotrebuješ na to žiadnu agentúru, ktorej zbytočne zaplatíš desiatky €. To čo zadáš pri vypĺňaní formuláru sa ti zobrazí v žiadosti.
 
-Podmienky používania aplikácie Kindergeld:
-Autor aplikácie nenesie zodpovednosť za akékoľvek škody, straty alebo ujmy spôsobené používaním aplikácie, najmä za škodu spôsobenú nesprávnym vyplnením formulárov, prípadne uvedením nepravdivých údajov pri žiadosti o prídavky.
-
-Ochrana osobných údajov:
-Všetky údaje zadané užívateľom ostávajú v telefóne. Aplikácia sa nepripája na internet a neodosiela žiadne dáta. Aplikácia nezbiera ani nikomu neposkytuje žiadne údaje. Po vyplnení formulára si vieš hotové PDF vytlačiť z telefónu, alebo preniesť bezpečne do počítača a následne z počítača vytlačiť. Používaním aplikácie dávaš najavo súhlas s podmienkami používania.
+Podmienky používania aplikácie Kindergeld nájdeš v Nastaveniach.
+Používaním aplikácie dávaš najavo súhlas s podmienkami používania.
 
 """
         

@@ -38,8 +38,6 @@ class PayDaysVC: UIViewController {
         configButton()
         showPayDays()
         configInfoLabel()
-       
-     
         createDismissKeyboardTapGesture()
         
     }
