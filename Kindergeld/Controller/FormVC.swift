@@ -14,7 +14,9 @@ class FormVC: UIViewController {
     let subTitle = UILabel()
 //    let explainText = KGTextLabel()
     let explainButton = KGButton(title: "Vysvetlivky - Kto je žiadateľ")
-  
+  let nameQ = KGTextField(placeholder: "Zadaj krstné meno žiadateľa")
+    let surenameQ = KGTextField(placeholder: "Zadaj priezvisko žiadateľa")
+    let maidenNameQ = KGTextField(placeholder: "Zadaj rodné priezvisko žiadateľa")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,7 +125,7 @@ class FormVC: UIViewController {
     }
     
     func configQ1() {
-        let nameQ = KGTextField(placeholder: "Zadaj krstné meno žiadateľa")
+         
         view.addSubview(nameQ)
         
         nameQ.keyboardType = .alphabet
@@ -135,7 +137,7 @@ class FormVC: UIViewController {
             nameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        let surenameQ = KGTextField(placeholder: "Zadaj priezvisko žiadateľa")
+         
         view.addSubview(surenameQ)
         
         surenameQ.keyboardType = .alphabet
@@ -147,7 +149,7 @@ class FormVC: UIViewController {
             surenameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        let maidenNameQ = KGTextField(placeholder: "Zadaj rodné priezvisko žiadateľa")
+    
         view.addSubview(maidenNameQ)
         
         maidenNameQ.keyboardType = .alphabet
@@ -165,6 +167,8 @@ class FormVC: UIViewController {
         let nextButton = KGButton(title: "ďalej ->>")
         view.addSubview(nextButton)
         
+        nextButton.addTarget(self, action: #selector(saveData), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -220),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
@@ -174,4 +178,32 @@ class FormVC: UIViewController {
         
     }
     
+   @objc func saveData() {
+        var nameParent : String?
+        var sureNameParent : String?
+        var maidenNameParent : String?
+      
+    
+    guard nameQ.text != nil else { return }
+        nameParent = nameQ.text!
+ 
+    guard surenameQ.text != nil else { return }
+    sureNameParent = surenameQ.text!
+    
+    guard maidenNameQ.text != nil else { return }
+    maidenNameParent = maidenNameQ.text!
+    
+           
+        print(nameParent!, sureNameParent!, maidenNameParent!)
+        
+        
+    }
+    
+    
+}
+extension FormVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+   saveData()
+        return true
+    }
 }

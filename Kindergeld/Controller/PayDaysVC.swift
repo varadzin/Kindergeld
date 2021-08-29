@@ -11,22 +11,22 @@ class PayDaysVC: UIViewController {
     
     let titleKG = UILabel()
     let subTitle = UILabel()
-//    let textLabelYourNummber = UILabel()
+    //    let textLabelYourNummber = UILabel()
     let KGNumberTextField = KGTextField(placeholder: "Zadaj Kindergeld číslo")
     let CTAButton = KGButton(title: "Ok")
     let explainLabel = UILabel()
     var KGNumber : String?
     var lastNumberIs0 = [String]()
-    var NumberForPayDays = Int()
+    
     let infoLabel = UILabel()
     
     
-   
     
     
-//    var isKGNumberEntered: Bool { return !KGNumberTextField.text!.isEmpty }
-  
-
+    
+    //    var isKGNumberEntered: Bool { return !KGNumberTextField.text!.isEmpty }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,7 @@ class PayDaysVC: UIViewController {
             subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             
         ])
-     
+        
     }
     
     func configKGNumberTextField() {
@@ -92,7 +92,7 @@ class PayDaysVC: UIViewController {
             KGNumberTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             KGNumberTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             KGNumberTextField.heightAnchor.constraint(equalToConstant: 50)
-         
+            
         ])
         
     }
@@ -106,7 +106,7 @@ class PayDaysVC: UIViewController {
             CTAButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 135),
             CTAButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -135),
             CTAButton.heightAnchor.constraint(equalToConstant: 50)
-        
+            
         ])
     }
     
@@ -148,7 +148,7 @@ class PayDaysVC: UIViewController {
     8. November 2021
     7. December 2021
     """)
-      
+        
         let lastChar4 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
     
@@ -203,7 +203,7 @@ class PayDaysVC: UIViewController {
     7. December
     """)
         
-   
+        
         view.addSubview(explainLabel)
         
         explainLabel.textAlignment = .center
@@ -211,7 +211,7 @@ class PayDaysVC: UIViewController {
         explainLabel.textColor = .secondaryLabel
         explainLabel.numberOfLines = 0
         infoLabel.isHidden = false
-     
+        
         switch lastChar {
         case "0":
             explainLabel.text = lastChar0
@@ -250,40 +250,34 @@ Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
             explainLabel.topAnchor.constraint(equalTo: CTAButton.bottomAnchor, constant: 50),
             explainLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             explainLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
-        
+            
         ])
     }
     
     //check if enteres string has 11 characters
-  @objc func showPayDays() {
-    
-    KGNumber = KGNumberTextField.text!
-    
-  if KGNumber == nil {
-        showAlert()
-        return
+    @objc func showPayDays() {
+        
+        KGNumber = KGNumberTextField.text!
+        if KGNumber == nil {
+            showAlert()
+            return
+        }
+        
+        guard KGNumber?.count != 11 else {
+            showAlert()
+            return
+        }
+        
+        let lastChar = (KGNumber?.last.map{String($0)} ?? "a")!
+        configExplainLabel(lastChar: lastChar)
     }
     
-
- guard KGNumber?.count != 11 else {
-    showAlert()
-    return
-}
-  
     
     
-    let lastChar = (KGNumber?.last.map{String($0)} ?? "a")!
     
-    configExplainLabel(lastChar: lastChar)
-        
-    }
-        
-    
-    
-  
     func showAlert() {
         let alert = UIAlertController(title: "Pozor", message: "číslo Kindergeld je v tvare XXXFKXXXXXX tzn. tri čísla, potom písmená FK a potom šesť čísel, všetko písané spolu", preferredStyle: .alert)
-       
+        
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
         present(alert, animated: true)
     }
@@ -295,10 +289,10 @@ Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
     }
     
     func configInfoLabel() {
-      
+        
         
         view.addSubview(infoLabel)
-     
+        
         infoLabel.numberOfLines = 0
         infoLabel.textAlignment = .center
         infoLabel.textColor = .secondaryLabel
@@ -313,13 +307,8 @@ Zadaj tvoje Kindergeld číslo uvedené v liste od Famillienkasse v tvare:
             infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
-     
-        
+        }
     }
-    
-    
-    
-}
 
 extension PayDaysVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
