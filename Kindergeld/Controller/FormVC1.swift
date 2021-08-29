@@ -1,5 +1,5 @@
 //
-//  FormVC.swift
+//  FormVC1.swift
 //  Kindergeld
 //
 //  Created by Frantisek Varadzin on 21/08/2021.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-class FormVC: UIViewController {
+class FormVC1: UIViewController {
 
     let scrollView = UIScrollView()
     let titleKG = UILabel()
     let subTitle = UILabel()
 //    let explainText = KGTextLabel()
     let explainButton = KGButton(title: "Vysvetlivky - Kto je žiadateľ")
-  let nameQ = KGTextField(placeholder: "Zadaj krstné meno žiadateľa")
-    let surenameQ = KGTextField(placeholder: "Zadaj priezvisko žiadateľa")
-    let maidenNameQ = KGTextField(placeholder: "Zadaj rodné priezvisko žiadateľa")
+  let nameQ = KGTextField(placeholder: " Zadaj krstné meno žiadateľa ")
+    let surenameQ = KGTextField(placeholder: " Zadaj priezvisko žiadateľa ")
+    let maidenNameQ = KGTextField(placeholder: " Zadaj rodné priezvisko žiadateľa ")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,10 +167,10 @@ class FormVC: UIViewController {
         let nextButton = KGButton(title: "ďalej ->>")
         view.addSubview(nextButton)
         
-        nextButton.addTarget(self, action: #selector(saveData), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -220),
+            nextButton.topAnchor.constraint(equalTo: maidenNameQ.bottomAnchor, constant: 15),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
@@ -178,7 +178,7 @@ class FormVC: UIViewController {
         
     }
     
-   @objc func saveData() {
+   @objc func saveDataAndGoNext() {
         var nameParent : String?
         var sureNameParent : String?
         var maidenNameParent : String?
@@ -195,15 +195,17 @@ class FormVC: UIViewController {
     
            
         print(nameParent!, sureNameParent!, maidenNameParent!)
-        
+       
+    let nextVC = FormVC2()
+    navigationController?.pushViewController(nextVC, animated: true)
         
     }
     
     
 }
-extension FormVC: UITextFieldDelegate {
+extension FormVC1: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-   saveData()
+        saveDataAndGoNext()
         return true
     }
 }
