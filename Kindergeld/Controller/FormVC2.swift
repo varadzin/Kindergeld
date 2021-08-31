@@ -161,7 +161,7 @@ class FormVC2: UIViewController {
         let nextButton = KGButton(title: "ďalej ->>")
         view.addSubview(nextButton)
         
-        //        nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
+                nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             nextButton.topAnchor.constraint(equalTo: segController.bottomAnchor, constant: 25),
@@ -191,5 +191,23 @@ class FormVC2: UIViewController {
     @objc func goBack() {
         navigationController?.popViewController(animated: true)
         
+    }
+
+
+@objc func saveDataAndGoNext() {
+    
+    
+    
+    
+    let nextVC = FormVC3()
+    navigationController?.pushViewController(nextVC, animated: true)
+        
+    
+}
+}
+extension FormVC2: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        saveDataAndGoNext()
+        return true
     }
 }

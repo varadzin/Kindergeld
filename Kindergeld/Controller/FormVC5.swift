@@ -1,46 +1,44 @@
 //
-//  FormVC3.swift
+//  FormVC5.swift
 //  Kindergeld
 //
-//  Created by Frantisek Varadzin on 29/08/2021.
+//  Created by Frantisek Varadzin on 31/08/2021.
 //
 
 import UIKit
 
-class FormVC3: UIViewController {
-
+class FormVC5: UIViewController {
+    
+    
+    
     let scrollView = UIScrollView()
     let titleKG = UILabel()
     let subTitle = UILabel()
+    let spouseNameQ = KGTextField(placeholder: " Krstné meno partnera / ky ")
+      let spouseSurenameQ = KGTextField(placeholder: " Priezvisko partnera / ky ")
+      let maidenSpouseNameQ = KGTextField(placeholder: " Rodné priezvisko partnera / ky ")
+    let explainButton = KGButton(title: "Vysvetlivky - Partner / ka -  / manžel / ka")
 
-    let explainButton = KGButton(title: "Vysvetlivky - Kto je žiadateľ")
- 
-    let nationalityQ = KGTextField(placeholder: "Zadaj národnosť žiadateľa")
-    let addressQ = KGTextField(placeholder: "Ulica a číslo domu v Nemecku")
-    let addressQ2 = KGTextField(placeholder: "PSČ a mesto Nemecku")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configVC()
-
+        
         configTitle()
         configSubTitle()
-
+        
         configExplainButton()
-        configQ3()
-        configBackButton()
-        configNextButton()
- 
-
+   
+        
     }
-    
     func configVC() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
-      }
+    }
     
-
+    
     
     func configTitle() {
         view.addSubview(titleKG)
@@ -48,7 +46,7 @@ class FormVC3: UIViewController {
         titleKG.text = "Hlavná žiadosť - (KG1)"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
-  
+        
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -56,14 +54,14 @@ class FormVC3: UIViewController {
             
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
- 
+            
         ])
     }
     
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "Údaje žiadateľa"
+        subTitle.text = "Údaje o manželke / manželovi, partnerke / partnerovi"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
@@ -79,7 +77,7 @@ class FormVC3: UIViewController {
         ])
     }
     
-
+    
     
     func configExplainButton() {
         view.addSubview(explainButton)
@@ -92,7 +90,7 @@ class FormVC3: UIViewController {
             explainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             explainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             explainButton.heightAnchor.constraint(equalToConstant: 50)
-               ])
+        ])
     }
     
     
@@ -104,54 +102,53 @@ class FormVC3: UIViewController {
         
     }
     
-    func configQ3() {
+    func configQ5() {
+         
+        view.addSubview(spouseNameQ)
         
-        view.addSubview(nationalityQ)
-        
-        nationalityQ.keyboardType = .numbersAndPunctuation
-        
-        NSLayoutConstraint.activate([
-            nationalityQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 20),
-            nationalityQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            nationalityQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            nationalityQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        
-        view.addSubview(addressQ)
-        
-        addressQ.keyboardType = .alphabet
+        spouseNameQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            addressQ.topAnchor.constraint(equalTo: nationalityQ.bottomAnchor, constant: 15),
-            addressQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ.heightAnchor.constraint(equalToConstant: 50)
+            spouseNameQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 15),
+            spouseNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            spouseNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            spouseNameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+         
+        view.addSubview(spouseSurenameQ)
+        
+        spouseSurenameQ.keyboardType = .alphabet
+        
+        NSLayoutConstraint.activate([
+            spouseSurenameQ.topAnchor.constraint(equalTo: nameQ.bottomAnchor, constant: 15),
+            spouseSurenameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            spouseSurenameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            spouseSurenameQ.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
     
-        view.addSubview(addressQ2)
+        view.addSubview(maidenSpouseNameQ)
         
-        addressQ2.keyboardType = .alphabet
+        maidenSpouseNameQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            addressQ2.topAnchor.constraint(equalTo: addressQ.bottomAnchor, constant: 15),
-            addressQ2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ2.heightAnchor.constraint(equalToConstant: 50)
+            maidenSpouseNameQ.topAnchor.constraint(equalTo: surenameQ.bottomAnchor, constant: 15),
+            maidenSpouseNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            maidenSpouseNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            maidenSpouseNameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
-    
+        
     }
-    
-    
     
     func configNextButton() {
         let nextButton = KGButton(title: "ďalej ->>")
         view.addSubview(nextButton)
         
-                nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
+            nextButton.topAnchor.constraint(equalTo: maidenSpouseNameQ.bottomAnchor, constant: 15),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
@@ -159,39 +156,35 @@ class FormVC3: UIViewController {
         
     }
     
+   @objc func saveDataAndGoNext() {
+        var nameSpouse : String?
+        var sureNameSpouse : String?
+        var maidenNameSpouse : String?
+      
     
-    func configBackButton() {
-        let backButton = KGButton(title: "<<- späť")
-        view.addSubview(backButton)
-        
-                backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
-            backButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-    }
+    guard spouseNameQ.text != nil else { return }
+        nameSpouse = spouseNameQ.text!
+ 
+    guard spouseSurenameQ.text != nil else { return }
+    sureNameSpouse = spouseSurenameQ.text!
     
-    @objc func goBack() {
-        navigationController?.popViewController(animated: true)
-        
-    }
-
-
-@objc func saveDataAndGoNext() {
+    guard maidenSpouseNameQ.text != nil else { return }
+    maidenNameSpouse = maidenSpouseNameQ.text!
     
-    
-    
-    
-    let nextVC = FormVC4()
+           
+        print(nameSpouse!, sureNameSpouse!, maidenNameSpouse!)
+       
+    let nextVC = FormVC6()
     navigationController?.pushViewController(nextVC, animated: true)
         
+    }
+    
     
 }
-    
-    
+extension FormVC5: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        saveDataAndGoNext()
+        return true
+    }
     
 }

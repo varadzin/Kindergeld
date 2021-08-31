@@ -1,46 +1,51 @@
 //
-//  FormVC3.swift
+//  FormVC4.swift
 //  Kindergeld
 //
-//  Created by Frantisek Varadzin on 29/08/2021.
+//  Created by Frantisek Varadzin on 31/08/2021.
 //
 
 import UIKit
 
-class FormVC3: UIViewController {
-
+class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    
     let scrollView = UIScrollView()
     let titleKG = UILabel()
     let subTitle = UILabel()
-
-    let explainButton = KGButton(title: "Vysvetlivky - Kto je žiadateľ")
- 
-    let nationalityQ = KGTextField(placeholder: "Zadaj národnosť žiadateľa")
-    let addressQ = KGTextField(placeholder: "Ulica a číslo domu v Nemecku")
-    let addressQ2 = KGTextField(placeholder: "PSČ a mesto Nemecku")
+    
+    let explainButton = KGButton(title: "Vysvetlivky - Rodinný stav")
+    let simpleText = KGTextLabel()
+    let pickerArray = ["slobodný / slobodná", "ženatý / vydatá", "rozvedený / rozvedená", "vdovec / vdova", "žijeme v registr.partnerstve", "žijeme trvale oddelene"]
+    
+    let pickerView = UIPickerView()
+    let sinceQ = KGTextField(placeholder: "Dátum od:")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configVC()
-
+        
         configTitle()
         configSubTitle()
-
+        
         configExplainButton()
-        configQ3()
-        configBackButton()
+        configSimpleText()
+        configPickerView()
+        configQ4()
         configNextButton()
- 
-
+        configBackButton()
+        
+        
     }
-    
     func configVC() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
-      }
+    }
     
-
+    
     
     func configTitle() {
         view.addSubview(titleKG)
@@ -48,7 +53,7 @@ class FormVC3: UIViewController {
         titleKG.text = "Hlavná žiadosť - (KG1)"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
-  
+        
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -56,7 +61,7 @@ class FormVC3: UIViewController {
             
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
- 
+            
         ])
     }
     
@@ -79,7 +84,7 @@ class FormVC3: UIViewController {
         ])
     }
     
-
+    
     
     func configExplainButton() {
         view.addSubview(explainButton)
@@ -92,7 +97,7 @@ class FormVC3: UIViewController {
             explainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             explainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             explainButton.heightAnchor.constraint(equalToConstant: 50)
-               ])
+        ])
     }
     
     
@@ -104,45 +109,71 @@ class FormVC3: UIViewController {
         
     }
     
-    func configQ3() {
+    func configSimpleText() {
         
-        view.addSubview(nationalityQ)
         
-        nationalityQ.keyboardType = .numbersAndPunctuation
+        simpleText.text = "Zadaj rodinný stav žiadateľa:"
+        
+        view.addSubview(simpleText)
         
         NSLayoutConstraint.activate([
-            nationalityQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 20),
-            nationalityQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            nationalityQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            nationalityQ.heightAnchor.constraint(equalToConstant: 50)
+            simpleText.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 10),
+            simpleText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            simpleText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            simpleText.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         
-        view.addSubview(addressQ)
-        
-        addressQ.keyboardType = .alphabet
-        
-        NSLayoutConstraint.activate([
-            addressQ.topAnchor.constraint(equalTo: nationalityQ.bottomAnchor, constant: 15),
-            addressQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    
-        view.addSubview(addressQ2)
-        
-        addressQ2.keyboardType = .alphabet
-        
-        NSLayoutConstraint.activate([
-            addressQ2.topAnchor.constraint(equalTo: addressQ.bottomAnchor, constant: 15),
-            addressQ2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ2.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    
     }
     
     
+    func configPickerView() {
+        view.addSubview(pickerView)
+        
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            pickerView.topAnchor.constraint(equalTo: simpleText.bottomAnchor, constant: 5),
+            pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            pickerView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+        
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let row = pickerArray[row]
+        return row
+     }
+ 
+    
+    
+    func configQ4() {
+        
+        view.addSubview(sinceQ)
+        
+   
+        sinceQ.keyboardType = .numbersAndPunctuation
+        
+        NSLayoutConstraint.activate([
+            sinceQ.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 10),
+            sinceQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            sinceQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            sinceQ.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
     
     func configNextButton() {
         let nextButton = KGButton(title: "ďalej ->>")
@@ -151,7 +182,7 @@ class FormVC3: UIViewController {
                 nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
+            nextButton.topAnchor.constraint(equalTo: sinceQ.bottomAnchor, constant: 25),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
@@ -167,7 +198,7 @@ class FormVC3: UIViewController {
                 backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
+            backButton.topAnchor.constraint(equalTo: sinceQ.bottomAnchor, constant: 25),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
             backButton.heightAnchor.constraint(equalToConstant: 50)
@@ -186,12 +217,10 @@ class FormVC3: UIViewController {
     
     
     
-    let nextVC = FormVC4()
+    let nextVC = FormVC5()
     navigationController?.pushViewController(nextVC, animated: true)
         
     
 }
-    
-    
     
 }
