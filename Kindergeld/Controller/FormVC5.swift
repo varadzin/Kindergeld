@@ -29,7 +29,7 @@ class FormVC5: UIViewController {
         configTitle()
         configSubTitle()
         
-        configExplainButton()
+//        configExplainButton()
         
         configQ5()
         configNextButton()
@@ -113,7 +113,7 @@ class FormVC5: UIViewController {
         spouseNameQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            spouseNameQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 15),
+            spouseNameQ.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 15),
             spouseNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             spouseNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             spouseNameQ.heightAnchor.constraint(equalToConstant: 50)

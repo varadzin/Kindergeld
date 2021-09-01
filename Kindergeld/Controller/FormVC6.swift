@@ -21,15 +21,18 @@ class FormVC6: UIViewController {
     let explainButton = KGButton(title: "Vysvetlivky - Partner / ka -  / manžel / ka")
     let simpleText = KGTextLabel()
     let datePicker = UIDatePicker()
+    let spouseNationality = KGTextField(placeholder: "Štátna príslušnosť partnera/ky")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
         configTitle()
         configSubTitle()
-        configSimpleText()
+//        configSimpleText()
         configDatePicker()
-        
+        configQ6()
+        configBackButton()
+        configNextButton()
         
     }
     
@@ -62,7 +65,7 @@ class FormVC6: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "Údaje o manželke / manželovi, partnerke / partnerovi"
+        subTitle.text = "Dátum narodenia partnera / ky"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
@@ -78,18 +81,7 @@ class FormVC6: UIViewController {
         ])
     }
     
-    func configSimpleText() {
-        view.addSubview(simpleText)
-        
-        simpleText.text = "Dátum narodenia:"
-        
-        NSLayoutConstraint.activate([
-            simpleText.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 10),
-            simpleText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            simpleText.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
-        ])
-        
-    }
+
     
     
     func configDatePicker() {
@@ -102,11 +94,11 @@ class FormVC6: UIViewController {
  
         
       
-        datePicker.addTarget(self, action: #selector(FormVC6.datePickerValueChanged(_:)), for: .valueChanged)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            datePicker.topAnchor.constraint(equalTo: simpleText.bottomAnchor, constant: 5),
+            datePicker.topAnchor.constraint(equalTo: subTitle.bottomAnchor),
             datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             datePicker.heightAnchor.constraint(equalToConstant: 200)
@@ -126,6 +118,23 @@ class FormVC6: UIViewController {
         
     }
     
+    
+    func configQ6() {
+         
+        view.addSubview(spouseNationality)
+        
+        spouseNationality.keyboardType = .alphabet
+        
+        NSLayoutConstraint.activate([
+            spouseNationality.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 5),
+            spouseNationality.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            spouseNationality.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            spouseNationality.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+    
+    }
+    
     func configBackButton() {
         let backButton = KGButton(title: "<<- späť")
         view.addSubview(backButton)
@@ -133,7 +142,7 @@ class FormVC6: UIViewController {
                 backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 15),
+            backButton.topAnchor.constraint(equalTo: spouseNationality.bottomAnchor, constant: 15),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
             backButton.heightAnchor.constraint(equalToConstant: 50)
@@ -154,7 +163,7 @@ class FormVC6: UIViewController {
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 15),
+            nextButton.topAnchor.constraint(equalTo: spouseNationality.bottomAnchor, constant: 15),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
