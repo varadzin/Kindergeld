@@ -17,7 +17,7 @@ class FormVC5: UIViewController {
     let spouseNameQ = KGTextField(placeholder: " Krstné meno partnera / ky ")
       let spouseSurenameQ = KGTextField(placeholder: " Priezvisko partnera / ky ")
       let maidenSpouseNameQ = KGTextField(placeholder: " Rodné priezvisko partnera / ky ")
-    let explainButton = KGButton(title: "Vysvetlivky - Partner / ka -  / manžel / ka")
+    let explainButton = KGButton(title: "Vysvetlivky")
 
     
     
@@ -30,6 +30,10 @@ class FormVC5: UIViewController {
         configSubTitle()
         
         configExplainButton()
+        
+        configQ5()
+        configNextButton()
+        configBackButton()
    
         
     }
@@ -121,7 +125,7 @@ class FormVC5: UIViewController {
         spouseSurenameQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            spouseSurenameQ.topAnchor.constraint(equalTo: nameQ.bottomAnchor, constant: 15),
+            spouseSurenameQ.topAnchor.constraint(equalTo: spouseNameQ.bottomAnchor, constant: 15),
             spouseSurenameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             spouseSurenameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             spouseSurenameQ.heightAnchor.constraint(equalToConstant: 50)
@@ -133,13 +137,33 @@ class FormVC5: UIViewController {
         maidenSpouseNameQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            maidenSpouseNameQ.topAnchor.constraint(equalTo: surenameQ.bottomAnchor, constant: 15),
+            maidenSpouseNameQ.topAnchor.constraint(equalTo: spouseSurenameQ.bottomAnchor, constant: 15),
             maidenSpouseNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             maidenSpouseNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             maidenSpouseNameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         
     }
+    func configBackButton() {
+        let backButton = KGButton(title: "<<- späť")
+        view.addSubview(backButton)
+        
+                backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: maidenSpouseNameQ.bottomAnchor, constant: 15),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
+            backButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+    }
+    
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+        
+    }
+    
     
     func configNextButton() {
         let nextButton = KGButton(title: "ďalej ->>")

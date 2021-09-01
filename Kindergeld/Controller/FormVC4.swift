@@ -21,6 +21,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let pickerView = UIPickerView()
     let sinceQ = KGTextField(placeholder: "Dátum od:")
+
     
     
     override func viewDidLoad() {
@@ -31,10 +32,11 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         configTitle()
         configSubTitle()
         
-        configExplainButton()
-        configSimpleText()
+//        configExplainButton()
+//        configSimpleText()
         configPickerView()
         configQ4()
+        sinceQ.isHidden = true
         configNextButton()
         configBackButton()
         
@@ -68,7 +70,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "Údaje žiadateľa"
+        subTitle.text = "Zadaj rodinný stav žiadateľa:"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
@@ -138,7 +140,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            pickerView.topAnchor.constraint(equalTo: simpleText.bottomAnchor, constant: 5),
+            pickerView.topAnchor.constraint(equalTo: subTitle.bottomAnchor),
             pickerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             pickerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             pickerView.heightAnchor.constraint(equalToConstant: 200)
@@ -156,23 +158,38 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let row = pickerArray[row]
         return row
-     }
+    }
+    
+       func pickerView(_ pickerView: UIPickerView, didSelectRow pickedItem: Int, inComponent : Int) {
+     
+        switch pickedItem {
+        case 0:
+        
+            sinceQ.isHidden = true
+        
+        default:
+            sinceQ.isHidden = false
+        }
+        }
+  
  
     
     
     func configQ4() {
-        
+      
         view.addSubview(sinceQ)
         
    
         sinceQ.keyboardType = .numbersAndPunctuation
         
         NSLayoutConstraint.activate([
-            sinceQ.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 10),
+            sinceQ.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 5),
             sinceQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             sinceQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             sinceQ.heightAnchor.constraint(equalToConstant: 50)
         ])
+       
+        
     }
     
     func configNextButton() {
@@ -182,7 +199,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                 nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: sinceQ.bottomAnchor, constant: 25),
+            nextButton.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 70),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
@@ -198,7 +215,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                 backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: sinceQ.bottomAnchor, constant: 25),
+            backButton.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 70),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
             backButton.heightAnchor.constraint(equalToConstant: 50)
