@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FormVC10: UIViewController {
+class FormVC10: UIViewController, UIScrollViewDelegate {
     
     
     
@@ -27,8 +27,21 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     
     
-    var segKidController = UISegmentedControl()
+
     var segController = UISegmentedControl()
+    var segController1 = UISegmentedControl()
+    var segController2 = UISegmentedControl()
+    var segController3 = UISegmentedControl()
+    var segController4 = UISegmentedControl()
+    
+    var segKidController = UISegmentedControl()
+
+    
+    
+    
+    
+    
+    
     var nOfKids : String?
     var sOfKid : String?
     let scrollView = UIScrollView()
@@ -55,25 +68,29 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         configSubTitle()
         numberOfKids()
 
-        configQ10()
-        configSeQ()
-        configNextButton()
-        configBackButton()
+        configQ10a()
+        configSeQa()
+        
+        configQ10b()
+        configSeQb()
+        
+//        configNextButton()
+//        configBackButton()
         
         
     }
     
     
     func configVC() {
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
     
     func configScrollView() {
         view.addSubview(scrollView)
-        scrollView.backgroundColor = .systemGray2
+
         scrollView.frame = view.bounds
-        scrollView.contentSize = CGSize(width: view.frame.size.width, height:view.frame.size.height)
+        scrollView.contentSize = CGSize(width: view.frame.size.width, height:view.frame.size.height + 400)
     }
     
     func configTitle() {
@@ -192,7 +209,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         ])
     }
     
-    func configSeQ() {
+    func configSeQa() {
       
         shortText2a.text = "Dieťa je:"
         shortText2a.textColor = .label
@@ -208,24 +225,101 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         
         let items = ["Chlapec", "Dievča"]
-        segController = UISegmentedControl(items: items)
-        segController.selectedSegmentIndex = 0
-        segController.addTarget(self, action: #selector(saveSex), for: .valueChanged)
+        segController1 = UISegmentedControl(items: items)
+        segController1.selectedSegmentIndex = 0
+        segController1.addTarget(self, action: #selector(saveSexa), for: .valueChanged)
         
         
-        scrollView.addSubview(segController)
+        scrollView.addSubview(segController1)
         
-        segController.translatesAutoresizingMaskIntoConstraints = false
+        segController1.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            segController.topAnchor.constraint(equalTo: shortText2.bottomAnchor, constant: 10),
-            segController.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50),
-            segController.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
-            segController.heightAnchor.constraint(equalToConstant: 30)
+            segController1.topAnchor.constraint(equalTo: shortText2a.bottomAnchor, constant: 10),
+            segController1.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50),
+            segController1.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
+            segController1.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
-    @objc func saveSex(sender: UISegmentedControl) {
+    @objc func saveSexa(sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            sOfKid = "Man"
+        case 1:
+            sOfKid = "Woman"
+        default:
+            sOfKid = "Man"
+        }
+        print(sOfKid!)
+    }
+    
+    
+    
+    //Questions 2. Kid
+    
+    
+    func configQ10b() {
+        
+        scrollView.addSubview(nameKid2Q)
+        
+        nameKid2Q.keyboardType = .alphabet
+        
+        NSLayoutConstraint.activate([
+            nameKid2Q.topAnchor.constraint(equalTo: segController1.bottomAnchor, constant: 20),
+            nameKid2Q.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            nameKid2Q.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            nameKid2Q.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        
+        scrollView.addSubview(surenameKid2Q)
+        
+        surenameKid2Q.keyboardType = .alphabet
+        
+        NSLayoutConstraint.activate([
+            surenameKid2Q.topAnchor.constraint(equalTo: nameKid2Q.bottomAnchor, constant: 15),
+            surenameKid2Q.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            surenameKid2Q.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            surenameKid2Q.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    func configSeQb() {
+      
+        shortText2b.text = "Dieťa je:"
+        shortText2b.textColor = .label
+        scrollView.addSubview(shortText2b)
+        
+        
+        NSLayoutConstraint.activate([
+            shortText2b.topAnchor.constraint(equalTo: surenameKid2Q.bottomAnchor, constant: 10),
+            shortText2b.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            shortText2b.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
+            shortText2b.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        
+        let items = ["Chlapec", "Dievča"]
+        segController2 = UISegmentedControl(items: items)
+        segController2.selectedSegmentIndex = 0
+        segController2.addTarget(self, action: #selector(saveSexb), for: .valueChanged)
+        
+        
+        scrollView.addSubview(segController2)
+        
+        segController2.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            segController2.topAnchor.constraint(equalTo: shortText2b.bottomAnchor, constant: 10),
+            segController2.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50),
+            segController2.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
+            segController2.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    @objc func saveSexb(sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
         case 0:
@@ -242,8 +336,6 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     
     
-    
-    
     func configQ10() {
         
         scrollView.addSubview(nameKidQ)
@@ -251,7 +343,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         nameKidQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            nameKidQ.topAnchor.constraint(equalTo: segKidController.bottomAnchor, constant: 20),
+            nameKidQ.topAnchor.constraint(equalTo: segKidController.bottomAnchor, constant: 25),
             nameKidQ.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
             nameKidQ.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
             nameKidQ.heightAnchor.constraint(equalToConstant: 50)
