@@ -1,24 +1,23 @@
 //
-//  FormVC7.swift
+//  FormVC9.swift
 //  Kindergeld
 //
-//  Created by Frantisek Varadzin on 01/09/2021.
+//  Created by Frantisek Varadzin on 02/09/2021.
 //
-
 import UIKit
 
-class FormVC7: UIViewController {
+class FormVC9: UIViewController {
     
     
     
     
     let titleKG = UILabel()
     let subTitle = UILabel()
-    let explainButton = KGButton(title: "Vysvetlivky - adresa partnera / ky")
+    let explainButton = KGButton(title: "Vysvetlivky - číslo bankového účtu")
     
 
-    let addressQ = KGTextField(placeholder: "Ulica a číslo domu")
-    let addressQ2 = KGTextField(placeholder: "PSČ, obec, štát")
+    let bankNameQ = KGTextField(placeholder: "Názov banky")
+    let accountNameQ = KGTextField(placeholder: "Meno majiteľa účtu")
 
     
     
@@ -28,7 +27,7 @@ class FormVC7: UIViewController {
         configTitle()
         configSubTitle()
      configExplainButton()
-        configQ7()
+        configQ9()
         configNextButton()
         configBackButton()
         
@@ -64,7 +63,7 @@ class FormVC7: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "Ak sa líši adresa partnera/partnerky od adresy žiadateľa/ky"
+        subTitle.text = "Kam budú posielané prídavky na dieťa"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
@@ -101,29 +100,29 @@ class FormVC7: UIViewController {
         present(navCon, animated: true)
         
     }
-    func configQ7() {
+    func configQ9() {
         
-        view.addSubview(addressQ)
+        view.addSubview(bankNameQ)
         
-        addressQ.keyboardType = .numbersAndPunctuation
+        bankNameQ.keyboardType = .numbersAndPunctuation
         
         NSLayoutConstraint.activate([
-            addressQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 20),
-            addressQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ.heightAnchor.constraint(equalToConstant: 50)
+            bankNameQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 20),
+            bankNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            bankNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            bankNameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         
-        view.addSubview(addressQ2)
+        view.addSubview(accountNameQ)
         
-        addressQ2.keyboardType = .alphabet
+        accountNameQ.keyboardType = .alphabet
         
         NSLayoutConstraint.activate([
-            addressQ2.topAnchor.constraint(equalTo: addressQ.bottomAnchor, constant: 15),
-            addressQ2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ2.heightAnchor.constraint(equalToConstant: 50)
+            accountNameQ.topAnchor.constraint(equalTo: bankNameQ.bottomAnchor, constant: 15),
+            accountNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            accountNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            accountNameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
     
         
@@ -138,7 +137,7 @@ class FormVC7: UIViewController {
                 nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
+            nextButton.topAnchor.constraint(equalTo: accountNameQ.bottomAnchor, constant: 25),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
@@ -154,7 +153,7 @@ class FormVC7: UIViewController {
                 backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
+            backButton.topAnchor.constraint(equalTo: accountNameQ.bottomAnchor, constant: 25),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
             backButton.heightAnchor.constraint(equalToConstant: 50)
@@ -173,20 +172,17 @@ class FormVC7: UIViewController {
     
     
     
-    let nextVC = FormVC8()
+    let nextVC = FormVC10()
     navigationController?.pushViewController(nextVC, animated: true)
         
     
 }
-    
-    
-    
-    
 }
-extension FormVC7: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        saveDataAndGoNext()
-        return true
+    
+    extension FormVC9: UITextFieldDelegate {
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            saveDataAndGoNext()
+            return true
+        }
+        
     }
-    
-}
