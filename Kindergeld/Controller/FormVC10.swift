@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FormVC10: UIViewController, UIScrollViewDelegate {
+class FormVC10: UIViewController {
     
     
     
@@ -16,7 +16,7 @@ class FormVC10: UIViewController, UIScrollViewDelegate {
     let subTitle = UILabel()
 let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     let surenameKidQ = KGTextField(placeholder: "Priezvisko dieťaťa")
-    let shortText1 = KGTextLabel()
+    let shortText1 = UILabel()
     let shortText2 = KGTextLabel()
     let shortText2a = KGTextLabel()
     let shortText2b = KGTextLabel()
@@ -45,6 +45,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     var nOfKids : String?
     var sOfKid : String?
     let scrollView = UIScrollView()
+
     let nameKid1Q = KGTextField(placeholder: "Krstné meno 1. dieťaťa")
     let surenameKid1Q = KGTextField(placeholder: "Priezvisko 1. dieťaťa")
     
@@ -57,7 +58,8 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     let nameKid4Q = KGTextField(placeholder: "Krstné meno 4. dieťaťa")
     let surenameKid4Q = KGTextField(placeholder: "Priezvisko 4. dieťaťa")
     
-    
+    let textLabel = UILabel()
+    let shortLabel = KGTextLabel()
     
     
     override func viewDidLoad() {
@@ -66,11 +68,11 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         configScrollView()
         configTitle()
         configSubTitle()
-        numberOfKids()
 
-        configQ10a()
+        configNumberOfKids()
+          configQ10a()
         configSeQa()
-        
+
         configQ10b()
         configSeQb()
         
@@ -89,8 +91,11 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     func configScrollView() {
         view.addSubview(scrollView)
 
+        
         scrollView.frame = view.bounds
-        scrollView.contentSize = CGSize(width: view.frame.size.width, height:view.frame.size.height + 400)
+        
+        scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height)
+
     }
     
     func configTitle() {
@@ -130,36 +135,39 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         ])
     }
     
-    func numberOfKids() {
-        
-        shortText1.text = "Počet detí pre ktoré žiadaš o prídavky:"
-        shortText1.textColor = .label
-        scrollView.addSubview(shortText1)
+    
+
+    
+    func configNumberOfKids() {
+        scrollView.addSubview(shortLabel)
+        shortLabel.text = "Počet detí pre ktoré žiadaš o prídavky:"
+        shortLabel.textColor = .label
         
         NSLayoutConstraint.activate([
-            shortText1.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            shortText1.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            shortText1.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            shortText1.heightAnchor.constraint(equalToConstant: 30)
+            shortLabel.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
+            shortLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            shortLabel.widthAnchor.constraint(equalToConstant: 300)
         ])
         
         let items = ["1", "2", "3", "4"]
-        segKidController = UISegmentedControl(items: items)
-        segKidController.selectedSegmentIndex = 0
-        segKidController.addTarget(self, action: #selector(numberOfKidsRequest), for: .valueChanged)
+                segKidController = UISegmentedControl(items: items)
+                segKidController.selectedSegmentIndex = 0
+                segKidController.addTarget(self, action: #selector(numberOfKidsRequest), for: .valueChanged)
         
         
-        scrollView.addSubview(segKidController)
+                scrollView.addSubview(segKidController)
         
-        segKidController.translatesAutoresizingMaskIntoConstraints = false
+                segKidController.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            segKidController.topAnchor.constraint(equalTo: shortText1.bottomAnchor, constant: 10),
-            segKidController.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50),
-            segKidController.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
-            segKidController.heightAnchor.constraint(equalToConstant: 30)
-        ])
+                NSLayoutConstraint.activate([
+                    segKidController.topAnchor.constraint(equalTo: shortLabel.bottomAnchor, constant: 10),
+                    segKidController.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+                    segKidController.widthAnchor.constraint(equalToConstant: 300)
+                ])
+        
     }
+    
+   
     
     @objc func numberOfKidsRequest(sender: UISegmentedControl) {
         
@@ -189,10 +197,12 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         nameKid1Q.keyboardType = .alphabet
         
+        nameKid1Q.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             nameKid1Q.topAnchor.constraint(equalTo: segKidController.bottomAnchor, constant: 20),
-            nameKid1Q.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            nameKid1Q.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            nameKid1Q.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            nameKid1Q.widthAnchor.constraint(equalToConstant: 300),
             nameKid1Q.heightAnchor.constraint(equalToConstant: 50)
         ])
         
@@ -203,8 +213,8 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         NSLayoutConstraint.activate([
             surenameKid1Q.topAnchor.constraint(equalTo: nameKid1Q.bottomAnchor, constant: 15),
-            surenameKid1Q.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            surenameKid1Q.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            surenameKid1Q.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            surenameKid1Q.widthAnchor.constraint(equalToConstant: 300),
             surenameKid1Q.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
@@ -216,10 +226,12 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         scrollView.addSubview(shortText2a)
         
         
+        shortText2a.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             shortText2a.topAnchor.constraint(equalTo: surenameKid1Q.bottomAnchor, constant: 20),
-            shortText2a.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            shortText2a.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
+            shortText2a.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            shortText2a.widthAnchor.constraint(equalToConstant: 300),
             shortText2a.heightAnchor.constraint(equalToConstant: 30)
         ])
         
@@ -236,8 +248,8 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         NSLayoutConstraint.activate([
             segController1.topAnchor.constraint(equalTo: shortText2a.bottomAnchor, constant: 10),
-            segController1.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50),
-            segController1.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
+            segController1.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            segController1.widthAnchor.constraint(equalToConstant: 300),
             segController1.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
@@ -266,10 +278,12 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         nameKid2Q.keyboardType = .alphabet
         
+        nameKid2Q.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             nameKid2Q.topAnchor.constraint(equalTo: segController1.bottomAnchor, constant: 20),
-            nameKid2Q.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            nameKid2Q.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            nameKid2Q.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            nameKid2Q.widthAnchor.constraint(equalToConstant: 300),
             nameKid2Q.heightAnchor.constraint(equalToConstant: 50)
         ])
         
@@ -280,8 +294,8 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         NSLayoutConstraint.activate([
             surenameKid2Q.topAnchor.constraint(equalTo: nameKid2Q.bottomAnchor, constant: 15),
-            surenameKid2Q.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            surenameKid2Q.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            surenameKid2Q.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            surenameKid2Q.widthAnchor.constraint(equalToConstant: 300),
             surenameKid2Q.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
@@ -293,10 +307,12 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         scrollView.addSubview(shortText2b)
         
         
+        shortText2b.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             shortText2b.topAnchor.constraint(equalTo: surenameKid2Q.bottomAnchor, constant: 10),
-            shortText2b.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            shortText2b.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
+            shortText2b.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            shortText2b.widthAnchor.constraint(equalToConstant: 300),
             shortText2b.heightAnchor.constraint(equalToConstant: 30)
         ])
         
@@ -313,8 +329,8 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         NSLayoutConstraint.activate([
             segController2.topAnchor.constraint(equalTo: shortText2b.bottomAnchor, constant: 10),
-            segController2.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 50),
-            segController2.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
+            segController2.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            segController2.widthAnchor.constraint(equalToConstant: 300),
             segController2.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
@@ -344,8 +360,8 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         
         NSLayoutConstraint.activate([
             nameKidQ.topAnchor.constraint(equalTo: segKidController.bottomAnchor, constant: 25),
-            nameKidQ.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-            nameKidQ.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            nameKidQ.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            nameKidQ.widthAnchor.constraint(equalToConstant: 300),
             nameKidQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         

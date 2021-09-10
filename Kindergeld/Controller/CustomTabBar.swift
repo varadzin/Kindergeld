@@ -16,7 +16,7 @@ class CustomTabBar: UITabBarController {
         let bar3 = createTabBarController(vc: PayDaysVC(), title: "Výplatné termíny",image: #imageLiteral(resourceName: "calendar"))
         let bar2 = createTabBarController(vc: FormVC1(), title: "Formulár",image: #imageLiteral(resourceName: "edit"))
         let bar4 = createTabBarController(vc: SettingsVC(), title: "Nastavenia",image: #imageLiteral(resourceName: "settings"))
-        let bar5 = createTabBarController(vc: OutputVC(), title: "Vyplnená žiadosť",image: #imageLiteral(resourceName: "file-text"))
+        let bar5 = createTabBarController(vc: FormVC10(), title: "Vyplnená žiadosť",image: #imageLiteral(resourceName: "file-text"))
         viewControllers = [bar1, bar2, bar3, bar4, bar5]
     }
     
