@@ -8,199 +8,111 @@
 import UIKit
 
 class FormVC1: UIViewController {
-
-    let scrollView = UIScrollView()
+    
+    
     let titleKG = UILabel()
     let subTitle = UILabel()
-//    let explainText = KGTextLabel()
-    let explainButton = KGButton(title: "Vysvetlivky - Kto je žiadateľ")
-  let nameQ = KGTextField(placeholder: " Zadaj krstné meno žiadateľa ")
-    let surenameQ = KGTextField(placeholder: " Zadaj priezvisko žiadateľa ")
-    let maidenNameQ = KGTextField(placeholder: " Zadaj rodné priezvisko žiadateľa ")
+    let helpButton = KGHelpButton(title: "        Help")
+    let nameQ = KGTextField(placeholder: " First name ")
+    let surenameQ = KGTextField(placeholder: " Name ")
+    let maidenNameQ = KGTextField(placeholder: " Maiden name / name from former marriage ")
+    let nextButton = KGButton(title: "next ->>")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configVC()
-//        configScrollView()
+        configHelpBtn()
         configTitle()
         configSubTitle()
-//        explainComment()
-        configExplainButton()
         configQ1()
         configNextButton()
-
     }
     
     func configVC() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
-      }
+        navigationItem.setHidesBackButton(true, animated: true)
+    }
     
     
-//    func configScrollView() {
-//        view.addSubview(scrollView)
-//
-//        scrollView.frame = view.bounds
-//        scrollView.contentSize = CGSize(width: view.frame.size.width, height:view.frame.size.height)
-//
-// }
+    func configHelpBtn() {
+        view.addSubview(helpButton)
+        
+        helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
+        
+    }
+    
     
     func configTitle() {
         view.addSubview(titleKG)
         
-        titleKG.text = "Hlavná žiadosť - (KG1)"
+        titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
-  
-        titleKG.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            
-            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
- 
-        ])
+        titleKG.textAlignment = .center
     }
     
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "Údaje žiadateľa"
+        subTitle.text = "Details of person making application"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
-        
-        
-        subTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
-            subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
-        ])
-    }
-    
-//    func explainComment() {
-//
-//        view.addSubview(explainText)
-//
-//        explainText.text = """
-//            Tu zadávaš údaje žiadateľa.
-//            Kto môže byť žiadateľ si pozri vo vysvetlivkách
-//            """
-//
-//        NSLayoutConstraint.activate([
-//            explainText.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-//            explainText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//            explainText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-//        ])
-//
-//
-//    }
-    
-    func configExplainButton() {
-        view.addSubview(explainButton)
-        
-        explainButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
-        
-        
-        NSLayoutConstraint.activate([
-            explainButton.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            explainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            explainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            explainButton.heightAnchor.constraint(equalToConstant: 50)
-               ])
     }
     
     
     @objc func showExplanation() {
         let destVC = KGExplainVC()
-        destVC.title = "Žiadateľ o Kindergeld"
+        destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
         
     }
     
     func configQ1() {
-         
-        view.addSubview(nameQ)
         
+        view.addSubview(nameQ)
         nameQ.keyboardType = .alphabet
         
-        NSLayoutConstraint.activate([
-            nameQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 15),
-            nameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            nameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            nameQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
         
-         
         view.addSubview(surenameQ)
-        
         surenameQ.keyboardType = .alphabet
         
-        NSLayoutConstraint.activate([
-            surenameQ.topAnchor.constraint(equalTo: nameQ.bottomAnchor, constant: 15),
-            surenameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            surenameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            surenameQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-    
         view.addSubview(maidenNameQ)
-        
         maidenNameQ.keyboardType = .alphabet
-        
-        NSLayoutConstraint.activate([
-            maidenNameQ.topAnchor.constraint(equalTo: surenameQ.bottomAnchor, constant: 15),
-            maidenNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            maidenNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            maidenNameQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
         
     }
     
     func configNextButton() {
-        let nextButton = KGButton(title: "ďalej ->>")
         view.addSubview(nextButton)
-        
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: maidenNameQ.bottomAnchor, constant: 15),
-            nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            nextButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
     }
     
-   @objc func saveDataAndGoNext() {
+    @objc func saveDataAndGoNext() {
         var nameParent : String?
         var sureNameParent : String?
         var maidenNameParent : String?
-      
-    
-    guard nameQ.text != nil else { return }
+        
+        
+        guard nameQ.text != nil else { return }
         nameParent = nameQ.text!
- 
-    guard surenameQ.text != nil else { return }
-    sureNameParent = surenameQ.text!
-    
-    guard maidenNameQ.text != nil else { return }
-    maidenNameParent = maidenNameQ.text!
-    
-           
+        
+        guard surenameQ.text != nil else { return }
+        sureNameParent = surenameQ.text!
+        
+        guard maidenNameQ.text != nil else { return }
+        maidenNameParent = maidenNameQ.text!
+        
+        
         print(nameParent!, sureNameParent!, maidenNameParent!)
-       
-    let nextVC = FormVC2()
-    navigationController?.pushViewController(nextVC, animated: true)
+        
+        let nextVC = FormVC2()
+        navigationController?.pushViewController(nextVC, animated: true)
         
     }
-    
     
 }
 extension FormVC1: UITextFieldDelegate {

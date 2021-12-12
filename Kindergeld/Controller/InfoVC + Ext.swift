@@ -33,12 +33,12 @@ extension InfoVC {
             textField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
         
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        startButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 10),
-            nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextButton.widthAnchor.constraint(equalToConstant: 120),
-            nextButton.heightAnchor.constraint(equalToConstant: 40)
+            startButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20),
+            startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            startButton.widthAnchor.constraint(equalToConstant: 120),
+            startButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         

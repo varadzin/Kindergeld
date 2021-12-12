@@ -36,8 +36,10 @@ class StartVC: UIViewController {
     
     
     func configVC() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+ 
         view.backgroundColor = .systemBackground
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func configTitle() {
@@ -47,7 +49,7 @@ class StartVC: UIViewController {
         titleKG.font = UIFont(name: "Times New Roman", size: 62)
         titleKG.textColor = .label
         titleKG.textAlignment = .center
-    }
+        }
     
     
     func configSubTitle() {
@@ -58,7 +60,7 @@ class StartVC: UIViewController {
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
-    }
+        }
     
     
     func configImages() {
@@ -66,7 +68,7 @@ class StartVC: UIViewController {
         coinsImg.image = UIImage(named: "coinsImg")
         view.addSubview(babyImg)
         babyImg.image = UIImage(named: "babyImg")
-    }
+     }
     
     
     func configLanguageButtons() {
@@ -80,7 +82,7 @@ class StartVC: UIViewController {
         SKLabel.text = "Slovensky"
         SKLabel.textColor = .label
         SKLabel.font = UIFont(name: "Times New Roman", size: 14)
-        
+       
         
         
         //Setting Button - GEFlag - chosed Germany Language
@@ -93,11 +95,11 @@ class StartVC: UIViewController {
         GELabel.text = "Deutsch"
         GELabel.textColor = .label
         GELabel.font = UIFont(name: "Times New Roman", size: 14)
-        
+    
         
         
         //Setting Button - GBFlag - chosed English Language
-        
+       
         view.addSubview(GBBtn)
         GBBtn.setBackgroundImage(UIImage(named: "GBFlag"), for: .normal)
         GBBtn.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
