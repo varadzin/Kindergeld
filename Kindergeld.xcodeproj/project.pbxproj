@@ -119,21 +119,11 @@
 		09DBE03E26D13D4000218F87 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				39C5ABE52763BD8100C5DA3E /* FormsViewControllers */,
 				09DBE03C26D113B100218F87 /* StartVC.swift */,
 				09DBE03F26D13DAD00218F87 /* InfoVC.swift */,
 				09DBE04126D13F7200218F87 /* CustomTabBar.swift */,
 				09DBE04326D15DA500218F87 /* PayDaysVC.swift */,
-				09DBE04526D15DBA00218F87 /* FormVC1.swift */,
-				09DBE07C26DBCF5000218F87 /* FormVC2.swift */,
-				09DBE07E26DBEB0100218F87 /* FormVC3.swift */,
-				09DBE08026DEC34900218F87 /* FormVC4.swift */,
-				09DBE08226DEC9AB00218F87 /* FormVC5.swift */,
-				09DBE08426DECE4800218F87 /* FormVC6.swift */,
-				09DBE08826E0108400218F87 /* FormVC7.swift */,
-				09DBE08A26E1481700218F87 /* FormVC8.swift */,
-				09DBE08C26E14BA300218F87 /* FormVC9.swift */,
-				09DBE08E26E4F13500218F87 /* FormVC10.swift */,
-				09DBE09226E4F60600218F87 /* FormVC11.swift */,
 				09DBE04726D15DD400218F87 /* SettingsVC.swift */,
 				09DBE04926D15DF000218F87 /* OutputVC.swift */,
 				09DBE04D26D2773A00218F87 /* moreInfoVC.swift */,
@@ -153,6 +143,24 @@
 				09DBE09026E4F19600218F87 /* KGTitle.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		39C5ABE52763BD8100C5DA3E /* FormsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				09DBE04526D15DBA00218F87 /* FormVC1.swift */,
+				09DBE07C26DBCF5000218F87 /* FormVC2.swift */,
+				09DBE07E26DBEB0100218F87 /* FormVC3.swift */,
+				09DBE08026DEC34900218F87 /* FormVC4.swift */,
+				09DBE08226DEC9AB00218F87 /* FormVC5.swift */,
+				09DBE08426DECE4800218F87 /* FormVC6.swift */,
+				09DBE08826E0108400218F87 /* FormVC7.swift */,
+				09DBE08A26E1481700218F87 /* FormVC8.swift */,
+				09DBE08C26E14BA300218F87 /* FormVC9.swift */,
+				09DBE08E26E4F13500218F87 /* FormVC10.swift */,
+				09DBE09226E4F60600218F87 /* FormVC11.swift */,
+			);
+			path = FormsViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,6 +7,8 @@
 
 import UIKit
 
+//Button used in Forms
+
 class KGButton: UIButton {
 
     override init(frame: CGRect) {

@@ -7,6 +7,8 @@
 
 import UIKit
 
+//Explanation Button - if you need more info about topic
+
 class KGExplainVC: UIViewController {
 
     override func viewDidLoad() {

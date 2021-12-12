@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+//Text Field used in Forms
 class KGTextField: UITextField {
 
     override init(frame: CGRect) {

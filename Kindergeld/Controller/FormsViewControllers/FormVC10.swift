@@ -97,11 +97,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
 
     }
     
-    func makeScrollViewGreatAgain() {
-        
-        
-        
-    }
+  
     
     func configTitle() {
         scrollView.addSubview(titleKG)
@@ -179,26 +175,33 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         switch sender.selectedSegmentIndex {
         case 0:
             nOfKids = "1"
-            oneKidRestHide()
+            hide2and3and4Kid()
         case 1:
             nOfKids = "2"
             configQ10b()
             configSeQb()
-            twoKidsRestHide()
+            hide3and4Kid()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 200)
             
         case 2:
             nOfKids = "3"
+            configQ10b()
+            configSeQb()
             configQ10c()
             configSeQc()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 300)
-            
-            threeKidsRestHide()
+            hide4Kid()
+           
         case 3:
             nOfKids = "4"
+            configQ10b()
+            configSeQb()
+            configQ10c()
+            configSeQc()
             configQ10d()
             configSeQd()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 450)
+        
             
         default:
             nOfKids = "1"
@@ -206,7 +209,34 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         print(nOfKids!)
     }
     
-       
+    
+    func hide4Kid() {
+        nameKid4Q.isHidden = true
+        surenameKid4Q.isHidden = true
+        shortText2d.isHidden = true
+        segController4.isHidden = true
+    }
+    
+    
+    func hide3and4Kid() {
+        hide4Kid()
+        nameKid3Q.isHidden = true
+        surenameKid3Q.isHidden = true
+        shortText2c.isHidden = true
+        segController2.isHidden = true
+        
+    }
+    
+    func hide2and3and4Kid() {
+        hide3and4Kid()
+        nameKid2Q.isHidden = true
+        surenameKid2Q.isHidden = true
+        shortText2b.isHidden = true
+        segController.isHidden = true
+        
+    }
+    
+    
     //Questions 1. Kid
     
     func configQ10a() {
@@ -379,6 +409,8 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         surenameKid2Q.isHidden = false
         shortText2b.isHidden = false
         segController2.isHidden = false
+        
+        
     }
     
     //Questions 3. Kid
@@ -463,19 +495,26 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
    
     
+//    func threeKidsRestHide() {
+//        nameKid2Q.isHidden = false
+//        surenameKid2Q.isHidden = false
+//        shortText2b.isHidden = false
+//        segController2.isHidden = false
+//
+//        nameKid3Q.isHidden = false
+//        surenameKid3Q.isHidden = false
+//        shortText2c.isHidden = false
+//        segController3.isHidden = false
+//    }
+    
     func threeKidsRestHide() {
-        nameKid2Q.isHidden = false
-        surenameKid2Q.isHidden = false
-        shortText2b.isHidden = false
-        segController2.isHidden = false
+      
         
-        nameKid3Q.isHidden = false
-        surenameKid3Q.isHidden = false
-        shortText2c.isHidden = false
-        segController3.isHidden = false
+        nameKid4Q.isHidden = true
+        surenameKid4Q.isHidden = true
+        shortText2d.isHidden = true
+        segController4.isHidden = true
     }
-    
-    
     
     //Questions 4. Kid
     
@@ -558,17 +597,17 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
    
     
-//    func fourKidsRestHide() {
-//        nameKid2Q.isHidden = false
-//        surenameKid2Q.isHidden = false
-//        shortText2b.isHidden = false
-//        segController2.isHidden = false
-//
-//        nameKid3Q.isHidden = false
-//        surenameKid3Q.isHidden = false
-//        shortText2c.isHidden = false
-//        segController3.isHidden = false
-//    }
+    func fourKidsRestHide() {
+        nameKid2Q.isHidden = false
+        surenameKid2Q.isHidden = false
+        shortText2b.isHidden = false
+        segController2.isHidden = false
+
+        nameKid3Q.isHidden = false
+        surenameKid3Q.isHidden = false
+        shortText2c.isHidden = false
+        segController3.isHidden = false
+    }
     
     
     
