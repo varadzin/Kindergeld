@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,9 @@
 		09DBE09126E4F19600218F87 /* KGTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE09026E4F19600218F87 /* KGTitle.swift */; };
 		09DBE09326E4F60600218F87 /* FormVC11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE09226E4F60600218F87 /* FormVC11.swift */; };
 		3969A4A527664AE0003A7928 /* StartVC + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4A427664AE0003A7928 /* StartVC + Ext.swift */; };
+		3969A4A827666D69003A7928 /* PSPDFKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3969A4A727666D69003A7928 /* PSPDFKit */; };
+		3969A4AC27667A7E003A7928 /* ChildBenefitInfo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3969A4AB27667A7E003A7928 /* ChildBenefitInfo.pdf */; };
+		3969A4AE2766857F003A7928 /* InfoVC + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4AD2766857F003A7928 /* InfoVC + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,8 @@
 		09DBE09026E4F19600218F87 /* KGTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGTitle.swift; sourceTree = "<group>"; };
 		09DBE09226E4F60600218F87 /* FormVC11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC11.swift; sourceTree = "<group>"; };
 		3969A4A427664AE0003A7928 /* StartVC + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartVC + Ext.swift"; sourceTree = "<group>"; };
+		3969A4AB27667A7E003A7928 /* ChildBenefitInfo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ChildBenefitInfo.pdf; sourceTree = "<group>"; };
+		3969A4AD2766857F003A7928 /* InfoVC + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoVC + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3969A4A827666D69003A7928 /* PSPDFKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +112,7 @@
 		09DBE02426D111F900218F87 /* Kindergeld */ = {
 			isa = PBXGroup;
 			children = (
+				3969A4AB27667A7E003A7928 /* ChildBenefitInfo.pdf */,
 				09DBE04F26D29E3E00218F87 /* View */,
 				09DBE03E26D13D4000218F87 /* Controller */,
 				09DBE02526D111F900218F87 /* AppDelegate.swift */,
@@ -125,6 +132,7 @@
 				09DBE03C26D113B100218F87 /* StartVC.swift */,
 				3969A4A427664AE0003A7928 /* StartVC + Ext.swift */,
 				09DBE03F26D13DAD00218F87 /* InfoVC.swift */,
+				3969A4AD2766857F003A7928 /* InfoVC + Ext.swift */,
 				09DBE04126D13F7200218F87 /* CustomTabBar.swift */,
 				09DBE04326D15DA500218F87 /* PayDaysVC.swift */,
 				09DBE04726D15DD400218F87 /* SettingsVC.swift */,
@@ -182,6 +190,9 @@
 			dependencies = (
 			);
 			name = Kindergeld;
+			packageProductDependencies = (
+				3969A4A727666D69003A7928 /* PSPDFKit */,
+			);
 			productName = Kindergeld;
 			productReference = 09DBE02226D111F900218F87 /* Kindergeld.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 09DBE01926D111F900218F87;
+			packageReferences = (
+				3969A4A627666D69003A7928 /* XCRemoteSwiftPackageReference "PSPDFKit-SP" */,
+			);
 			productRefGroup = 09DBE02326D111F900218F87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -224,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DBE03526D111FE00218F87 /* LaunchScreen.storyboard in Resources */,
+				3969A4AC27667A7E003A7928 /* ChildBenefitInfo.pdf in Resources */,
 				09DBE03226D111FE00218F87 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +262,7 @@
 				09DBE07B26DA911600218F87 /* KGExplainVC.swift in Sources */,
 				09DBE04426D15DA500218F87 /* PayDaysVC.swift in Sources */,
 				09DBE05126D29E6A00218F87 /* KGTextField.swift in Sources */,
+				3969A4AE2766857F003A7928 /* InfoVC + Ext.swift in Sources */,
 				09DBE03026D111F900218F87 /* Kindergeld.xcdatamodeld in Sources */,
 				09DBE09326E4F60600218F87 /* FormVC11.swift in Sources */,
 				09DBE08526DECE4800218F87 /* FormVC6.swift in Sources */,
@@ -403,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2A24H4FJ3Q;
+				DEVELOPMENT_TEAM = 95ZHG55NFY;
 				INFOPLIST_FILE = Kindergeld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -422,7 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2A24H4FJ3Q;
+				DEVELOPMENT_TEAM = 95ZHG55NFY;
 				INFOPLIST_FILE = Kindergeld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +473,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3969A4A627666D69003A7928 /* XCRemoteSwiftPackageReference "PSPDFKit-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PSPDFKit/PSPDFKit-SP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3969A4A727666D69003A7928 /* PSPDFKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3969A4A627666D69003A7928 /* XCRemoteSwiftPackageReference "PSPDFKit-SP" */;
+			productName = PSPDFKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		09DBE02E26D111F900218F87 /* Kindergeld.xcdatamodeld */ = {
