@@ -37,6 +37,7 @@
 		09DBE08F26E4F13500218F87 /* FormVC10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE08E26E4F13500218F87 /* FormVC10.swift */; };
 		09DBE09126E4F19600218F87 /* KGTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE09026E4F19600218F87 /* KGTitle.swift */; };
 		09DBE09326E4F60600218F87 /* FormVC11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE09226E4F60600218F87 /* FormVC11.swift */; };
+		3969A4A527664AE0003A7928 /* StartVC + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4A427664AE0003A7928 /* StartVC + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		09DBE08E26E4F13500218F87 /* FormVC10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC10.swift; sourceTree = "<group>"; };
 		09DBE09026E4F19600218F87 /* KGTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGTitle.swift; sourceTree = "<group>"; };
 		09DBE09226E4F60600218F87 /* FormVC11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC11.swift; sourceTree = "<group>"; };
+		3969A4A427664AE0003A7928 /* StartVC + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartVC + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				39C5ABE52763BD8100C5DA3E /* FormsViewControllers */,
 				09DBE03C26D113B100218F87 /* StartVC.swift */,
+				3969A4A427664AE0003A7928 /* StartVC + Ext.swift */,
 				09DBE03F26D13DAD00218F87 /* InfoVC.swift */,
 				09DBE04126D13F7200218F87 /* CustomTabBar.swift */,
 				09DBE04326D15DA500218F87 /* PayDaysVC.swift */,
@@ -240,6 +243,7 @@
 				09DBE04A26D15DF000218F87 /* OutputVC.swift in Sources */,
 				09DBE05526D8070F00218F87 /* LanguageVC.swift in Sources */,
 				09DBE07D26DBCF5000218F87 /* FormVC2.swift in Sources */,
+				3969A4A527664AE0003A7928 /* StartVC + Ext.swift in Sources */,
 				09DBE07B26DA911600218F87 /* KGExplainVC.swift in Sources */,
 				09DBE04426D15DA500218F87 /* PayDaysVC.swift in Sources */,
 				09DBE05126D29E6A00218F87 /* KGTextField.swift in Sources */,
