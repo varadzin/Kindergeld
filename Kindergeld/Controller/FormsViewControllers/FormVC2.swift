@@ -32,6 +32,7 @@ class FormVC2: UIViewController {
         configSexQ()
         configNextButton()
         configBackButton()
+        layoutFormVC2()
         
     }
     
