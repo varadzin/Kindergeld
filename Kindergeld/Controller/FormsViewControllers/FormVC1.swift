@@ -27,6 +27,7 @@ class FormVC1: UIViewController {
         configSubTitle()
         configQ1()
         configNextButton()
+        layoutFormVC1()
     }
     
     func configVC() {
@@ -38,7 +39,6 @@ class FormVC1: UIViewController {
     
     func configHelpBtn() {
         view.addSubview(helpButton)
-        
         helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
         
     }
@@ -46,7 +46,6 @@ class FormVC1: UIViewController {
     
     func configTitle() {
         view.addSubview(titleKG)
-        
         titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
@@ -55,7 +54,6 @@ class FormVC1: UIViewController {
     
     func configSubTitle() {
         view.addSubview(subTitle)
-        
         subTitle.text = "Details of person making application"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
@@ -77,7 +75,6 @@ class FormVC1: UIViewController {
         view.addSubview(nameQ)
         nameQ.keyboardType = .alphabet
         
-        
         view.addSubview(surenameQ)
         surenameQ.keyboardType = .alphabet
         
@@ -95,7 +92,6 @@ class FormVC1: UIViewController {
         var nameParent : String?
         var sureNameParent : String?
         var maidenNameParent : String?
-        
         
         guard nameQ.text != nil else { return }
         nameParent = nameQ.text!

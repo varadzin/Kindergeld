@@ -43,6 +43,7 @@
 		3969A4AE2766857F003A7928 /* InfoVC + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4AD2766857F003A7928 /* InfoVC + Ext.swift */; };
 		3969A4B0276691FF003A7928 /* KGHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4AF276691FF003A7928 /* KGHelpButton.swift */; };
 		3969A4B22766984B003A7928 /* FormVC1 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B12766984B003A7928 /* FormVC1 + Ext.swift */; };
+		3969A4B42767F312003A7928 /* FormVC2 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B32767F312003A7928 /* FormVC2 + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		3969A4AD2766857F003A7928 /* InfoVC + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoVC + Ext.swift"; sourceTree = "<group>"; };
 		3969A4AF276691FF003A7928 /* KGHelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGHelpButton.swift; sourceTree = "<group>"; };
 		3969A4B12766984B003A7928 /* FormVC1 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC1 + Ext.swift"; sourceTree = "<group>"; };
+		3969A4B32767F312003A7928 /* FormVC2 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC2 + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				09DBE04526D15DBA00218F87 /* FormVC1.swift */,
 				3969A4B12766984B003A7928 /* FormVC1 + Ext.swift */,
 				09DBE07C26DBCF5000218F87 /* FormVC2.swift */,
+				3969A4B32767F312003A7928 /* FormVC2 + Ext.swift */,
 				09DBE07E26DBEB0100218F87 /* FormVC3.swift */,
 				09DBE08026DEC34900218F87 /* FormVC4.swift */,
 				09DBE08226DEC9AB00218F87 /* FormVC5.swift */,
@@ -268,6 +271,7 @@
 				3969A4A527664AE0003A7928 /* StartVC + Ext.swift in Sources */,
 				09DBE07B26DA911600218F87 /* KGExplainVC.swift in Sources */,
 				09DBE04426D15DA500218F87 /* PayDaysVC.swift in Sources */,
+				3969A4B42767F312003A7928 /* FormVC2 + Ext.swift in Sources */,
 				09DBE05126D29E6A00218F87 /* KGTextField.swift in Sources */,
 				3969A4AE2766857F003A7928 /* InfoVC + Ext.swift in Sources */,
 				09DBE03026D111F900218F87 /* Kindergeld.xcdatamodeld in Sources */,
