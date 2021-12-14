@@ -11,29 +11,23 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     
-    let scrollView = UIScrollView()
+    let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
-    
-    let explainButton = KGButton(title: "Vysvetlivky - Rodinný stav")
     let simpleText = KGTextLabel()
-    let pickerArray = ["slobodný / slobodná", "ženatý / vydatá", "rozvedený / rozvedená", "vdovec / vdova", "žijeme v registr.partnerstve", "žijeme trvale oddelene"]
+    let pickerArray = ["single", "married", "divorced", "widowed", "living in a registered civil partnership", "permanently separated"]
     
     let pickerView = UIPickerView()
-    let sinceQ = KGTextField(placeholder: "Dátum od:")
-
+    let sinceQ = KGTextField(placeholder: "Since:")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configVC()
-        
+        configHelpBtn()
         configTitle()
         configSubTitle()
-        
-//        configExplainButton()
-//        configSimpleText()
         configPickerView()
         configQ4()
         sinceQ.isHidden = true
@@ -47,19 +41,30 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         navigationController?.isNavigationBarHidden = true
     }
     
-    
+    func configHelpBtn() {
+        view.addSubview(helpButton)
+        helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
+        
+        helpButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            helpButton.widthAnchor.constraint(equalToConstant: 100),
+            helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            helpButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
     
     func configTitle() {
         view.addSubview(titleKG)
         
-        titleKG.text = "Hlavná žiadosť - (KG1)"
+        titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
         
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
             
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
@@ -70,12 +75,11 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "Zadaj rodinný stav žiadateľa:"
+        subTitle.text = "Family status of person making application"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
-        
         
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         
@@ -88,54 +92,31 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     
-    func configExplainButton() {
-        view.addSubview(explainButton)
-        
-        explainButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
-        
-        
-        NSLayoutConstraint.activate([
-            explainButton.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            explainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            explainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            explainButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
-    
     
     @objc func showExplanation() {
         let destVC = KGExplainVC()
-        destVC.title = "Žiadateľ o Kindergeld"
+        destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
-        
     }
     
     func configSimpleText() {
-        
-        
-        simpleText.text = "Zadaj rodinný stav žiadateľa:"
-        
+        simpleText.text = "Family status"
         view.addSubview(simpleText)
-        
         NSLayoutConstraint.activate([
-            simpleText.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 10),
+            simpleText.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 10),
             simpleText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             simpleText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             simpleText.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        
     }
     
     
     func configPickerView() {
         view.addSubview(pickerView)
         
-        
         pickerView.delegate = self
         pickerView.dataSource = self
-        
         
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -147,6 +128,8 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         ])
         
     }
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -160,43 +143,39 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         return row
     }
     
-       func pickerView(_ pickerView: UIPickerView, didSelectRow pickedItem: Int, inComponent : Int) {
-     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow pickedItem: Int, inComponent : Int) {
+        
         switch pickedItem {
         case 0:
-        
+            
             sinceQ.isHidden = true
-        
+            
         default:
             sinceQ.isHidden = false
         }
-        }
-  
- 
+    }
+    
     
     
     func configQ4() {
-      
+        
         view.addSubview(sinceQ)
         
-   
         sinceQ.keyboardType = .numbersAndPunctuation
-        
         NSLayoutConstraint.activate([
             sinceQ.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 5),
             sinceQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             sinceQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             sinceQ.heightAnchor.constraint(equalToConstant: 50)
         ])
-       
+        
         
     }
     
     func configNextButton() {
-        let nextButton = KGButton(title: "ďalej ->>")
+        let nextButton = KGButton(title: "next ->>")
         view.addSubview(nextButton)
-        
-                nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             nextButton.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 70),
@@ -209,11 +188,9 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     func configBackButton() {
-        let backButton = KGButton(title: "<<- späť")
+        let backButton = KGButton(title: "<<- back")
         view.addSubview(backButton)
-        
-                backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 70),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
@@ -225,19 +202,12 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @objc func goBack() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @objc func saveDataAndGoNext() {
+        let nextVC = FormVC5()
+        navigationController?.pushViewController(nextVC, animated: true)
         
     }
-
-
-@objc func saveDataAndGoNext() {
-    
-    
-    
-    
-    let nextVC = FormVC5()
-    navigationController?.pushViewController(nextVC, animated: true)
-        
-    
-}
-    
 }
