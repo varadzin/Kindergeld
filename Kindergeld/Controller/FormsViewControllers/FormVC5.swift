@@ -11,13 +11,13 @@ class FormVC5: UIViewController {
     
     
     
-    let scrollView = UIScrollView()
+    let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
-    let spouseNameQ = KGTextField(placeholder: " Krstné meno partnera / ky ")
-      let spouseSurenameQ = KGTextField(placeholder: " Priezvisko partnera / ky ")
-      let maidenSpouseNameQ = KGTextField(placeholder: " Rodné priezvisko partnera / ky ")
-    let explainButton = KGButton(title: "Vysvetlivky")
+    let spouseNameQ = KGTextField(placeholder: " First Name ")
+      let spouseSurenameQ = KGTextField(placeholder: " Name")
+      let maidenSpouseNameQ = KGTextField(placeholder: " Maiden name or name from former marriage ")
+  
 
     
     
@@ -25,11 +25,10 @@ class FormVC5: UIViewController {
         super.viewDidLoad()
         
         configVC()
-        
+        configHelpBtn()
         configTitle()
         configSubTitle()
-        
-//        configExplainButton()
+
         
         configQ5()
         configNextButton()
@@ -42,19 +41,32 @@ class FormVC5: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    
+    func configHelpBtn() {
+        view.addSubview(helpButton)
+        helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
+        
+        helpButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            helpButton.widthAnchor.constraint(equalToConstant: 100),
+            helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            helpButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
     
     func configTitle() {
         view.addSubview(titleKG)
         
-        titleKG.text = "Hlavná žiadosť - (KG1)"
+        titleKG.text = "Information on the spouse or registered civil partner"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
+        titleKG.numberOfLines = 0
+        titleKG.textAlignment = .center
         
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
             
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
@@ -65,7 +77,7 @@ class FormVC5: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "Údaje o manželke / manželovi, partnerke / partnerovi"
+        subTitle.text = "or the other biological or step-parent in the common household"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
@@ -82,25 +94,12 @@ class FormVC5: UIViewController {
     }
     
     
-    
-    func configExplainButton() {
-        view.addSubview(explainButton)
-        
-        explainButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
-        
-        
-        NSLayoutConstraint.activate([
-            explainButton.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            explainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            explainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            explainButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
+
     
     
     @objc func showExplanation() {
         let destVC = KGExplainVC()
-        destVC.title = "Žiadateľ o Kindergeld"
+        destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
         
@@ -145,7 +144,7 @@ class FormVC5: UIViewController {
         
     }
     func configBackButton() {
-        let backButton = KGButton(title: "<<- späť")
+        let backButton = KGButton(title: "<<- back")
         view.addSubview(backButton)
         
                 backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
@@ -166,7 +165,7 @@ class FormVC5: UIViewController {
     
     
     func configNextButton() {
-        let nextButton = KGButton(title: "ďalej ->>")
+        let nextButton = KGButton(title: "next ->>")
         view.addSubview(nextButton)
         
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
