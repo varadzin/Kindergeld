@@ -45,6 +45,7 @@
 		3969A4B42767F312003A7928 /* FormVC2 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B32767F312003A7928 /* FormVC2 + Ext.swift */; };
 		3969A4B62767FB26003A7928 /* FormVC3 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B52767FB26003A7928 /* FormVC3 + Ext.swift */; };
 		39C59C93276BFBCB0013052D /* FormVC5 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C59C92276BFBCB0013052D /* FormVC5 + Ext.swift */; };
+		39FA0827276D0D71006CDEE1 /* FormVC6 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA0826276D0D71006CDEE1 /* FormVC6 + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -101,6 +102,7 @@
 		3969A4B32767F312003A7928 /* FormVC2 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC2 + Ext.swift"; sourceTree = "<group>"; };
 		3969A4B52767FB26003A7928 /* FormVC3 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC3 + Ext.swift"; sourceTree = "<group>"; };
 		39C59C92276BFBCB0013052D /* FormVC5 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC5 + Ext.swift"; sourceTree = "<group>"; };
+		39FA0826276D0D71006CDEE1 /* FormVC6 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC6 + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				09DBE08226DEC9AB00218F87 /* FormVC5.swift */,
 				39C59C92276BFBCB0013052D /* FormVC5 + Ext.swift */,
 				09DBE08426DECE4800218F87 /* FormVC6.swift */,
+				39FA0826276D0D71006CDEE1 /* FormVC6 + Ext.swift */,
 				09DBE08826E0108400218F87 /* FormVC7.swift */,
 				09DBE08A26E1481700218F87 /* FormVC8.swift */,
 				09DBE08C26E14BA300218F87 /* FormVC9.swift */,
@@ -304,6 +307,7 @@
 				09DBE08526DECE4800218F87 /* FormVC6.swift in Sources */,
 				09DBE08326DEC9AB00218F87 /* FormVC5.swift in Sources */,
 				3969A4B0276691FF003A7928 /* KGHelpButton.swift in Sources */,
+				39FA0827276D0D71006CDEE1 /* FormVC6 + Ext.swift in Sources */,
 				3969A4B62767FB26003A7928 /* FormVC3 + Ext.swift in Sources */,
 				09DBE07926DA837A00218F87 /* KGTextLabel.swift in Sources */,
 				09DBE02626D111F900218F87 /* AppDelegate.swift in Sources */,
