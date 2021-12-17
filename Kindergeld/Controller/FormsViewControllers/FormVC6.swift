@@ -92,6 +92,7 @@ class FormVC6: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let selectedDate: String = dateFormatter.string(from: sender.date)
+        print(selectedDate)
     }
     
     
