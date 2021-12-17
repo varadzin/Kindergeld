@@ -9,29 +9,27 @@ import UIKit
 
 class FormVC8: UIViewController {
     
-    
-    
-    
+    let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
-    let explainButton = KGButton(title: "Vysvetlivky - číslo bankového účtu")
-    
-
     let ibanQ = KGTextField(placeholder: "IBAN")
-    let bicQ = KGTextField(placeholder: "SWIFT / BIC účtu")
-
-    
+    let bicQ = KGTextField(placeholder: "Account SWIFT / BIC ")
+    let bankNameQ = KGTextField(placeholder: "Bank, financial institution")
+    let accountNameQ = KGTextField(placeholder: "Account holder")
+    let nextButton = KGButton(title: "next ->>")
+    let backButton = KGButton(title: "<<- back")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
+        configHelpBtn()
         configTitle()
         configSubTitle()
-     configExplainButton()
         configQ8()
+        configQ9()
         configNextButton()
         configBackButton()
-        
+        layoutFormVC8()
         
     }
     
@@ -41,149 +39,78 @@ class FormVC8: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    
+    func configHelpBtn() {
+        view.addSubview(helpButton)
+        helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
+    }
     
     func configTitle() {
         view.addSubview(titleKG)
-        
-        titleKG.text = "Hlavná žiadosť - (KG1)"
+        titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
-        
-        titleKG.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            
-            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
-            
-        ])
     }
     
     func configSubTitle() {
         view.addSubview(subTitle)
-        
-        subTitle.text = "Kam budú posielané prídavky na dieťa"
+        subTitle.text = "Details of method of payment"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
-        
-        
-        subTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
-            subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
-        ])
     }
     
-    func configExplainButton() {
-        view.addSubview(explainButton)
-        
-        explainButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
-        
-        
-        NSLayoutConstraint.activate([
-            explainButton.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            explainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            explainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            explainButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
+    
     
     @objc func showExplanation() {
         let destVC = KGExplainVC()
-        destVC.title = "Žiadateľ o Kindergeld"
+        destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
-        
     }
+    
     func configQ8() {
         
         view.addSubview(ibanQ)
-        
         ibanQ.keyboardType = .numbersAndPunctuation
-        
-        NSLayoutConstraint.activate([
-            ibanQ.topAnchor.constraint(equalTo: explainButton.bottomAnchor, constant: 20),
-            ibanQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            ibanQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            ibanQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        
         view.addSubview(bicQ)
-        
         bicQ.keyboardType = .alphabet
-        
-        NSLayoutConstraint.activate([
-            bicQ.topAnchor.constraint(equalTo: ibanQ.bottomAnchor, constant: 15),
-            bicQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            bicQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            bicQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
+    }
     
-        
+    func configQ9() {
+        view.addSubview(bankNameQ)
+        bankNameQ.keyboardType = .numbersAndPunctuation
+        view.addSubview(accountNameQ)
+        accountNameQ.keyboardType = .alphabet
     }
     
     
     
     func configNextButton() {
-        let nextButton = KGButton(title: "ďalej ->>")
         view.addSubview(nextButton)
-        
-                nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: bicQ.bottomAnchor, constant: 25),
-            nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            nextButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
+        nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
     }
     
     
     func configBackButton() {
-        let backButton = KGButton(title: "<<- späť")
         view.addSubview(backButton)
-        
-                backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        
-        NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: bicQ.bottomAnchor, constant: 25),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
-            backButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
     }
     
     @objc func goBack() {
         navigationController?.popViewController(animated: true)
-        
     }
-
-
-@objc func saveDataAndGoNext() {
     
     
-    
-    
-    let nextVC = FormVC9()
-    navigationController?.pushViewController(nextVC, animated: true)
-        
-    
-}
-}
-    
-    extension FormVC8: UITextFieldDelegate {
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            saveDataAndGoNext()
-            return true
-        }
-        
+    @objc func saveDataAndGoNext() {
+        let nextVC = FormVC9()
+        navigationController?.pushViewController(nextVC, animated: true)
     }
+}
+
+extension FormVC8: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        saveDataAndGoNext()
+        return true
+    }
+}
