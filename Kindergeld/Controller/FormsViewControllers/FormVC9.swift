@@ -1,5 +1,5 @@
 //
-//  FormVC10.swift
+//  FormVC9.swift
 //  Kindergeld
 //
 //  Created by Frantisek Varadzin on 05/09/2021.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class FormVC10: UIViewController {
+class FormVC9: UIViewController {
     
     
     
     
     let titleKG = UILabel()
     let subTitle = UILabel()
-let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
-    let surenameKidQ = KGTextField(placeholder: "Priezvisko dieťaťa")
+let nameKidQ = KGTextField(placeholder: "First Name of Child")
+    let surenameKidQ = KGTextField(placeholder: "Name of Child")
     let shortText1 = UILabel()
     let shortText2 = KGTextLabel()
     let shortText2a = KGTextLabel()
@@ -46,17 +46,17 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     var sOfKid : String?
     let scrollView = UIScrollView()
 
-    let nameKid1Q = KGTextField(placeholder: "Krstné meno 1. dieťaťa")
-    let surenameKid1Q = KGTextField(placeholder: "Priezvisko 1. dieťaťa")
+    let nameKid1Q = KGTextField(placeholder: "First name of 1. Child")
+    let surenameKid1Q = KGTextField(placeholder: "Name of 1. Child")
     
-    let nameKid2Q = KGTextField(placeholder: "Krstné meno 2. dieťaťa")
-    let surenameKid2Q = KGTextField(placeholder: "Priezvisko 2. dieťaťa")
+    let nameKid2Q = KGTextField(placeholder: "First name of 2. Child")
+    let surenameKid2Q = KGTextField(placeholder: "Name of 2. Child")
     
-    let nameKid3Q = KGTextField(placeholder: "Krstné meno 3. dieťaťa")
-    let surenameKid3Q = KGTextField(placeholder: "Priezvisko 3. dieťaťa")
+    let nameKid3Q = KGTextField(placeholder: "First name of 3. Child")
+    let surenameKid3Q = KGTextField(placeholder: "Name of 3. Child")
     
-    let nameKid4Q = KGTextField(placeholder: "Krstné meno 4. dieťaťa")
-    let surenameKid4Q = KGTextField(placeholder: "Priezvisko 4. dieťaťa")
+    let nameKid4Q = KGTextField(placeholder: "First name of 4. Child")
+    let surenameKid4Q = KGTextField(placeholder: "Name of 4. Child")
     
     let textLabel = UILabel()
     let shortLabel = KGTextLabel()
@@ -102,7 +102,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     func configTitle() {
         scrollView.addSubview(titleKG)
         
-        titleKG.text = "Hlavná žiadosť - (KG1)"
+        titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
         
@@ -120,7 +120,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     func configSubTitle() {
         scrollView.addSubview(subTitle)
         
-        subTitle.text = "Údaje o dieťati na ktoré žiadaš prídavky"
+        subTitle.text = "Details of children"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
@@ -141,7 +141,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     func configNumberOfKids() {
         scrollView.addSubview(shortLabel)
-        shortLabel.text = "Počet detí pre ktoré žiadaš o prídavky:"
+        shortLabel.text = "For how many chidren you apply:"
         shortLabel.textColor = .label
         
         NSLayoutConstraint.activate([
@@ -269,7 +269,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     func configSeQa() {
       
-        shortText2a.text = "1. dieťa je:"
+        shortText2a.text = "1. child is:"
         shortText2a.textColor = .label
         scrollView.addSubview(shortText2a)
         
@@ -284,7 +284,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         ])
         
         
-        let items = ["Chlapec", "Dievča"]
+        let items = ["Boy", "Girl"]
         segController1 = UISegmentedControl(items: items)
         segController1.selectedSegmentIndex = 0
         segController1.addTarget(self, action: #selector(saveSexa), for: .valueChanged)
@@ -350,7 +350,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     func configSeQb() {
       
-        shortText2b.text = "2. dieťa je:"
+        shortText2b.text = "2. child is:"
         shortText2b.textColor = .label
         scrollView.addSubview(shortText2b)
         
@@ -365,7 +365,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         ])
         
         
-        let items = ["Chlapec", "Dievča"]
+        let items = ["Boy", "Girl"]
         segController2 = UISegmentedControl(items: items)
         segController2.selectedSegmentIndex = 0
         segController2.addTarget(self, action: #selector(saveSexb), for: .valueChanged)
@@ -461,7 +461,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         ])
         
         
-        let items = ["Chlapec", "Dievča"]
+        let items = ["Boy", "Girl"]
         segController3 = UISegmentedControl(items: items)
         segController3.selectedSegmentIndex = 0
         segController3.addTarget(self, action: #selector(saveSexc), for: .valueChanged)
@@ -548,7 +548,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     func configSeQd() {
       
-        shortText2d.text = "4. dieťa je:"
+        shortText2d.text = "4. Child is:"
         shortText2d.textColor = .label
         scrollView.addSubview(shortText2d)
         
@@ -563,7 +563,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         ])
         
         
-        let items = ["Chlapec", "Dievča"]
+        let items = ["Boy", "Girl"]
         segController4 = UISegmentedControl(items: items)
         segController4.selectedSegmentIndex = 0
         segController4.addTarget(self, action: #selector(saveSexd), for: .valueChanged)
@@ -643,7 +643,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     func configSeQ() {
       
-        shortText2.text = "Dieťa je:"
+        shortText2.text = "Child is:"
         shortText2.textColor = .label
         scrollView.addSubview(shortText2)
         
@@ -656,7 +656,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
         ])
         
         
-        let items = ["Chlapec", "Dievča"]
+        let items = ["Boy", "Girl"]
         segController = UISegmentedControl(items: items)
         segController.selectedSegmentIndex = 0
         segController.addTarget(self, action: #selector(saveSex), for: .valueChanged)
@@ -688,7 +688,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     }
     
     func configNextButton() {
-        let nextButton = KGButton(title: "ďalej ->>")
+        let nextButton = KGButton(title: "next ->>")
         scrollView.addSubview(nextButton)
         
                 nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
@@ -704,7 +704,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
     
     func configBackButton() {
-        let backButton = KGButton(title: "<<- späť")
+        let backButton = KGButton(title: "<<- back")
         scrollView.addSubview(backButton)
         
                 backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
@@ -735,7 +735,7 @@ let nameKidQ = KGTextField(placeholder: "Krstné meno dieťaťa")
     
 }
 }
-extension FormVC10: UITextFieldDelegate {
+extension FormVC9: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         saveDataAndGoNext()
         return true

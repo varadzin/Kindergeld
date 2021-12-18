@@ -33,7 +33,7 @@
 		09DBE08526DECE4800218F87 /* FormVC6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE08426DECE4800218F87 /* FormVC6.swift */; };
 		09DBE08926E0108400218F87 /* FormVC7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE08826E0108400218F87 /* FormVC7.swift */; };
 		09DBE08B26E1481700218F87 /* FormVC8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE08A26E1481700218F87 /* FormVC8.swift */; };
-		09DBE08F26E4F13500218F87 /* FormVC10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE08E26E4F13500218F87 /* FormVC10.swift */; };
+		09DBE08F26E4F13500218F87 /* FormVC9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE08E26E4F13500218F87 /* FormVC9.swift */; };
 		09DBE09126E4F19600218F87 /* KGTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE09026E4F19600218F87 /* KGTitle.swift */; };
 		09DBE09326E4F60600218F87 /* FormVC11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE09226E4F60600218F87 /* FormVC11.swift */; };
 		3969A4A527664AE0003A7928 /* StartVC + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4A427664AE0003A7928 /* StartVC + Ext.swift */; };
@@ -91,7 +91,7 @@
 		09DBE08426DECE4800218F87 /* FormVC6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC6.swift; sourceTree = "<group>"; };
 		09DBE08826E0108400218F87 /* FormVC7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC7.swift; sourceTree = "<group>"; };
 		09DBE08A26E1481700218F87 /* FormVC8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC8.swift; sourceTree = "<group>"; };
-		09DBE08E26E4F13500218F87 /* FormVC10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC10.swift; sourceTree = "<group>"; };
+		09DBE08E26E4F13500218F87 /* FormVC9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC9.swift; sourceTree = "<group>"; };
 		09DBE09026E4F19600218F87 /* KGTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGTitle.swift; sourceTree = "<group>"; };
 		09DBE09226E4F60600218F87 /* FormVC11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC11.swift; sourceTree = "<group>"; };
 		3969A4A427664AE0003A7928 /* StartVC + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartVC + Ext.swift"; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				39FA0828276D33D5006CDEE1 /* FormVC7 + Ext.swift */,
 				09DBE08A26E1481700218F87 /* FormVC8.swift */,
 				39FA082A276D3A85006CDEE1 /* FormVC8 + Ext.swift */,
-				09DBE08E26E4F13500218F87 /* FormVC10.swift */,
+				09DBE08E26E4F13500218F87 /* FormVC9.swift */,
 				09DBE09226E4F60600218F87 /* FormVC11.swift */,
 			);
 			path = FormsViewControllers;
@@ -323,7 +323,7 @@
 				09DBE05326D2A38A00218F87 /* KGButton.swift in Sources */,
 				09DBE04826D15DD400218F87 /* SettingsVC.swift in Sources */,
 				09DBE08B26E1481700218F87 /* FormVC8.swift in Sources */,
-				09DBE08F26E4F13500218F87 /* FormVC10.swift in Sources */,
+				09DBE08F26E4F13500218F87 /* FormVC9.swift in Sources */,
 				09DBE04E26D2773A00218F87 /* moreInfoVC.swift in Sources */,
 				09DBE05726D80BD100218F87 /* DisclaimerVC.swift in Sources */,
 			);
