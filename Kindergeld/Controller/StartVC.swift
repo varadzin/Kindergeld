@@ -55,7 +55,7 @@ class StartVC: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         
-        subTitle.text = "prídavky na deti v Nemecku"
+        subTitle.text = "get your Child Benefit"
         subTitle.font = UIFont(name: "Times New Roman", size: 36)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center

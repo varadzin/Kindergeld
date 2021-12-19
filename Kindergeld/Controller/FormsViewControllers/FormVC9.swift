@@ -11,7 +11,7 @@ class FormVC9: UIViewController {
     
     
     
-    
+    let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
 let nameKidQ = KGTextField(placeholder: "First Name of Child")
@@ -65,6 +65,7 @@ let nameKidQ = KGTextField(placeholder: "First Name of Child")
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
+        configHelpBtn()
         configScrollView()
         configTitle()
         configSubTitle()
@@ -98,6 +99,23 @@ let nameKidQ = KGTextField(placeholder: "First Name of Child")
     }
     
   
+    func configHelpBtn() {
+        view.addSubview(helpButton)
+        helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
+   
+        helpButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            helpButton.widthAnchor.constraint(equalToConstant: 100),
+            helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            helpButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    
+    
+    
+    
+    
+    }
     
     func configTitle() {
         scrollView.addSubview(titleKG)
@@ -109,7 +127,7 @@ let nameKidQ = KGTextField(placeholder: "First Name of Child")
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleKG.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -40),
+            titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
             
             titleKG.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16)
@@ -136,6 +154,12 @@ let nameKidQ = KGTextField(placeholder: "First Name of Child")
         ])
     }
     
+    @objc func showExplanation() {
+        let destVC = KGExplainVC()
+        destVC.title = "Help"
+        let navCon = UINavigationController(rootViewController: destVC)
+        present(navCon, animated: true)
+    }
     
 
     
