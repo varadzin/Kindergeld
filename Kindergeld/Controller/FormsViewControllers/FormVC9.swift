@@ -8,9 +8,6 @@
 import UIKit
 
 class FormVC9: UIViewController {
-    
-    
-    
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -22,12 +19,6 @@ let nameKidQ = KGTextField(placeholder: "First Name of Child")
     let shortText2b = KGTextLabel()
     let shortText2c = KGTextLabel()
     let shortText2d = KGTextLabel()
-    
-    
-    
-    
-    
-
     var segController = UISegmentedControl()
     var segController1 = UISegmentedControl()
     var segController2 = UISegmentedControl()
@@ -35,13 +26,6 @@ let nameKidQ = KGTextField(placeholder: "First Name of Child")
     var segController4 = UISegmentedControl()
     
     var segKidController = UISegmentedControl()
-
-    
-    
-    
-    
-    
-    
     var nOfKids : String?
     var sOfKid : String?
     let scrollView = UIScrollView()

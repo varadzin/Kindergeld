@@ -7,7 +7,7 @@
 
 import UIKit
 
-class moreInfoVC: UIViewController {
+class MoreInfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

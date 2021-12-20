@@ -10,7 +10,7 @@ import UIKit
 //Button used in Forms
 
 class KGButton: UIButton {
-
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         
@@ -26,9 +26,6 @@ class KGButton: UIButton {
         self.init(frame: .zero)
         self.setTitle(title, for: .normal)
     }
-    
-    
-    
     private func configure() {
         layer.cornerRadius = 12
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)

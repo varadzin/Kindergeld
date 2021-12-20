@@ -50,8 +50,7 @@ class InfoVC: UIViewController {
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
     }
-    
-    func configTextField() {
+func configTextField() {
         view.addSubview(textField)
         textField.font = UIFont(name: "Times New Roman", size: 18)
         textField.numberOfLines = 0

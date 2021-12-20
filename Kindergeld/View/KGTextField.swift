@@ -47,13 +47,5 @@ class KGTextField: UITextField {
         returnKeyType = .go
         keyboardType = .numbersAndPunctuation
         clearButtonMode = .whileEditing
-        
-       
-       
-        
-        
-        
     }
-    
-    
-}
+    }
