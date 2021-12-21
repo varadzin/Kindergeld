@@ -17,12 +17,10 @@ class KGExplainVC: UIViewController {
         view.backgroundColor = .systemBackground
         configDoneBtn()
     }
-    
     func configDoneBtn() {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
         }
-    
     @objc func dismissVC() {
         dismiss(animated: true)
     }

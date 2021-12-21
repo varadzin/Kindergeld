@@ -8,7 +8,6 @@
 import UIKit
 
 class FormVC2: UIViewController {
-    
     let scrollView = UIScrollView()
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -20,7 +19,6 @@ class FormVC2: UIViewController {
     let shortText = KGTextLabel()
     let nextButton = KGButton(title: "next ->>")
     let backButton = KGButton(title: "<<- back")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
@@ -34,12 +32,10 @@ class FormVC2: UIViewController {
         layoutFormVC2a()
         layoutFormVC2b()
     }
-    
     func configVC() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
-    
     func configHelpBtn() {
         view.addSubview(helpButton)
         helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
@@ -51,7 +47,6 @@ class FormVC2: UIViewController {
         titleKG.textColor = .secondaryLabel
         titleKG.textAlignment = .center
     }
-    
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Details of person making application"
@@ -60,14 +55,12 @@ class FormVC2: UIViewController {
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
     }
-    
     @objc func showExplanation() {
         let destVC = KGExplainVC()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
-    
     func configQ2() {
         view.addSubview(dateBirthQ)
         dateBirthQ.keyboardType = .numbersAndPunctuation
@@ -85,7 +78,6 @@ class FormVC2: UIViewController {
         view.addSubview(segController)
     }
     @objc func saveSex(sender: UISegmentedControl) {
-        
         switch sender.selectedSegmentIndex {
         case 0:
             sexOfApplicant = "Man"
@@ -95,11 +87,9 @@ class FormVC2: UIViewController {
             sexOfApplicant = "Man"
         }
     }
-    
     func configNextButton() {
         view.addSubview(nextButton)
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
-        
     }
     func configBackButton() {
         view.addSubview(backButton)

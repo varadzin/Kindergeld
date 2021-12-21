@@ -16,15 +16,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     }
 
     // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        
+func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        
-    }
+        }
 
     // MARK: - Core Data stack
 
@@ -38,8 +35,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         let container = NSPersistentContainer(name: "Kindergeld")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-              
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+              fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
@@ -53,12 +49,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
             do {
                 try context.save()
             } catch {
-            
-                let nserror = error as NSError
+            let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
 
 }
-

@@ -8,10 +8,8 @@
 import UIKit
 
 extension StartVC {
-    
     // Extension is only for Autolayout of Elements in StartVC file
     func layoutStartVC() {
-        
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
@@ -45,14 +43,11 @@ extension StartVC {
             SKBtn.widthAnchor.constraint(equalToConstant: 80),
             SKBtn.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        
         SKLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             SKLabel.bottomAnchor.constraint(equalTo: SKBtn.topAnchor, constant: -5),
             SKLabel.leadingAnchor.constraint(equalTo: SKBtn.leadingAnchor, constant: 10)
         ])
-        
         GEBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             GEBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
@@ -60,14 +55,11 @@ extension StartVC {
             GEBtn.widthAnchor.constraint(equalToConstant: 80),
             GEBtn.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
         GELabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             GELabel.bottomAnchor.constraint(equalTo: GEBtn.topAnchor, constant: -5),
             GELabel.leadingAnchor.constraint(equalTo: GEBtn.leadingAnchor, constant: 18)
         ])
-        
-        
         GBBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             GBBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
@@ -75,8 +67,6 @@ extension StartVC {
             GBBtn.widthAnchor.constraint(equalToConstant: 80),
             GBBtn.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        
         GBLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             GBLabel.bottomAnchor.constraint(equalTo: GBBtn.topAnchor, constant: -5),

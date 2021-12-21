@@ -8,20 +8,18 @@
 import UIKit
 
 class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-   var titleKG = UILabel()
+    var titleKG = UILabel()
     let tableViewArray = ["Language / Jazyk / Jezyk / Sprache", "Pravidlá používania"]
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
         configTitle()
         configTableView()
-        
     }
     func configVC() {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemBackground
     }
-    
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Nastavenia"
@@ -31,13 +29,12 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             titleKG.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15)
-            ])
+        ])
     }
-    
     func configTableView() {
-    let tableView = UITableView()
-    view.addSubview(tableView)
- tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let tableView = UITableView()
+        view.addSubview(tableView)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +44,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableViewArray.count
     }
@@ -62,7 +59,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let newVC = LanguageVC()
             navigationController?.pushViewController(newVC, animated: true)
         } else {
-           print("Disclaimer")
+            print("Disclaimer")
         }
     }
 }

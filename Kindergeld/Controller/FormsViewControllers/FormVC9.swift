@@ -46,7 +46,6 @@ class FormVC9: UIViewController {
         configScrollView()
         configTitle()
         configSubTitle()
-        
         configNumberOfKids()
         configQ10a()
         configSeQa()

@@ -9,7 +9,6 @@ import UIKit
 
 let titleKG = UILabel()
 class KGTitle: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTitle()
@@ -18,9 +17,7 @@ class KGTitle: UIViewController {
         view.addSubview(titleKG)
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
-        
         titleKG.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),

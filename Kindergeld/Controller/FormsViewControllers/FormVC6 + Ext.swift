@@ -8,9 +8,7 @@
 import UIKit
 
 extension FormVC6 {
-    
     func layoutFormVC6() {
-        
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
@@ -19,32 +17,24 @@ extension FormVC6 {
             helpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         titleKG.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
-            
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
-            
         ])
-        
         subTitle.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
             subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
-        
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             datePicker.topAnchor.constraint(equalTo: subTitle.bottomAnchor),
             datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             datePicker.heightAnchor.constraint(equalToConstant: 200)
         ])
-        
         NSLayoutConstraint.activate([
             spouseNationality.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 5),
             spouseNationality.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
@@ -57,12 +47,11 @@ extension FormVC6 {
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
             backButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
         NSLayoutConstraint.activate([
             nextButton.topAnchor.constraint(equalTo: spouseNationality.bottomAnchor, constant: 15),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-        }
+    }
 }

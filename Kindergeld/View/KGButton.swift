@@ -6,22 +6,15 @@
 //
 
 import UIKit
-
-//Button used in Forms
-
+// Button used in Forms
 class KGButton: UIButton {
-    
     override init(frame: CGRect) {
         super .init(frame: frame)
-        
         configure()
-        
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     convenience init(title: String) {
         self.init(frame: .zero)
         self.setTitle(title, for: .normal)
@@ -32,7 +25,5 @@ class KGButton: UIButton {
         setTitleColor(.white, for: .normal)
         backgroundColor = .systemOrange
         translatesAutoresizingMaskIntoConstraints = false
-        
     }
-    
 }

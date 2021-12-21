@@ -8,8 +8,7 @@
 import UIKit
 
 extension FormVC9 {
-    
-    func layoutFormVC9a() {
+func layoutFormVC9a() {
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),

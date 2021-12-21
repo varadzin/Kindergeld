@@ -8,9 +8,6 @@
 import UIKit
 
 class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    
-    
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -45,7 +42,6 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             helpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Application for Child Benefit"
@@ -58,7 +54,6 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
     }
-    
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Family status of person making application"
@@ -79,7 +74,6 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
-    
     func configSimpleText() {
         simpleText.text = "Family status"
         view.addSubview(simpleText)
@@ -90,8 +84,6 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             simpleText.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
-    
     func configPickerView() {
         view.addSubview(pickerView)
         pickerView.delegate = self
@@ -110,7 +102,6 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerArray.count
     }
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let row = pickerArray[row]
         return row
@@ -133,7 +124,6 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             sinceQ.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
     func configNextButton() {
         let nextButton = KGButton(title: "next ->>")
         view.addSubview(nextButton)
