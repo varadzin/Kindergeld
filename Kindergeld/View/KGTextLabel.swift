@@ -7,19 +7,18 @@
 
 import UIKit
 
-//Text Label used in Forms
+// Text Label used in Forms
 
 class KGTextLabel: UILabel {
     
     override init(frame: CGRect) {
-        super.init (frame: frame)
+        super.init(frame: frame)
         config()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     private func config() {
         numberOfLines = 0
         font = UIFont.preferredFont(forTextStyle: .body)
@@ -27,5 +26,4 @@ class KGTextLabel: UILabel {
         textAlignment = .center
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
-}
+    }

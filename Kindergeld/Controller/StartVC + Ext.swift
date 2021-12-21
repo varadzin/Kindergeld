@@ -9,9 +9,7 @@ import UIKit
 
 extension StartVC {
     
-    //Extension is only for Autolayout of Elements in StartVC file
-    
-    
+    // Extension is only for Autolayout of Elements in StartVC file
     func layoutStartVC() {
         
         titleKG.translatesAutoresizingMaskIntoConstraints = false
@@ -20,16 +18,12 @@ extension StartVC {
             titleKG.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             titleKG.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
         ])
-        
-        
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
             subTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             subTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
-        
-        
         coinsImg.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             coinsImg.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -37,8 +31,6 @@ extension StartVC {
             coinsImg.widthAnchor.constraint(equalToConstant: 86),
             coinsImg.heightAnchor.constraint(equalToConstant: 97)
         ])
-        
-        
         babyImg.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             babyImg.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
@@ -46,9 +38,6 @@ extension StartVC {
             babyImg.widthAnchor.constraint(equalToConstant: 245),
             babyImg.heightAnchor.constraint(equalToConstant: 240)
         ])
-        
-        
-        
         SKBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             SKBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),

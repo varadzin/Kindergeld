@@ -44,6 +44,7 @@
 		3969A4B42767F312003A7928 /* FormVC2 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B32767F312003A7928 /* FormVC2 + Ext.swift */; };
 		3969A4B62767FB26003A7928 /* FormVC3 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B52767FB26003A7928 /* FormVC3 + Ext.swift */; };
 		39C59C93276BFBCB0013052D /* FormVC5 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C59C92276BFBCB0013052D /* FormVC5 + Ext.swift */; };
+		39F54EBE2771E6D0007F46C4 /* PayDaysVC + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EBD2771E6D0007F46C4 /* PayDaysVC + Ext.swift */; };
 		39FA0827276D0D71006CDEE1 /* FormVC6 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA0826276D0D71006CDEE1 /* FormVC6 + Ext.swift */; };
 		39FA0829276D33D5006CDEE1 /* FormVC7 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA0828276D33D5006CDEE1 /* FormVC7 + Ext.swift */; };
 		39FA082B276D3A85006CDEE1 /* FormVC8 + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA082A276D3A85006CDEE1 /* FormVC8 + Ext.swift */; };
@@ -102,6 +103,7 @@
 		3969A4B32767F312003A7928 /* FormVC2 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC2 + Ext.swift"; sourceTree = "<group>"; };
 		3969A4B52767FB26003A7928 /* FormVC3 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC3 + Ext.swift"; sourceTree = "<group>"; };
 		39C59C92276BFBCB0013052D /* FormVC5 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC5 + Ext.swift"; sourceTree = "<group>"; };
+		39F54EBD2771E6D0007F46C4 /* PayDaysVC + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PayDaysVC + Ext.swift"; sourceTree = "<group>"; };
 		39FA0826276D0D71006CDEE1 /* FormVC6 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC6 + Ext.swift"; sourceTree = "<group>"; };
 		39FA0828276D33D5006CDEE1 /* FormVC7 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC7 + Ext.swift"; sourceTree = "<group>"; };
 		39FA082A276D3A85006CDEE1 /* FormVC8 + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormVC8 + Ext.swift"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				3969A4AD2766857F003A7928 /* InfoVC + Ext.swift */,
 				09DBE04126D13F7200218F87 /* CustomTabBar.swift */,
 				09DBE04326D15DA500218F87 /* PayDaysVC.swift */,
+				39F54EBD2771E6D0007F46C4 /* PayDaysVC + Ext.swift */,
 				09DBE04726D15DD400218F87 /* SettingsVC.swift */,
 				09DBE04926D15DF000218F87 /* OutputVC.swift */,
 				09DBE04D26D2773A00218F87 /* moreInfoVC.swift */,
@@ -313,6 +316,7 @@
 			files = (
 				09DBE08926E0108400218F87 /* FormVC7.swift in Sources */,
 				39C59C93276BFBCB0013052D /* FormVC5 + Ext.swift in Sources */,
+				39F54EBE2771E6D0007F46C4 /* PayDaysVC + Ext.swift in Sources */,
 				09DBE09126E4F19600218F87 /* KGTitle.swift in Sources */,
 				09DBE07F26DBEB0100218F87 /* FormVC3.swift in Sources */,
 				09DBE03D26D113B100218F87 /* StartVC.swift in Sources */,

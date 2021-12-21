@@ -14,12 +14,8 @@ class KGTitle: UIViewController {
         super.viewDidLoad()
         configTitle()
     }
-    
-    
     func configTitle() {
         view.addSubview(titleKG)
-        
-        titleKG.text = "Hlavná žiadosť - (KG1)"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
         

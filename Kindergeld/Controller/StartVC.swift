@@ -8,7 +8,6 @@
 import UIKit
 
 class StartVC: UIViewController {
-    
     let titleKG = UILabel()
     let subTitle = UILabel()
     let babyImg = UIImageView()
@@ -22,7 +21,6 @@ class StartVC: UIViewController {
     
     let GBBtn = UIButton()
     let GBLabel = UILabel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
