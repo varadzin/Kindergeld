@@ -10,21 +10,15 @@ import UIKit
 class LanguageVC: UIViewController {
 
     var titleKG = UILabel()
-  
-    
-    
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
         configTitle()
-      
-
-    }
+      }
     func configVC() {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemBackground
     }
-    
     func configTitle() {
         view.addSubview(titleKG)
         
@@ -37,11 +31,6 @@ class LanguageVC: UIViewController {
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             titleKG.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15)
-            
-            
-        ])
+            ])
     }
-
-    
-
 }

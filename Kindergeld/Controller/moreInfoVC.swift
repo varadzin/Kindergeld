@@ -14,8 +14,6 @@ class MoreInfoVC: UIViewController {
 
      configVC()
     }
-    
-
     func configVC() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true

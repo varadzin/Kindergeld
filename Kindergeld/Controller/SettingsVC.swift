@@ -62,8 +62,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let newVC = LanguageVC()
             navigationController?.pushViewController(newVC, animated: true)
         } else {
-            let newVC = DisclaimerVC()
-            navigationController?.pushViewController(newVC, animated: true)
+           print("Disclaimer")
         }
     }
 }

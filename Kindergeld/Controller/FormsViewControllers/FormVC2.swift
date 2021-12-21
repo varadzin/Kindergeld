@@ -15,7 +15,7 @@ class FormVC2: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let dateBirthQ = KGTextField(placeholder: " Day of birth - DD.MM.RRRR ")
     let placeBirthQ = KGTextField(placeholder: " Place of birth")
-    var sexOfApplicant : String?
+    var sexOfApplicant: String?
     var segController = UISegmentedControl()
     let shortText = KGTextLabel()
     let nextButton = KGButton(title: "next ->>")
@@ -23,7 +23,6 @@ class FormVC2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configVC()
         configHelpBtn()
         configTitle()
@@ -32,8 +31,8 @@ class FormVC2: UIViewController {
         configSexQ()
         configNextButton()
         configBackButton()
-        layoutFormVC2()
-        
+        layoutFormVC2a()
+        layoutFormVC2b()
     }
     
     func configVC() {
@@ -45,14 +44,12 @@ class FormVC2: UIViewController {
         view.addSubview(helpButton)
         helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
     }
-    
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
         titleKG.textAlignment = .center
-        
     }
     
     func configSubTitle() {
@@ -62,9 +59,7 @@ class FormVC2: UIViewController {
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
-        
     }
-    
     
     @objc func showExplanation() {
         let destVC = KGExplainVC()
@@ -73,31 +68,22 @@ class FormVC2: UIViewController {
         present(navCon, animated: true)
     }
     
-    
     func configQ2() {
-        
         view.addSubview(dateBirthQ)
         dateBirthQ.keyboardType = .numbersAndPunctuation
         view.addSubview(placeBirthQ)
         placeBirthQ.keyboardType = .alphabet
-        
     }
-    
     func configSexQ() {
-        
         shortText.text = "Person making application is:"
         shortText.textColor = .label
         view.addSubview(shortText)
-        
         let items = ["Man", "Woman"]
         segController = UISegmentedControl(items: items)
         segController.selectedSegmentIndex = 0
         segController.addTarget(self, action: #selector(saveSex), for: .valueChanged)
         view.addSubview(segController)
-        
     }
-    
-    
     @objc func saveSex(sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
@@ -115,22 +101,16 @@ class FormVC2: UIViewController {
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
         
     }
-    
-    
     func configBackButton() {
         view.addSubview(backButton)
         backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
     }
-    
     @objc func goBack() {
         navigationController?.popViewController(animated: true)
     }
-    
-    
     @objc func saveDataAndGoNext() {
         let nextVC = FormVC3()
         navigationController?.pushViewController(nextVC, animated: true)
-        
     }
 }
 

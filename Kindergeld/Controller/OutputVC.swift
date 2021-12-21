@@ -12,12 +12,10 @@ class OutputVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
-
-    }
+}
     
     func configVC() {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
     }
-    
 }
