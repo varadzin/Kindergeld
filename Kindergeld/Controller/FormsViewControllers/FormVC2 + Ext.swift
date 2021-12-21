@@ -22,21 +22,18 @@ extension FormVC2 {
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
             ])
-        
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
             subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
-        
         NSLayoutConstraint.activate([
             dateBirthQ.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
             dateBirthQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             dateBirthQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             dateBirthQ.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
         NSLayoutConstraint.activate([
             placeBirthQ.topAnchor.constraint(equalTo: dateBirthQ.bottomAnchor, constant: 15),
             placeBirthQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),

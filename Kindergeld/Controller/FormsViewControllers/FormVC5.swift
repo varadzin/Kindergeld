@@ -8,7 +8,6 @@
 import UIKit
 
 class FormVC5: UIViewController {
-    
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -58,7 +57,6 @@ class FormVC5: UIViewController {
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
-    
     func configQ5() {
         view.addSubview(spouseNameQ)
         spouseNameQ.keyboardType = .alphabet

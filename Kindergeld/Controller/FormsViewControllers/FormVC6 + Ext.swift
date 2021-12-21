@@ -51,8 +51,6 @@ extension FormVC6 {
             spouseNationality.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             spouseNationality.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: spouseNationality.bottomAnchor, constant: 15),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
@@ -66,9 +64,5 @@ extension FormVC6 {
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
-        
-    }
-    
-    
+        }
 }

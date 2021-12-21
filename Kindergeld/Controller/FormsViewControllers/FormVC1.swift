@@ -15,7 +15,6 @@ class FormVC1: UIViewController {
     let surenameQ = KGTextField(placeholder: " Name ")
     let maidenNameQ = KGTextField(placeholder: " Maiden name / name from former marriage ")
     let nextButton = KGButton(title: "next ->>")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
@@ -64,12 +63,10 @@ class FormVC1: UIViewController {
         view.addSubview(maidenNameQ)
         maidenNameQ.keyboardType = .alphabet
         }
-    
     func configNextButton() {
         view.addSubview(nextButton)
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
     }
-    
     @objc func saveDataAndGoNext() {
         var nameParent: String?
         var sureNameParent: String?
@@ -84,8 +81,7 @@ class FormVC1: UIViewController {
         let nextVC = FormVC2()
         navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-}
+    }
 extension FormVC1: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         saveDataAndGoNext()

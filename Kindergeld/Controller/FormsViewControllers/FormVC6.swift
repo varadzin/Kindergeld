@@ -6,12 +6,7 @@
 //
 
 import UIKit
-
-
 class FormVC6: UIViewController {
-    
-    
-    
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -23,7 +18,6 @@ class FormVC6: UIViewController {
     let spouseNationality = KGTextField(placeholder: "Nationality of spouse")
     let backButton = KGButton(title: "<<- back")
     let nextButton = KGButton(title: "next ->>")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
@@ -36,19 +30,14 @@ class FormVC6: UIViewController {
         configNextButton()
         layoutFormVC6()
     }
-    
-    
     func configVC() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
-    
     func configHelpBtn() {
         view.addSubview(helpButton)
         helpButton.addTarget(self, action: #selector(showExplanation), for: .touchUpInside)
     }
-    
-    
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Information on the spouse or registered civil partner"
@@ -57,7 +46,6 @@ class FormVC6: UIViewController {
         titleKG.numberOfLines = 0
         titleKG.textAlignment = .center
     }
-    
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Date of birth - spouse"
@@ -66,68 +54,48 @@ class FormVC6: UIViewController {
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
     }
-    
-    
     @objc func showExplanation() {
         let destVC = KGExplainVC()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
-    
-    
     func configDatePicker() {
-        
         view.addSubview(datePicker)
-        
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.timeZone = NSTimeZone.local
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
-        
-        
     }
-    
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let selectedDate: String = dateFormatter.string(from: sender.date)
         print(selectedDate)
     }
-    
-    
     func configQ6() {
         view.addSubview(spouseNationality)
         spouseNationality.keyboardType = .alphabet
     }
-    
     func configBackButton() {
         view.addSubview(backButton)
         backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
     }
-    
     @objc func goBack() {
         navigationController?.popViewController(animated: true)
     }
-    
-    
     func configNextButton() {
         view.addSubview(nextButton)
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
     }
-    
     @objc func saveDataAndGoNext() {
-        
         let nextVC = FormVC7()
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
-
 extension FormVC6: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         saveDataAndGoNext()
         return true
-        
-        
     }
 }

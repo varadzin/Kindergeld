@@ -12,7 +12,6 @@ class InfoVC: UIViewController {
     let textField = UILabel()
     let scrollView = UIScrollView()
     let startButton = UIButton()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
@@ -21,20 +20,18 @@ class InfoVC: UIViewController {
         configTextField()
         configNextBtn()
         layoutInfoVC()
-            }
-    
+    }
     func configVC() {
         view.backgroundColor = .systemBackground
-//        navigationController?.isNavigationBarHidden = true
+        //        navigationController?.isNavigationBarHidden = true
     }
-    
-func configTitle() {
+    func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Kindergeld - Child benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
         titleKG.textAlignment = .center
-}
+    }
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "How can this App help you:"
@@ -43,7 +40,7 @@ func configTitle() {
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
     }
-func configTextField() {
+    func configTextField() {
         view.addSubview(textField)
         textField.font = UIFont(name: "Times New Roman", size: 18)
         textField.numberOfLines = 0

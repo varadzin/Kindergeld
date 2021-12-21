@@ -37,7 +37,6 @@ class FormVC3: UIViewController {
     }
     func configTitle() {
         view.addSubview(titleKG)
-        
         titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
