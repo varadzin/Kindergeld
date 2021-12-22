@@ -12,7 +12,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let titleKG = UILabel()
     let subTitle = UILabel()
     let simpleText = KGTextLabel()
-    let pickerArray = ["single", "married", "divorced", "widowed", "living in a reg.civil partnership", "permanently separated"]
+    let pickerArray = ["single", "married", "divorced", "widowed", "living in reg.civil partnership", "perm.separated"]
     let pickerView = UIPickerView()
     let sinceQ = KGTextField(placeholder: "Since:")
     override func viewDidLoad() {
