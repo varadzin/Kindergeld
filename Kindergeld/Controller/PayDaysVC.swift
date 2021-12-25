@@ -81,7 +81,7 @@ class PayDaysVC: UIViewController {
             CTAButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 135),
             CTAButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -135),
             CTAButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
+        ])  
     }
     func configExplainLabel(lastChar: String) {
         view.addSubview(explainLabel)

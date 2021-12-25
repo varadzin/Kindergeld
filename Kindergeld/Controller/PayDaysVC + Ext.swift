@@ -44,6 +44,8 @@ extension PayDaysVC {
     8. November 2021
     7. December 2021
     """)
+}
+func configLabel2(lastChar: String) {
         lastChar5 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:
     8. September 2021
@@ -79,5 +81,5 @@ extension PayDaysVC {
     8. November
     7. December
     """)
-}
+    }
 }

@@ -171,6 +171,8 @@ func layoutFormVC9a() {
             segController.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -50),
             segController.heightAnchor.constraint(equalToConstant: 30)
         ])
+       }
+    func layoutFormVC9e() {
         NSLayoutConstraint.activate([
             nextButton.topAnchor.constraint(equalTo: segController.bottomAnchor, constant: 25),
             nextButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 200),

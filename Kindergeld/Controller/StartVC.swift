@@ -26,6 +26,7 @@ class StartVC: UIViewController {
         configImages()
         configLanguageButtons()
         layoutStartVC()
+        layoutStartVC2()
     }
     func configVC() {
         view.backgroundColor = .systemBackground
