@@ -12,7 +12,7 @@ class FormVC9: UIViewController {
     let subTitle = UILabel()
     let nameKidQ = KGTextField(placeholder: "First Name of Child")
     let surenameKidQ = KGTextField(placeholder: "Name of Child")
-    let shortText1 = UILabel()
+    let shortText1 = KGTextLabel()
     let shortText2 = KGTextLabel()
     let shortText2a = KGTextLabel()
     let shortText2b = KGTextLabel()
@@ -53,9 +53,9 @@ class FormVC9: UIViewController {
         //        configBackButton()
         layoutFormVC9a()
         layoutFormVC9b()
-        layoutFormVC9c()
-        layoutFormVC9d()
-        layoutFormVC9e()
+//        layoutFormVC9c()
+//        layoutFormVC9d()
+//        layoutFormVC9e()
     }
     func configVC() {
         view.backgroundColor = .systemBackground

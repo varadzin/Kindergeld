@@ -12,7 +12,7 @@ extension FormVC9 {
         shortText2c.text = "3. dieťa je:"
         shortText2c.textColor = .label
         scrollView.addSubview(shortText2c)
-        shortText2c.translatesAutoresizingMaskIntoConstraints = false
+      
         let items = ["Boy", "Girl"]
         segController3 = UISegmentedControl(items: items)
         segController3.selectedSegmentIndex = 0
