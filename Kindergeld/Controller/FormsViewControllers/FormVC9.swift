@@ -25,9 +25,12 @@ class FormVC9: UIViewController {
     let sureNameOfSecondKid = KGTextField(placeholder: " Sure name ")
     let nameOfThirdKid = KGTextField(placeholder: " First name ")
     let sureNameOfThirdKid = KGTextField(placeholder: " Sure name ")
+    let nameOfFourthKid = KGTextField(placeholder: " First name ")
+    let sureNameOfFourthKid = KGTextField(placeholder: " Sure name ")
     let labelFirstChild = UILabel()
     let labelSecondChild = UILabel()
     let labelThirdChild = UILabel()
+    let labelFourthChild = UILabel()
     let scrollView = UIScrollView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +85,7 @@ class FormVC9: UIViewController {
         numberOfKidsSegController.selectedSegmentIndex = 0
         numberOfKidsSegController.addTarget(self, action: #selector(numberOfKidsRequest), for: .valueChanged)
         scrollView.addSubview(numberOfKidsSegController)
-            shortLabel.translatesAutoresizingMaskIntoConstraints = false
+        shortLabel.translatesAutoresizingMaskIntoConstraints = false
         numberOfKidsSegController.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             shortLabel.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 5),
@@ -92,7 +95,7 @@ class FormVC9: UIViewController {
             numberOfKidsSegController.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             numberOfKidsSegController.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16)
         ])
-        }
+    }
     @objc func numberOfKidsRequest(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -103,26 +106,21 @@ class FormVC9: UIViewController {
             configNameOfSecondKid()
             unhide2Kid()
             hide3and4Kid()
-//            configQ10b()
-//            configSeQb()
-//            hide3and4Kid()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 200)
         case 2:
             nOfKids = "3"
-           configNameOfSecondKid()
+            configNameOfSecondKid()
             unhide2Kid()
             configNameOfThirdKid()
             unhide3Kid()
+            hide4Kid()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 300)
-//            hide4Kid()
         case 3:
             nOfKids = "4"
-//            configQ10b()
-//            configSeQb()
-//            configQ10c()
-//            configSeQc()
-//            configQ10d()
-//            configSeQd()
+            configNameOfFourthKid()
+            unhide2Kid()
+            unhide3Kid()
+            unhide4Kid()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 450)
         default:
             nOfKids = "1"
@@ -130,27 +128,27 @@ class FormVC9: UIViewController {
         print(nOfKids!)
     }
     func hide4Kid() {
-//        nameKid4Q.isHidden = true
-//        surenameKid4Q.isHidden = true
-//        shortText2d.isHidden = true
-//        segController4.isHidden = true
+        labelFourthChild.isHidden = true
+        nameOfFourthKid.isHidden = true
+        sureNameOfFourthKid.isHidden = true
     }
     func hide3and4Kid() {
         hide4Kid()
         labelThirdChild.isHidden = true
         nameOfThirdKid.isHidden = true
         sureNameOfThirdKid.isHidden = true
-
-    }
+        }
     func hide2and3and4Kid() {
-//        hide3and4Kid()
         labelSecondChild.isHidden = true
         nameOfSecondKid.isHidden = true
         sureNameOfSecondKid.isHidden = true
         labelThirdChild.isHidden = true
         nameOfThirdKid.isHidden = true
         sureNameOfThirdKid.isHidden = true
-        }
+        labelFourthChild.isHidden = true
+        nameOfFourthKid.isHidden = true
+        sureNameOfFourthKid.isHidden = true
+    }
     func unhide2Kid() {
         labelSecondChild.isHidden = false
         nameOfSecondKid.isHidden = false
@@ -161,18 +159,22 @@ class FormVC9: UIViewController {
         nameOfThirdKid.isHidden = false
         sureNameOfThirdKid.isHidden = false
     }
+    func unhide4Kid() {
+        labelFourthChild.isHidden = false
+        nameOfFourthKid.isHidden = false
+        sureNameOfFourthKid.isHidden = false
+    }
     func configNameOfFirstKid() {
         scrollView.addSubview(labelFirstChild)
         labelFirstChild.text = "1. Child is: "
         labelFirstChild.translatesAutoresizingMaskIntoConstraints = false
-   
         scrollView.addSubview(sexOfFirstChildSegController)
         sexOfFirstChildSegController.translatesAutoresizingMaskIntoConstraints = false
         let items = ["Boy", "Girl"]
         sexOfFirstChildSegController = UISegmentedControl(items: items)
         sexOfFirstChildSegController.selectedSegmentIndex = 0
         sexOfFirstChildSegController.addTarget(self, action: #selector(numberOfKidsRequest), for: .valueChanged)
-       scrollView.addSubview(nameOfFirstKid)
+        scrollView.addSubview(nameOfFirstKid)
         nameOfFirstKid.keyboardType = .alphabet
         nameOfFirstKid.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(sureNameOfFirstKid)
@@ -191,7 +193,7 @@ class FormVC9: UIViewController {
             sureNameOfFirstKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             sureNameOfFirstKid.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16),
             sureNameOfFirstKid.heightAnchor.constraint(equalToConstant: 50)
-  ])
+        ])
     }
     func configNameOfSecondKid() {
         scrollView.addSubview(labelSecondChild)
@@ -241,6 +243,31 @@ class FormVC9: UIViewController {
             sureNameOfThirdKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             sureNameOfThirdKid.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16),
             sureNameOfThirdKid.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    func configNameOfFourthKid() {
+        scrollView.addSubview(labelFourthChild)
+        labelFourthChild.text = "4. Child"
+        labelFourthChild.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(nameOfFourthKid)
+        nameOfFourthKid.keyboardType = .alphabet
+        nameOfFourthKid.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(sureNameOfFourthKid)
+        sureNameOfFourthKid.keyboardType = .alphabet
+        sureNameOfFourthKid.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            labelFourthChild.topAnchor.constraint(equalTo: sureNameOfThirdKid.bottomAnchor, constant: 10),
+            labelFourthChild.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            labelFourthChild.widthAnchor.constraint(equalToConstant: 200),
+            labelFourthChild.heightAnchor.constraint(equalToConstant: 40),
+            nameOfFourthKid.topAnchor.constraint(equalTo: labelFourthChild.bottomAnchor, constant: 5),
+            nameOfFourthKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            nameOfFourthKid.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16),
+            nameOfFourthKid.heightAnchor.constraint(equalToConstant: 50),
+            sureNameOfFourthKid.topAnchor.constraint(equalTo: nameOfFourthKid.bottomAnchor, constant: 5),
+            sureNameOfFourthKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            sureNameOfFourthKid.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16),
+            sureNameOfFourthKid.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
