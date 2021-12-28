@@ -11,22 +11,22 @@ extension FormVC9 {
     func layoutFormVC9() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            helpButton.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: -60),
             helpButton.widthAnchor.constraint(equalToConstant: 100),
-            helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            helpButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
             helpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
-            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
+            titleKG.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            titleKG.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16)
             ])
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
-            subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
+            subTitle.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            subTitle.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16)
         ])
     }
 }
