@@ -13,6 +13,10 @@ class FormVC9: UIViewController {
     let subTitle = UILabel()
     let shortLabel = KGTextLabel()
     var numberOfKidsSegController = UISegmentedControl()
+    var sexOfFirstChildSegController = UISegmentedControl()
+    var sexOfSecondChildSegController = UISegmentedControl()
+    var sexOfThirdChildSegController = UISegmentedControl()
+    var sexOfFourthChildSegController = UISegmentedControl()
     var nOfKids: String?
     var sOfKid: String?
     let nameOfFirstKid = KGTextField(placeholder: " First name ")
@@ -159,9 +163,16 @@ class FormVC9: UIViewController {
     }
     func configNameOfFirstKid() {
         scrollView.addSubview(labelFirstChild)
-        labelFirstChild.text = "1. Child"
+        labelFirstChild.text = "1. Child is: "
         labelFirstChild.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(nameOfFirstKid)
+   
+        scrollView.addSubview(sexOfFirstChildSegController)
+        sexOfFirstChildSegController.translatesAutoresizingMaskIntoConstraints = false
+        let items = ["Boy", "Girl"]
+        sexOfFirstChildSegController = UISegmentedControl(items: items)
+        sexOfFirstChildSegController.selectedSegmentIndex = 0
+        sexOfFirstChildSegController.addTarget(self, action: #selector(numberOfKidsRequest), for: .valueChanged)
+       scrollView.addSubview(nameOfFirstKid)
         nameOfFirstKid.keyboardType = .alphabet
         nameOfFirstKid.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(sureNameOfFirstKid)
@@ -180,7 +191,7 @@ class FormVC9: UIViewController {
             sureNameOfFirstKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             sureNameOfFirstKid.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16),
             sureNameOfFirstKid.heightAnchor.constraint(equalToConstant: 50)
-        ])
+  ])
     }
     func configNameOfSecondKid() {
         scrollView.addSubview(labelSecondChild)

@@ -11,7 +11,7 @@ extension FormVC10 {
     func layoutFormVC9a() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            helpButton.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: 20),
             helpButton.widthAnchor.constraint(equalToConstant: 100),
             helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             helpButton.heightAnchor.constraint(equalToConstant: 50)

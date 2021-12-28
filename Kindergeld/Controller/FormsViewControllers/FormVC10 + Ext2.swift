@@ -12,8 +12,7 @@ extension FormVC10 {
         shortText2c.text = "3. dieťa je:"
         shortText2c.textColor = .label
         scrollView.addSubview(shortText2c)
-      
-        let items = ["Boy", "Girl"]
+      let items = ["Boy", "Girl"]
         segController3 = UISegmentedControl(items: items)
         segController3.selectedSegmentIndex = 0
         segController3.addTarget(self, action: #selector(saveSexc), for: .valueChanged)
