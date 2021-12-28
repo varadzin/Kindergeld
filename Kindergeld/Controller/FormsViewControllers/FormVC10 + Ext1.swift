@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension FormVC9 {
+extension FormVC10 {
     func layoutFormVC9a() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -100,6 +100,13 @@ extension FormVC9 {
             nameKid2Q.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             nameKid2Q.widthAnchor.constraint(equalToConstant: 300),
             nameKid2Q.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        surenameKid2Q.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            surenameKid2Q.topAnchor.constraint(equalTo: nameKid2Q.bottomAnchor, constant: 15),
+            surenameKid2Q.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            surenameKid2Q.widthAnchor.constraint(equalToConstant: 300),
+            surenameKid2Q.heightAnchor.constraint(equalToConstant: 50)
         ])
         shortText2b.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension FormVC9 {
+extension FormVC10 {
     func configSeQc() {
         shortText2c.text = "3. dieťa je:"
         shortText2c.textColor = .label
