@@ -33,12 +33,6 @@ extension FormVC9 {
         scrollView.addSubview(labelFirstChild)
         labelFirstChild.text = "1. Child is: "
         labelFirstChild.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(sexOfFirstChildSegController)
-        sexOfFirstChildSegController.translatesAutoresizingMaskIntoConstraints = false
-        let items = ["Boy", "Girl"]
-        sexOfFirstChildSegController = UISegmentedControl(items: items)
-        sexOfFirstChildSegController.selectedSegmentIndex = 0
-        sexOfFirstChildSegController.addTarget(self, action: #selector(numberOfKidsRequest), for: .valueChanged)
         scrollView.addSubview(nameOfFirstKid)
         nameOfFirstKid.keyboardType = .alphabet
         nameOfFirstKid.translatesAutoresizingMaskIntoConstraints = false
@@ -46,11 +40,11 @@ extension FormVC9 {
         sureNameOfFirstKid.keyboardType = .alphabet
         sureNameOfFirstKid.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelFirstChild.topAnchor.constraint(equalTo: numberOfKidsSegController.bottomAnchor, constant: 10),
+            labelFirstChild.topAnchor.constraint(equalTo: numberOfKidsSegController.bottomAnchor, constant: 20),
             labelFirstChild.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            labelFirstChild.widthAnchor.constraint(equalToConstant: 200),
+            labelFirstChild.widthAnchor.constraint(equalToConstant: 80),
             labelFirstChild.heightAnchor.constraint(equalToConstant: 40),
-            nameOfFirstKid.topAnchor.constraint(equalTo: labelFirstChild.bottomAnchor),
+            nameOfFirstKid.topAnchor.constraint(equalTo: labelFirstChild.bottomAnchor, constant: 5),
             nameOfFirstKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             nameOfFirstKid.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 15/16),
             nameOfFirstKid.heightAnchor.constraint(equalToConstant: 50),
@@ -62,7 +56,7 @@ extension FormVC9 {
     }
     func configNameOfSecondKid() {
         scrollView.addSubview(labelSecondChild)
-        labelSecondChild.text = "2. Child"
+        labelSecondChild.text = "2. Child is:"
         labelSecondChild.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(nameOfSecondKid)
         nameOfSecondKid.keyboardType = .alphabet
@@ -71,9 +65,9 @@ extension FormVC9 {
         sureNameOfSecondKid.keyboardType = .alphabet
         sureNameOfSecondKid.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelSecondChild.topAnchor.constraint(equalTo: sureNameOfFirstKid.bottomAnchor, constant: 10),
+            labelSecondChild.topAnchor.constraint(equalTo: sureNameOfFirstKid.bottomAnchor, constant: 20),
             labelSecondChild.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            labelSecondChild.widthAnchor.constraint(equalToConstant: 200),
+            labelSecondChild.widthAnchor.constraint(equalToConstant: 80),
             labelSecondChild.heightAnchor.constraint(equalToConstant: 40),
             nameOfSecondKid.topAnchor.constraint(equalTo: labelSecondChild.bottomAnchor, constant: 5),
             nameOfSecondKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -87,7 +81,7 @@ extension FormVC9 {
     }
     func configNameOfThirdKid() {
         scrollView.addSubview(labelThirdChild)
-        labelThirdChild.text = "3. Child"
+        labelThirdChild.text = "3. Child is:"
         labelThirdChild.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(nameOfThirdKid)
         nameOfThirdKid.keyboardType = .alphabet
@@ -96,9 +90,9 @@ extension FormVC9 {
         sureNameOfThirdKid.keyboardType = .alphabet
         sureNameOfThirdKid.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelThirdChild.topAnchor.constraint(equalTo: sureNameOfSecondKid.bottomAnchor, constant: 10),
+            labelThirdChild.topAnchor.constraint(equalTo: sureNameOfSecondKid.bottomAnchor, constant: 20),
             labelThirdChild.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            labelThirdChild.widthAnchor.constraint(equalToConstant: 200),
+            labelThirdChild.widthAnchor.constraint(equalToConstant: 80),
             labelThirdChild.heightAnchor.constraint(equalToConstant: 40),
             nameOfThirdKid.topAnchor.constraint(equalTo: labelThirdChild.bottomAnchor, constant: 5),
             nameOfThirdKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -112,7 +106,7 @@ extension FormVC9 {
     }
     func configNameOfFourthKid() {
         scrollView.addSubview(labelFourthChild)
-        labelFourthChild.text = "4. Child"
+        labelFourthChild.text = "4. Child is:"
         labelFourthChild.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(nameOfFourthKid)
         nameOfFourthKid.keyboardType = .alphabet
@@ -121,9 +115,9 @@ extension FormVC9 {
         sureNameOfFourthKid.keyboardType = .alphabet
         sureNameOfFourthKid.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelFourthChild.topAnchor.constraint(equalTo: sureNameOfThirdKid.bottomAnchor, constant: 10),
+            labelFourthChild.topAnchor.constraint(equalTo: sureNameOfThirdKid.bottomAnchor, constant: 20),
             labelFourthChild.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            labelFourthChild.widthAnchor.constraint(equalToConstant: 200),
+            labelFourthChild.widthAnchor.constraint(equalToConstant: 80),
             labelFourthChild.heightAnchor.constraint(equalToConstant: 40),
             nameOfFourthKid.topAnchor.constraint(equalTo: labelFourthChild.bottomAnchor, constant: 5),
             nameOfFourthKid.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
