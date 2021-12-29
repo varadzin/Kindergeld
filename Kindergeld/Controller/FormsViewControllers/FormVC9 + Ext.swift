@@ -129,4 +129,100 @@ extension FormVC9 {
             sureNameOfFourthKid.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    func configBoyGirlSegController1() {
+        let items = ["Boy", "Girl"]
+        boyGirlFirstSegController = UISegmentedControl(items: items)
+        boyGirlFirstSegController.selectedSegmentIndex = 0
+        boyGirlFirstSegController.addTarget(self, action: #selector(configSexOfFirstChild), for: .valueChanged)
+        scrollView.addSubview(boyGirlFirstSegController)
+        boyGirlFirstSegController.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            boyGirlFirstSegController.topAnchor.constraint(equalTo: numberOfKidsSegController.bottomAnchor, constant: 25),
+            boyGirlFirstSegController.leadingAnchor.constraint(equalTo: labelFirstChild.trailingAnchor, constant: 10),
+            boyGirlFirstSegController.widthAnchor.constraint(equalToConstant: 200),
+            boyGirlFirstSegController.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    @objc func configSexOfFirstChild(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            sexOfFirstChild = "Boy"
+        case 1:
+            sexOfFirstChild = "Girl"
+        default:
+            sexOfFirstChild = "Boy"
+        }
+    }
+    func configBoyGirlSegController2() {
+        let items = ["Boy", "Girl"]
+        boyGirlSecondSegController = UISegmentedControl(items: items)
+        boyGirlSecondSegController.selectedSegmentIndex = 0
+        boyGirlSecondSegController.addTarget(self, action: #selector(configSexOfSecondChild), for: .valueChanged)
+        scrollView.addSubview(boyGirlSecondSegController)
+        boyGirlSecondSegController.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            boyGirlSecondSegController.topAnchor.constraint(equalTo: sureNameOfFirstKid.bottomAnchor, constant: 25),
+            boyGirlSecondSegController.leadingAnchor.constraint(equalTo: labelSecondChild.trailingAnchor, constant: 10),
+            boyGirlSecondSegController.widthAnchor.constraint(equalToConstant: 200),
+            boyGirlSecondSegController.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    @objc func configSexOfSecondChild(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            sexOfSecondChild = "Boy"
+        case 1:
+            sexOfSecondChild = "Girl"
+        default:
+            sexOfSecondChild = "Boy"
+        }
+    }
+    func configBoyGirlSegController3() {
+        let items = ["Boy", "Girl"]
+        boyGirlThirdSegController = UISegmentedControl(items: items)
+        boyGirlThirdSegController.selectedSegmentIndex = 0
+        boyGirlThirdSegController.addTarget(self, action: #selector(configSexOfThirdChild), for: .valueChanged)
+        scrollView.addSubview(boyGirlThirdSegController)
+        boyGirlThirdSegController.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            boyGirlThirdSegController.topAnchor.constraint(equalTo: sureNameOfSecondKid.bottomAnchor, constant: 25),
+            boyGirlThirdSegController.leadingAnchor.constraint(equalTo: labelThirdChild.trailingAnchor, constant: 10),
+            boyGirlThirdSegController.widthAnchor.constraint(equalToConstant: 200),
+            boyGirlThirdSegController.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    @objc func configSexOfThirdChild(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            sexOfThirdChild = "Boy"
+        case 1:
+            sexOfThirdChild = "Girl"
+        default:
+            sexOfThirdChild = "Boy"
+        }
+    }
+    func configBoyGirlSegController4() {
+        let items = ["Boy", "Girl"]
+        boyGirlFourthSegController = UISegmentedControl(items: items)
+        boyGirlFourthSegController.selectedSegmentIndex = 0
+        boyGirlFourthSegController.addTarget(self, action: #selector(configSexOfFourthChild), for: .valueChanged)
+        scrollView.addSubview(boyGirlFourthSegController)
+        boyGirlFourthSegController.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            boyGirlFourthSegController.topAnchor.constraint(equalTo: sureNameOfThirdKid.bottomAnchor, constant: 25),
+            boyGirlFourthSegController.leadingAnchor.constraint(equalTo: labelFourthChild.trailingAnchor, constant: 10),
+            boyGirlFourthSegController.widthAnchor.constraint(equalToConstant: 200),
+            boyGirlFourthSegController.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    @objc func configSexOfFourthChild(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            sexOfFourthChild = "Boy"
+        case 1:
+            sexOfFourthChild = "Girl"
+        default:
+            sexOfFourthChild = "Boy"
+        }
+    }
 }
