@@ -9,41 +9,41 @@ import UIKit
 extension StartViewController {
     // Extension is only for Autolayout of Elements in StartVC file
     func layoutStartViewController2() {
-        SKBtn.translatesAutoresizingMaskIntoConstraints = false
+        SKButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            SKBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
-            SKBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            SKBtn.widthAnchor.constraint(equalToConstant: 80),
-            SKBtn.heightAnchor.constraint(equalToConstant: 50)
+            SKButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            SKButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            SKButton.widthAnchor.constraint(equalToConstant: 80),
+            SKButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         SKLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            SKLabel.bottomAnchor.constraint(equalTo: SKBtn.topAnchor, constant: -5),
-            SKLabel.leadingAnchor.constraint(equalTo: SKBtn.leadingAnchor, constant: 10)
+            SKLabel.bottomAnchor.constraint(equalTo: SKButton.topAnchor, constant: -5),
+            SKLabel.leadingAnchor.constraint(equalTo: SKButton.leadingAnchor, constant: 10)
         ])
-        GEBtn.translatesAutoresizingMaskIntoConstraints = false
+        GEButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            GEBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
-            GEBtn.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: -40),
-            GEBtn.widthAnchor.constraint(equalToConstant: 80),
-            GEBtn.heightAnchor.constraint(equalToConstant: 50)
+            GEButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            GEButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: -40),
+            GEButton.widthAnchor.constraint(equalToConstant: 80),
+            GEButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         GELabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            GELabel.bottomAnchor.constraint(equalTo: GEBtn.topAnchor, constant: -5),
-            GELabel.leadingAnchor.constraint(equalTo: GEBtn.leadingAnchor, constant: 18)
+            GELabel.bottomAnchor.constraint(equalTo: GEButton.topAnchor, constant: -5),
+            GELabel.leadingAnchor.constraint(equalTo: GEButton.leadingAnchor, constant: 18)
         ])
-        GBBtn.translatesAutoresizingMaskIntoConstraints = false
+        GBButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            GBBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
-            GBBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            GBBtn.widthAnchor.constraint(equalToConstant: 80),
-            GBBtn.heightAnchor.constraint(equalToConstant: 50)
+            GBButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            GBButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            GBButton.widthAnchor.constraint(equalToConstant: 80),
+            GBButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         GBLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            GBLabel.bottomAnchor.constraint(equalTo: GBBtn.topAnchor, constant: -5),
-            GBLabel.leadingAnchor.constraint(equalTo: GBBtn.leadingAnchor, constant: 18)
+            GBLabel.bottomAnchor.constraint(equalTo: GBButton.topAnchor, constant: -5),
+            GBLabel.leadingAnchor.constraint(equalTo: GBButton.leadingAnchor, constant: 18)
         ])
     }
 }
