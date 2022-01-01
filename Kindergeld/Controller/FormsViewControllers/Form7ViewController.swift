@@ -10,7 +10,7 @@ import UIKit
 class Form7ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = KGTitle()
-    let subTitle = UILabel()
+    let subTitle = KGSubTitle()
     let addressQ = KGTextField(placeholder: "Street, house number")
     let addressQ2 = KGTextField(placeholder: "postcode, city, country")
     let nextButton = KGButton(title: "next ->>")
@@ -41,10 +41,6 @@ class Form7ViewController: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Address, if different from applicant’s"
-        subTitle.font = UIFont(name: "Times New Roman", size: 22)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
         let destVC = KGExplainViewController()

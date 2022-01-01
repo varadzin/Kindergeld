@@ -10,7 +10,7 @@ import UIKit
 class Form5ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = KGTitle()
-    let subTitle = UILabel()
+    let subTitle = KGSubTitle()
     let spouseNameQ = KGTextField(placeholder: " First Name ")
     let spouseSurenameQ = KGTextField(placeholder: " Name")
     let maidenSpouseNameQ = KGTextField(placeholder: " Maiden name or name from former marriage ")
@@ -42,10 +42,6 @@ class Form5ViewController: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "or the other biological or step-parent in the common household"
-        subTitle.font = UIFont(name: "Times New Roman", size: 22)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
         let destVC = KGExplainViewController()

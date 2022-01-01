@@ -9,7 +9,7 @@ import UIKit
 class Form6ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = KGTitle()
-    let subTitle = UILabel()
+    let subTitle = KGSubTitle()
     let spouseNameQ = KGTextField(placeholder: " First Name of spouse ")
     let spouseSurenameQ = KGTextField(placeholder: " Name of spouse ")
     let maidenSpouseNameQ = KGTextField(placeholder: " Maiden Name ")
@@ -45,10 +45,6 @@ class Form6ViewController: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Date of birth - spouse"
-        subTitle.font = UIFont(name: "Times New Roman", size: 22)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
         let destVC = KGExplainViewController()

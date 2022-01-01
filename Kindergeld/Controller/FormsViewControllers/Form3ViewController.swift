@@ -10,7 +10,7 @@ import UIKit
 class Form3ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = KGTitle()
-    let subTitle = UILabel()
+    let subTitle = KGSubTitle()
     let nationalityQ = KGTextField(placeholder: "Nationality")
     let addressQ = KGTextField(placeholder: "Street, house number")
     let addressQ2 = KGTextField(placeholder: "postcode, city, country")
@@ -42,10 +42,6 @@ class Form3ViewController: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Details of person making application"
-        subTitle.font = UIFont(name: "Times New Roman", size: 22)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
     }
 @objc func showExplanation() {
         let destVC = KGExplainViewController()

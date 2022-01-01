@@ -10,7 +10,7 @@ import UIKit
 class Form8ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = KGTitle()
-    let subTitle = UILabel()
+    let subTitle = KGSubTitle()
     let ibanQ = KGTextField(placeholder: "IBAN")
     let bicQ = KGTextField(placeholder: "Account SWIFT / BIC ")
     let bankNameQ = KGTextField(placeholder: "Bank, financial institution")
@@ -45,10 +45,6 @@ class Form8ViewController: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Details of method of payment"
-        subTitle.font = UIFont(name: "Times New Roman", size: 22)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
         let destVC = KGExplainViewController()

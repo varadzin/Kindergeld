@@ -9,7 +9,7 @@ import UIKit
 
 class FormVC11: UIViewController {
     let titleKG = KGTitle()
-    let subTitle = UILabel()
+    let subTitle = KGSubTitle()
     let explainButton = KGButton(title: "Vysvetlivky - prídavky v SR a DE spolu")
     let datePicker = UIDatePicker()
     override func viewDidLoad() {
@@ -41,10 +41,6 @@ class FormVC11: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Kam budú posielané prídavky na dieťa"
-        subTitle.font = UIFont(name: "Times New Roman", size: 22)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
