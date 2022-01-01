@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension FormVC2 {
-    func layoutFormVC2a() {
+extension Form2ViewController {
+    func layoutForm2ViewControllerA() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
              NSLayoutConstraint.activate([
                 helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
@@ -47,7 +47,7 @@ extension FormVC2 {
             shortText.heightAnchor.constraint(equalToConstant: 30)
         ])
         }
-    func layoutFormVC2b() {
+    func layoutForm2ViewControllerB() {
         segController.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             segController.topAnchor.constraint(equalTo: shortText.bottomAnchor, constant: 10),

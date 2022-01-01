@@ -1,5 +1,5 @@
 //
-//  StartVC.swift
+//  StartViewController.swift
 //  Kindergeld
 //
 //  Created by Frantisek Varadzin on 21/08/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartVC: UIViewController {
+class StartViewController: UIViewController {
     let titleKG = UILabel()
     let subTitle = UILabel()
     let babyImg = UIImageView()
@@ -20,15 +20,15 @@ class StartVC: UIViewController {
     let GBLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configTitle()
         configSubTitle()
         configImages()
         configLanguageButtons()
-        layoutStartVC()
-        layoutStartVC2()
+        layoutStartViewController()
+        layoutStartViewController2()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
         navigationController?.navigationBar.prefersLargeTitles = true

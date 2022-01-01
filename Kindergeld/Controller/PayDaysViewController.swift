@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PayDaysVC: UIViewController {
+class PayDaysViewController: UIViewController {
     let titleKG = UILabel()
     let subTitle = UILabel()
     let KGNumberTextField = KGTextField(placeholder: "Zadaj Kindergeld číslo")
@@ -28,7 +28,7 @@ class PayDaysVC: UIViewController {
     var lastChar9: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configTitle()
         configSubTitle()
         configKGNumberTextField()
@@ -37,7 +37,7 @@ class PayDaysVC: UIViewController {
         configInfoLabel()
         createDismissKeyboardTapGesture()
     }
-    func configVC() {
+    func configViewController() {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemBackground
     }
@@ -81,8 +81,8 @@ class PayDaysVC: UIViewController {
             CTAButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 135),
             CTAButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -135),
             CTAButton.heightAnchor.constraint(equalToConstant: 50)
-        ])  
-    }
+    ])
+        }
     func configExplainLabel(lastChar: String) {
         view.addSubview(explainLabel)
         explainLabel.textAlignment = .center
@@ -165,7 +165,7 @@ class PayDaysVC: UIViewController {
         ])
     }
 }
-extension PayDaysVC: UITextFieldDelegate {
+extension PayDaysViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
                 showPayDays()
         return true

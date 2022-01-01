@@ -7,16 +7,16 @@
 
 import UIKit
 
-class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var titleKG = UILabel()
     let tableViewArray = ["Language / Jazyk / Jezyk / Sprache", "Pravidlá používania"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configTitle()
         configTableView()
     }
-    func configVC() {
+    func configViewController() {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemBackground
     }
@@ -56,7 +56,7 @@ class SettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let newVC = LanguageVC()
+            let newVC = LanguageViewController()
             navigationController?.pushViewController(newVC, animated: true)
         } else {
             print("Disclaimer")

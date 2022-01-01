@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class Form4ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -17,7 +17,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let sinceQ = KGTextField(placeholder: "Since:")
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configHelpBtn()
         configTitle()
         configSubTitle()
@@ -27,7 +27,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         configNextButton()
         configBackButton()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
@@ -69,7 +69,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         ])
     }
     @objc func showExplanation() {
-        let destVC = KGExplainVC()
+        let destVC = KGExplainViewController()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
@@ -150,7 +150,7 @@ class FormVC4: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         navigationController?.popViewController(animated: true)
     }
     @objc func saveDataAndGoNext() {
-        let nextVC = FormVC5()
+        let nextVC = Form5ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }

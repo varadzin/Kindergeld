@@ -1,5 +1,5 @@
 //
-//  FormVC8 + Ext.swift
+//  FormVC7 + Ext.swift
 //  Kindergeld
 //
 //  Created by Frantisek Varadzin on 17.12.21.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension FormVC8 {
-    func layoutFormVC8a() {
+extension Form7ViewController {
+    func layoutForm7ViewController() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
@@ -21,6 +21,12 @@ extension FormVC8 {
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
+            ])
+        NSLayoutConstraint.activate([
+            addressQ.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
+            addressQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            addressQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            addressQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -29,39 +35,19 @@ extension FormVC8 {
             subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
         NSLayoutConstraint.activate([
-            ibanQ.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            ibanQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            ibanQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            ibanQ.heightAnchor.constraint(equalToConstant: 50)
+            addressQ2.topAnchor.constraint(equalTo: addressQ.bottomAnchor, constant: 15),
+            addressQ2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            addressQ2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            addressQ2.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            bicQ.topAnchor.constraint(equalTo: ibanQ.bottomAnchor, constant: 15),
-            bicQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            bicQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            bicQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        NSLayoutConstraint.activate([
-            bankNameQ.topAnchor.constraint(equalTo: bicQ.bottomAnchor, constant: 20),
-            bankNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            bankNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            bankNameQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        NSLayoutConstraint.activate([
-            accountNameQ.topAnchor.constraint(equalTo: bankNameQ.bottomAnchor, constant: 15),
-            accountNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            accountNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            accountNameQ.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
-    func layoutFormVC8b() {
-        NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: accountNameQ.bottomAnchor, constant: 25),
+            nextButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: accountNameQ.bottomAnchor, constant: 25),
+            backButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
             backButton.heightAnchor.constraint(equalToConstant: 50)

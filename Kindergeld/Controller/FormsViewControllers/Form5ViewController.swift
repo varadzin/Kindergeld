@@ -1,36 +1,33 @@
 //
-//  FormVC6.swift
+//  FormVC5.swift
 //  Kindergeld
 //
 //  Created by Frantisek Varadzin on 31/08/2021.
 //
 
 import UIKit
-class FormVC6: UIViewController {
+
+class Form5ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
-    let spouseNameQ = KGTextField(placeholder: " First Name of spouse ")
-    let spouseSurenameQ = KGTextField(placeholder: " Name of spouse ")
-    let maidenSpouseNameQ = KGTextField(placeholder: " Maiden Name ")
-    let simpleText = KGTextLabel()
-    let datePicker = UIDatePicker()
-    let spouseNationality = KGTextField(placeholder: "Nationality of spouse")
+    let spouseNameQ = KGTextField(placeholder: " First Name ")
+    let spouseSurenameQ = KGTextField(placeholder: " Name")
+    let maidenSpouseNameQ = KGTextField(placeholder: " Maiden name or name from former marriage ")
     let backButton = KGButton(title: "<<- back")
     let nextButton = KGButton(title: "next ->>")
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configHelpBtn()
         configTitle()
         configSubTitle()
-        configDatePicker()
-        configQ6()
-        configBackButton()
+        configQ5()
         configNextButton()
-        layoutFormVC6()
+        configBackButton()
+        layoutForm5ViewController()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
@@ -48,34 +45,25 @@ class FormVC6: UIViewController {
     }
     func configSubTitle() {
         view.addSubview(subTitle)
-        subTitle.text = "Date of birth - spouse"
+        subTitle.text = "or the other biological or step-parent in the common household"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
-        let destVC = KGExplainVC()
+        let destVC = KGExplainViewController()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
-    func configDatePicker() {
-        view.addSubview(datePicker)
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.timeZone = NSTimeZone.local
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
-    }
-    @objc func datePickerValueChanged(_ sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        let selectedDate: String = dateFormatter.string(from: sender.date)
-        print(selectedDate)
-    }
-    func configQ6() {
-        view.addSubview(spouseNationality)
-        spouseNationality.keyboardType = .alphabet
+    func configQ5() {
+        view.addSubview(spouseNameQ)
+        spouseNameQ.keyboardType = .alphabet
+        view.addSubview(spouseSurenameQ)
+        spouseSurenameQ.keyboardType = .alphabet
+        view.addSubview(maidenSpouseNameQ)
+        maidenSpouseNameQ.keyboardType = .alphabet
     }
     func configBackButton() {
         view.addSubview(backButton)
@@ -89,11 +77,21 @@ class FormVC6: UIViewController {
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
     }
     @objc func saveDataAndGoNext() {
-        let nextVC = FormVC7()
+        var nameSpouse: String?
+        var sureNameSpouse: String?
+        var maidenNameSpouse: String?
+        guard spouseNameQ.text != nil else { return }
+        nameSpouse = spouseNameQ.text!
+        guard spouseSurenameQ.text != nil else { return }
+        sureNameSpouse = spouseSurenameQ.text!
+        guard maidenSpouseNameQ.text != nil else { return }
+        maidenNameSpouse = maidenSpouseNameQ.text!
+        print(nameSpouse!, sureNameSpouse!, maidenNameSpouse!)
+        let nextVC = Form6ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
-extension FormVC6: UITextFieldDelegate {
+extension Form5ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         saveDataAndGoNext()
         return true

@@ -6,9 +6,9 @@
 //
 import UIKit
 
-extension InfoVC {
+extension InfoViewController {
     // Extension is only for Autolayout of Elements in InfoVC file
-    func layoutInfoVC() {
+    func layoutInfoViewController() {
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),

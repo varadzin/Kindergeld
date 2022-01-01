@@ -1,38 +1,34 @@
 //
-//  FormVC8.swift
+//  FormVC1.swift
 //  Kindergeld
 //
-//  Created by Frantisek Varadzin on 02/09/2021.
+//  Created by Frantisek Varadzin on 21/08/2021.
 //
 
 import UIKit
 
-class FormVC8: UIViewController {
-    let helpButton = KGHelpButton(title: "        Help")
+class Form1ViewController: UIViewController {
     let titleKG = UILabel()
     let subTitle = UILabel()
-    let ibanQ = KGTextField(placeholder: "IBAN")
-    let bicQ = KGTextField(placeholder: "Account SWIFT / BIC ")
-    let bankNameQ = KGTextField(placeholder: "Bank, financial institution")
-    let accountNameQ = KGTextField(placeholder: "Account holder")
+    let helpButton = KGHelpButton(title: "        Help")
+    let nameQ = KGTextField(placeholder: " First name ")
+    let surenameQ = KGTextField(placeholder: " Name ")
+    let maidenNameQ = KGTextField(placeholder: " Maiden name / name from former marriage ")
     let nextButton = KGButton(title: "next ->>")
-    let backButton = KGButton(title: "<<- back")
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configHelpBtn()
         configTitle()
         configSubTitle()
-        configQ8()
-        configQ9()
+        configQ1()
         configNextButton()
-        configBackButton()
-        layoutFormVC8a()
-        layoutFormVC8b()
+        layoutForm1ViewController()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     func configHelpBtn() {
         view.addSubview(helpButton)
@@ -43,50 +39,50 @@ class FormVC8: UIViewController {
         titleKG.text = "Application for Child Benefit"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
+        titleKG.textAlignment = .center
     }
     func configSubTitle() {
         view.addSubview(subTitle)
-        subTitle.text = "Details of method of payment"
+        subTitle.text = "Details of person making application"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
-        let destVC = KGExplainVC()
+        let destVC = KGExplainViewController()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
-    func configQ8() {
-        view.addSubview(ibanQ)
-        ibanQ.keyboardType = .numbersAndPunctuation
-        view.addSubview(bicQ)
-        bicQ.keyboardType = .alphabet
-    }
-    func configQ9() {
-        view.addSubview(bankNameQ)
-        bankNameQ.keyboardType = .numbersAndPunctuation
-        view.addSubview(accountNameQ)
-        accountNameQ.keyboardType = .alphabet
-    }
+    func configQ1() {
+        view.addSubview(nameQ)
+        nameQ.keyboardType = .alphabet
+        view.addSubview(surenameQ)
+        surenameQ.keyboardType = .alphabet
+        view.addSubview(maidenNameQ)
+        maidenNameQ.keyboardType = .alphabet
+        }
     func configNextButton() {
         view.addSubview(nextButton)
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
     }
-    func configBackButton() {
-        view.addSubview(backButton)
-        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-    }
-    @objc func goBack() {
-        navigationController?.popViewController(animated: true)
-    }
     @objc func saveDataAndGoNext() {
-        let nextVC = FormVC9()
+        var nameParent: String?
+        var sureNameParent: String?
+        var maidenNameParent: String?
+        guard nameQ.text != nil else { return }
+        nameParent = nameQ.text!
+        guard surenameQ.text != nil else { return }
+        sureNameParent = surenameQ.text!
+        guard maidenNameQ.text != nil else { return }
+        maidenNameParent = maidenNameQ.text!
+        print(nameParent!, sureNameParent!, maidenNameParent!)
+        let nextVC = Form2ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
-}
-extension FormVC8: UITextFieldDelegate {
+    }
+extension Form1ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         saveDataAndGoNext()
         return true

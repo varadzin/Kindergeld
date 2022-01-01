@@ -7,14 +7,14 @@
 
 import UIKit
 
-class MoreInfoVC: UIViewController {
+class MoreInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     configVC()
+        configViewController()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
       }

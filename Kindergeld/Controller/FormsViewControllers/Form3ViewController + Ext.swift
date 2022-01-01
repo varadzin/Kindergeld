@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension FormVC3 {
-    func layoutFormVC3() {
+extension Form3ViewController {
+    func layoutForm3ViewController() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),

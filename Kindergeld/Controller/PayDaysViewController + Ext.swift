@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension PayDaysVC {
+extension PayDaysViewController {
  func configLabel(lastChar: String) {
         lastChar0 = ("""
     Pre zadané Kindergeld číslo platia tieto výplatné termíny:

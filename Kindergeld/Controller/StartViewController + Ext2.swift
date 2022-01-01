@@ -6,9 +6,9 @@
 //
 import UIKit
 
-extension StartVC {
+extension StartViewController {
     // Extension is only for Autolayout of Elements in StartVC file
-    func layoutStartVC2() {
+    func layoutStartViewController2() {
         SKBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             SKBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),

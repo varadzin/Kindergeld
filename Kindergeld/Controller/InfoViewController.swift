@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class InfoVC: UIViewController {
+class InfoViewController: UIViewController {
     let titleKG = UILabel()
     let subTitle = UILabel()
     let textField = UILabel()
@@ -14,14 +14,14 @@ class InfoVC: UIViewController {
     let startButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configTitle()
         configSubTitle()
         configTextField()
         configNextBtn()
-        layoutInfoVC()
+        layoutInfoViewController()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         //        navigationController?.isNavigationBarHidden = true
     }
@@ -61,6 +61,6 @@ and agree to be bound by all of these Terms and Conditions Use.
         startButton.addTarget(self, action: #selector(goToMoreInfoVC), for: .touchUpInside)
     }
     @objc func goToMoreInfoVC() {
-        navigationController?.pushViewController(FormVC1(), animated: true)
+        navigationController?.pushViewController(Form1ViewController(), animated: true)
     }
 }

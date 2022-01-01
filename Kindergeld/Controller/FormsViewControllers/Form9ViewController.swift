@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FormVC9: UIViewController {
+class Form9ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -38,16 +38,16 @@ class FormVC9: UIViewController {
     let scrollView = UIScrollView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configScrollView()
         configHelpBtn()
         configTitle()
         configSubTitle()
         configNumberOfKids()
         show1KidOnly()
-        layoutFormVC9()
+        layoutForm9ViewController()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
@@ -75,7 +75,7 @@ class FormVC9: UIViewController {
         subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
-        let destVC = KGExplainVC()
+        let destVC = KGExplainViewController()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)

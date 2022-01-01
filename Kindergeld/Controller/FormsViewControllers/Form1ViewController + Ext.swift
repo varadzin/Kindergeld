@@ -1,14 +1,14 @@
 //
-//  FormVC7 + Ext.swift
+//  FormVC1 + Ext.swift
 //  Kindergeld
 //
-//  Created by Frantisek Varadzin on 17.12.21.
+//  Created by Frantisek Varadzin on 12.12.21.
 //
 
 import UIKit
 
-extension FormVC7 {
-    func layoutFormVC7() {
+extension Form1ViewController {
+    func layoutForm1ViewController() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
@@ -21,36 +21,36 @@ extension FormVC7 {
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
             titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
-            ])
-        NSLayoutConstraint.activate([
-            addressQ.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
-            addressQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
+            subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 10),
             subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
         NSLayoutConstraint.activate([
-            addressQ2.topAnchor.constraint(equalTo: addressQ.bottomAnchor, constant: 15),
-            addressQ2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            addressQ2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            addressQ2.heightAnchor.constraint(equalToConstant: 50)
+            nameQ.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 20),
+            nameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            nameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            nameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
+            surenameQ.topAnchor.constraint(equalTo: nameQ.bottomAnchor, constant: 15),
+            surenameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            surenameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            surenameQ.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        NSLayoutConstraint.activate([
+            maidenNameQ.topAnchor.constraint(equalTo: surenameQ.bottomAnchor, constant: 15),
+            maidenNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            maidenNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            maidenNameQ.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        NSLayoutConstraint.activate([
+            nextButton.topAnchor.constraint(equalTo: maidenNameQ.bottomAnchor, constant: 20),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: addressQ2.bottomAnchor, constant: 25),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
-            backButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

@@ -7,9 +7,9 @@
 
 import UIKit
 
-extension StartVC {
+extension StartViewController {
     // Extension is only for Autolayout of Elements in StartVC file
-    func layoutStartVC() {
+    func layoutStartViewController() {
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),

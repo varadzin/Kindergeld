@@ -1,14 +1,14 @@
 //
-//  FormVC6 + Ext.swift
+//  FormVC5 + Ext.swift
 //  Kindergeld
 //
-//  Created by Frantisek Varadzin on 17.12.21.
+//  Created by Frantisek Varadzin on 16.12.21.
 //
 
 import UIKit
 
-extension FormVC6 {
-    func layoutFormVC6() {
+extension Form5ViewController {
+    func layoutForm5ViewController () {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
@@ -19,8 +19,7 @@ extension FormVC6 {
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
-            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
+            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -28,27 +27,32 @@ extension FormVC6 {
             subTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             subTitle.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            datePicker.topAnchor.constraint(equalTo: subTitle.bottomAnchor),
-            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            datePicker.heightAnchor.constraint(equalToConstant: 200)
+            spouseNameQ.topAnchor.constraint(equalTo: subTitle.bottomAnchor, constant: 15),
+            spouseNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            spouseNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            spouseNameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            spouseNationality.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 5),
-            spouseNationality.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            spouseNationality.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            spouseNationality.heightAnchor.constraint(equalToConstant: 50)
+            maidenSpouseNameQ.topAnchor.constraint(equalTo: spouseSurenameQ.bottomAnchor, constant: 15),
+            maidenSpouseNameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            maidenSpouseNameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            maidenSpouseNameQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: spouseNationality.bottomAnchor, constant: 15),
+            spouseSurenameQ.topAnchor.constraint(equalTo: spouseNameQ.bottomAnchor, constant: 15),
+            spouseSurenameQ.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            spouseSurenameQ.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            spouseSurenameQ.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: maidenSpouseNameQ.bottomAnchor, constant: 15),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -200),
             backButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: spouseNationality.bottomAnchor, constant: 15),
+            nextButton.topAnchor.constraint(equalTo: maidenSpouseNameQ.bottomAnchor, constant: 15),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nextButton.heightAnchor.constraint(equalToConstant: 50)

@@ -1,38 +1,32 @@
 //
-//  FormVC2.swift
+//  FormVC7.swift
 //  Kindergeld
 //
-//  Created by Frantisek Varadzin on 29/08/2021.
+//  Created by Frantisek Varadzin on 01/09/2021.
 //
 
 import UIKit
 
-class FormVC2: UIViewController {
-    let scrollView = UIScrollView()
+class Form7ViewController: UIViewController {
+    let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
-    let helpButton = KGHelpButton(title: "        Help")
-    let dateBirthQ = KGTextField(placeholder: " Day of birth - DD.MM.RRRR ")
-    let placeBirthQ = KGTextField(placeholder: " Place of birth")
-    var sexOfApplicant: String?
-    var segController = UISegmentedControl()
-    let shortText = KGTextLabel()
+    let addressQ = KGTextField(placeholder: "Street, house number")
+    let addressQ2 = KGTextField(placeholder: "postcode, city, country")
     let nextButton = KGButton(title: "next ->>")
     let backButton = KGButton(title: "<<- back")
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configHelpBtn()
         configTitle()
         configSubTitle()
-        configQ2()
-        configSexQ()
+        configQ7()
         configNextButton()
         configBackButton()
-        layoutFormVC2a()
-        layoutFormVC2b()
+        layoutForm7ViewController()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
@@ -42,50 +36,31 @@ class FormVC2: UIViewController {
     }
     func configTitle() {
         view.addSubview(titleKG)
-        titleKG.text = "Application for Child Benefit"
+        titleKG.text = "Information on the spouse or registered civil partner"
         titleKG.font = UIFont(name: "Times New Roman", size: 28)
         titleKG.textColor = .secondaryLabel
         titleKG.textAlignment = .center
+        titleKG.numberOfLines = 0
     }
     func configSubTitle() {
         view.addSubview(subTitle)
-        subTitle.text = "Details of person making application"
+        subTitle.text = "Address, if different from applicant’s"
         subTitle.font = UIFont(name: "Times New Roman", size: 22)
         subTitle.textColor = UIColor.systemOrange
         subTitle.textAlignment = .center
         subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
-        let destVC = KGExplainVC()
+        let destVC = KGExplainViewController()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
-    func configQ2() {
-        view.addSubview(dateBirthQ)
-        dateBirthQ.keyboardType = .numbersAndPunctuation
-        view.addSubview(placeBirthQ)
-        placeBirthQ.keyboardType = .alphabet
-    }
-    func configSexQ() {
-        shortText.text = "Person making application is:"
-        shortText.textColor = .label
-        view.addSubview(shortText)
-        let items = ["Man", "Woman"]
-        segController = UISegmentedControl(items: items)
-        segController.selectedSegmentIndex = 0
-        segController.addTarget(self, action: #selector(saveSex), for: .valueChanged)
-        view.addSubview(segController)
-    }
-    @objc func saveSex(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            sexOfApplicant = "Man"
-        case 1:
-            sexOfApplicant = "Woman"
-        default:
-            sexOfApplicant = "Man"
-        }
+    func configQ7() {
+        view.addSubview(addressQ)
+        addressQ.keyboardType = .numbersAndPunctuation
+        view.addSubview(addressQ2)
+        addressQ2.keyboardType = .alphabet
     }
     func configNextButton() {
         view.addSubview(nextButton)
@@ -99,12 +74,11 @@ class FormVC2: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @objc func saveDataAndGoNext() {
-        let nextVC = FormVC3()
+        let nextVC = Form8ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
-
-extension FormVC2: UITextFieldDelegate {
+extension Form7ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         saveDataAndGoNext()
         return true

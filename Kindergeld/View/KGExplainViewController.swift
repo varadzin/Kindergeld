@@ -1,5 +1,5 @@
 //
-//  KGExplainVC.swift
+//  KGExplainViewController.swift
 //  Kindergeld
 //
 //  Created by Frantisek Varadzin on 28/08/2021.
@@ -9,19 +9,19 @@ import UIKit
 
 // Explanation Button - if you need more info about topic
 
-class KGExplainVC: UIViewController {
+class KGExplainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .systemBackground
-        configDoneBtn()
+        configDoneButton()
     }
-    func configDoneBtn() {
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+    func configDoneButton() {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = doneButton
         }
-    @objc func dismissVC() {
+    @objc func dismissViewController() {
         dismiss(animated: true)
     }
 

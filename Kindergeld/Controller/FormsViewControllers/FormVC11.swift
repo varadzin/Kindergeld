@@ -14,7 +14,7 @@ class FormVC11: UIViewController {
     let datePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configTitle()
         configSubTitle()
         configExplainButton()
@@ -22,7 +22,7 @@ class FormVC11: UIViewController {
         configBackButton()
         configNextButton()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
@@ -63,7 +63,7 @@ class FormVC11: UIViewController {
         ])
     }
     @objc func showExplanation() {
-        let destVC = KGExplainVC()
+        let destVC = KGExplainViewController()
         destVC.title = "Žiadateľ o Kindergeld"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)

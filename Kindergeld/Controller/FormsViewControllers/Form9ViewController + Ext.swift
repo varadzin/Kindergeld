@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension FormVC9 {
-    func layoutFormVC9() {
+extension Form9ViewController {
+    func layoutForm9ViewController() {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             helpButton.topAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.topAnchor, constant: 5),

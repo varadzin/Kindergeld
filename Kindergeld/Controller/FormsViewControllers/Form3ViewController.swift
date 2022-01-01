@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FormVC3: UIViewController {
+class Form3ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = UILabel()
     let subTitle = UILabel()
@@ -18,16 +18,16 @@ class FormVC3: UIViewController {
     let backButton = KGButton(title: "<<- back")
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configHelpBtn()
         configTitle()
         configSubTitle()
         configQ3()
         configBackButton()
         configNextButton()
-        layoutFormVC3()
+        layoutForm3ViewController()
     }
-    func configVC() {
+    func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
     }
@@ -50,7 +50,7 @@ class FormVC3: UIViewController {
         subTitle.numberOfLines = 0
     }
 @objc func showExplanation() {
-        let destVC = KGExplainVC()
+        let destVC = KGExplainViewController()
         destVC.title = "Help"
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
@@ -75,7 +75,7 @@ class FormVC3: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @objc func saveDataAndGoNext() {
-        let nextVC = FormVC4()
+        let nextVC = Form4ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
         }
     }

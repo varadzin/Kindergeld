@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().tintColor = .systemOrange
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController.init(rootViewController: StartVC())
+        window?.rootViewController = UINavigationController.init(rootViewController: StartViewController())
         window?.makeKeyAndVisible()
     }
     func sceneDidDisconnect(_ scene: UIScene) {}

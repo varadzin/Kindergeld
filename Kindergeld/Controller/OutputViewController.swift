@@ -7,13 +7,13 @@
 
 import UIKit
 
-class OutputVC: UIViewController {
+class OutputViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
 }
-    func configVC() {
+    func configViewController() {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
     }

@@ -7,14 +7,14 @@
 
 import UIKit
 
-class LanguageVC: UIViewController {
+class LanguageViewController: UIViewController {
     var titleKG = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configVC()
+        configViewController()
         configTitle()
     }
-    func configVC() {
+    func configViewController() {
         navigationController?.isNavigationBarHidden = true
         view.backgroundColor = .systemBackground
     }
