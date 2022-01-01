@@ -9,7 +9,7 @@ import UIKit
 
 class Form4ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let helpButton = KGHelpButton(title: "        Help")
-    let titleKG = UILabel()
+    let titleKG = KGTitle()
     let subTitle = UILabel()
     let simpleText = KGTextLabel()
     let pickerArray = ["single", "married", "divorced", "widowed", "living in reg.civil partnership", "perm.separated"]
@@ -45,8 +45,7 @@ class Form4ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Application for Child Benefit"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
+        
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),

@@ -9,7 +9,7 @@ import UIKit
 
 class Form9ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
-    let titleKG = UILabel()
+    let titleKG = KGTitle()
     let subTitle = UILabel()
     let shortLabel = KGTextLabel()
     var numberOfKidsSegController = UISegmentedControl()
@@ -63,8 +63,6 @@ class Form9ViewController: UIViewController {
     func configTitle() {
         scrollView.addSubview(titleKG)
         titleKG.text = "Application for Child Benefit"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
     }
     func configSubTitle() {
         scrollView.addSubview(subTitle)

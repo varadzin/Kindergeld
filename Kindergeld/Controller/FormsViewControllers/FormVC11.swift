@@ -8,7 +8,7 @@
 import UIKit
 
 class FormVC11: UIViewController {
-    let titleKG = UILabel()
+    let titleKG = KGTitle()
     let subTitle = UILabel()
     let explainButton = KGButton(title: "Vysvetlivky - prídavky v SR a DE spolu")
     let datePicker = UIDatePicker()

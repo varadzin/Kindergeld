@@ -9,7 +9,7 @@ import UIKit
 
 class Form8ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
-    let titleKG = UILabel()
+    let titleKG = KGTitle()
     let subTitle = UILabel()
     let ibanQ = KGTextField(placeholder: "IBAN")
     let bicQ = KGTextField(placeholder: "Account SWIFT / BIC ")
@@ -41,8 +41,6 @@ class Form8ViewController: UIViewController {
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Application for Child Benefit"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
     }
     func configSubTitle() {
         view.addSubview(subTitle)

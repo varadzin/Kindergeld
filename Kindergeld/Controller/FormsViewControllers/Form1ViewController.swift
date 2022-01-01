@@ -9,7 +9,7 @@ import UIKit
 
 class Form1ViewController: UIViewController {
     let titleKG = KGTitle()
-    let subTitle = UILabel()
+    let subTitle = KGSubTitle()
     let helpButton = KGHelpButton(title: "        Help")
     let nameQ = KGTextField(placeholder: " First name ")
     let surenameQ = KGTextField(placeholder: " Name ")
@@ -41,10 +41,6 @@ class Form1ViewController: UIViewController {
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "Details of person making application"
-        subTitle.font = UIFont(name: "Times New Roman", size: 22)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
     }
     @objc func showExplanation() {
         let destVC = KGExplainViewController()

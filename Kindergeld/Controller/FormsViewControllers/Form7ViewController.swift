@@ -9,7 +9,7 @@ import UIKit
 
 class Form7ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
-    let titleKG = UILabel()
+    let titleKG = KGTitle()
     let subTitle = UILabel()
     let addressQ = KGTextField(placeholder: "Street, house number")
     let addressQ2 = KGTextField(placeholder: "postcode, city, country")
@@ -37,10 +37,6 @@ class Form7ViewController: UIViewController {
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Information on the spouse or registered civil partner"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
-        titleKG.textAlignment = .center
-        titleKG.numberOfLines = 0
     }
     func configSubTitle() {
         view.addSubview(subTitle)

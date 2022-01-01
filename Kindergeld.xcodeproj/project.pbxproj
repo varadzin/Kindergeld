@@ -44,6 +44,7 @@
 		3969A4B42767F312003A7928 /* Form2ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B32767F312003A7928 /* Form2ViewController + Ext.swift */; };
 		3969A4B62767FB26003A7928 /* Form3ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */; };
 		39C59C93276BFBCB0013052D /* Form5ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */; };
+		39E4FCBD27810FF200B4A018 /* KGSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */; };
 		39F54EBE2771E6D0007F46C4 /* PayDaysViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */; };
 		39F54EC427736D06007F46C4 /* StartViewController + Ext2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EC327736D06007F46C4 /* StartViewController + Ext2.swift */; };
 		39FA0827276D0D71006CDEE1 /* Form6ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA0826276D0D71006CDEE1 /* Form6ViewController + Ext.swift */; };
@@ -104,6 +105,7 @@
 		3969A4B32767F312003A7928 /* Form2ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form2ViewController + Ext.swift"; sourceTree = "<group>"; };
 		3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form3ViewController + Ext.swift"; sourceTree = "<group>"; };
 		39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form5ViewController + Ext.swift"; sourceTree = "<group>"; };
+		39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGSubtitle.swift; sourceTree = "<group>"; };
 		39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PayDaysViewController + Ext.swift"; sourceTree = "<group>"; };
 		39F54EC327736D06007F46C4 /* StartViewController + Ext2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartViewController + Ext2.swift"; sourceTree = "<group>"; };
 		39FA0826276D0D71006CDEE1 /* Form6ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form6ViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				09DBE07826DA837A00218F87 /* KGTextLabel.swift */,
 				09DBE07A26DA911600218F87 /* KGExplainViewController.swift */,
 				09DBE09026E4F19600218F87 /* KGTitle.swift */,
+				39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DBE08926E0108400218F87 /* Form7ViewController.swift in Sources */,
+				39E4FCBD27810FF200B4A018 /* KGSubtitle.swift in Sources */,
 				39C59C93276BFBCB0013052D /* Form5ViewController + Ext.swift in Sources */,
 				39F54EBE2771E6D0007F46C4 /* PayDaysViewController + Ext.swift in Sources */,
 				09DBE09126E4F19600218F87 /* KGTitle.swift in Sources */,

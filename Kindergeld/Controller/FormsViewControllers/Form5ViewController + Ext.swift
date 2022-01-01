@@ -19,7 +19,8 @@ extension Form5ViewController {
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 5),
-            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

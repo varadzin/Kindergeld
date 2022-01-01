@@ -9,7 +9,7 @@ import UIKit
 
 class Form2ViewController: UIViewController {
     let scrollView = UIScrollView()
-    let titleKG = UILabel()
+    let titleKG = KGTitle()
     let subTitle = UILabel()
     let helpButton = KGHelpButton(title: "        Help")
     let dateBirthQ = KGTextField(placeholder: " Day of birth - DD.MM.RRRR ")
@@ -43,9 +43,6 @@ class Form2ViewController: UIViewController {
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Application for Child Benefit"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
-        titleKG.textAlignment = .center
     }
     func configSubTitle() {
         view.addSubview(subTitle)
