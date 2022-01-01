@@ -6,8 +6,10 @@
 //
 import UIKit
 
+///
+/// Layout Setting for Buttons - Flags Slovakia, Great Britain, Germany
+///
 extension StartViewController {
-    // Extension is only for Autolayout of Elements in StartVC file
     func layoutStartViewController2() {
         SKButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -7,6 +7,9 @@
 
 import UIKit
 
+///
+/// Layout Setting for Title, Subtitle, Images
+///
 extension StartViewController {
     // Extension is only for Autolayout of Elements in StartVC file
     func layoutStartViewController() {

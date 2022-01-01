@@ -8,7 +8,7 @@
 import UIKit
 
 class Form1ViewController: UIViewController {
-    let titleKG = UILabel()
+    let titleKG = KGTitle()
     let subTitle = UILabel()
     let helpButton = KGHelpButton(title: "        Help")
     let nameQ = KGTextField(placeholder: " First name ")
@@ -37,9 +37,6 @@ class Form1ViewController: UIViewController {
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Application for Child Benefit"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
-        titleKG.textAlignment = .center
     }
     func configSubTitle() {
         view.addSubview(subTitle)
