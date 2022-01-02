@@ -8,8 +8,8 @@
 import UIKit
 
 class StartViewController: UIViewController {
-    let titleKG = UILabel()
-    let subTitle = UILabel()
+    let titleKG = KGTitle()
+    let subTitle = KGSubTitle()
     let babyImg = UIImageView()
     let coinsImg = UIImageView()
     let SKButton = UIButton()
@@ -40,17 +40,13 @@ class StartViewController: UIViewController {
         titleKG.text = "Kindergeld"
         titleKG.font = UIFont(name: "Times New Roman", size: 62)
         titleKG.textColor = .label
-        titleKG.textAlignment = .center
     }
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "get your Child Benefit"
         subTitle.font = UIFont(name: "Times New Roman", size: 36)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
-    }
-    /// Choose Language - 3 Buttons
+       }
+    // MARK: - Choose Language - 3 Buttons
     func configImages() {
         view.addSubview(coinsImg)
         coinsImg.image = UIImage(named: "coinsImg")

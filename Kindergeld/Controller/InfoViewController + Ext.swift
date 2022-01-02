@@ -4,8 +4,10 @@
 //
 //  Created by Frantisek Varadzin on 12.12.21.
 //
+///
+/// Setting Layout for Info View
+///
 import UIKit
-
 extension InfoViewController {
     // Extension is only for Autolayout of Elements in InfoVC file
     func layoutInfoViewController() {

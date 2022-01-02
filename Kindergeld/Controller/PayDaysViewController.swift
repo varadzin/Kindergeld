@@ -4,12 +4,15 @@
 //
 //  Created by Frantisek Varadzin on 21/08/2021.
 //
+///
+/// Pay Days screen shows which day
+///
 
 import UIKit
 
 class PayDaysViewController: UIViewController {
-    let titleKG = UILabel()
-    let subTitle = UILabel()
+    let titleKG = KGTitle()
+    let subTitle = KGSubTitle()
     let KGNumberTextField = KGTextField(placeholder: "Zadaj Kindergeld číslo")
     let CTAButton = KGButton(title: "Ok")
     let explainLabel = UILabel()
@@ -44,19 +47,17 @@ class PayDaysViewController: UIViewController {
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Kindergeld"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
-            titleKG.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15)
+            titleKG.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleKG.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 15/16)
         ])
     }
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "výplatné termíny"
         subTitle.font = UIFont.preferredFont(forTextStyle: .body)
-        subTitle.textColor = UIColor.systemOrange
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),

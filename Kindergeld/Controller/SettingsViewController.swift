@@ -4,11 +4,14 @@
 //
 //  Created by Frantisek Varadzin on 21/08/2021.
 //
+///
+/// Settings View
+///
 
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var titleKG = UILabel()
+    var titleKG = KGTitle()
     let tableViewArray = ["Language / Jazyk / Jezyk / Sprache", "Pravidlá používania"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +26,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Nastavenia"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),

@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
+///
 /// Tabbar with 4 Choises
+///
 class CustomTabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()

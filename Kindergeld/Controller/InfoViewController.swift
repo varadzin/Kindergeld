@@ -5,10 +5,14 @@
 //  Created by Frantisek Varadzin on 21/08/2021.
 //
 
+///
+/// Simple Info about App
+///
+
 import UIKit
 class InfoViewController: UIViewController {
-    let titleKG = UILabel()
-    let subTitle = UILabel()
+    let titleKG = KGTitle()
+    let subTitle = KGSubTitle()
     let textField = UILabel()
     let scrollView = UIScrollView()
     let startButton = UIButton()
@@ -23,22 +27,14 @@ class InfoViewController: UIViewController {
     }
     func configViewController() {
         view.backgroundColor = .systemBackground
-        //        navigationController?.isNavigationBarHidden = true
     }
     func configTitle() {
         view.addSubview(titleKG)
         titleKG.text = "Kindergeld - Child benefit"
-        titleKG.font = UIFont(name: "Times New Roman", size: 28)
-        titleKG.textColor = .secondaryLabel
-        titleKG.textAlignment = .center
     }
     func configSubTitle() {
         view.addSubview(subTitle)
         subTitle.text = "How can this App help you:"
-        subTitle.font = UIFont(name: "Times New Roman", size: 18)
-        subTitle.textColor = UIColor.systemOrange
-        subTitle.textAlignment = .center
-        subTitle.numberOfLines = 0
     }
     func configTextField() {
         view.addSubview(textField)

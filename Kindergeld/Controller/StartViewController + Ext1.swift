@@ -15,13 +15,13 @@ extension StartViewController {
     func layoutStartViewController() {
         titleKG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
+            titleKG.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             titleKG.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             titleKG.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
         ])
         subTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 5),
+            subTitle.topAnchor.constraint(equalTo: titleKG.bottomAnchor, constant: 10),
             subTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             subTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
