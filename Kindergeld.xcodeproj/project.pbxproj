@@ -45,6 +45,7 @@
 		3969A4B62767FB26003A7928 /* Form3ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */; };
 		39C59C93276BFBCB0013052D /* Form5ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */; };
 		39E4FCBD27810FF200B4A018 /* KGSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */; };
+		39E4FCBF278B28BB00B4A018 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4FCBE278B28BB00B4A018 /* SaveData.swift */; };
 		39F54EBE2771E6D0007F46C4 /* PayDaysViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */; };
 		39F54EC427736D06007F46C4 /* StartViewController + Ext2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EC327736D06007F46C4 /* StartViewController + Ext2.swift */; };
 		39FA0827276D0D71006CDEE1 /* Form6ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA0826276D0D71006CDEE1 /* Form6ViewController + Ext.swift */; };
@@ -106,6 +107,7 @@
 		3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form3ViewController + Ext.swift"; sourceTree = "<group>"; };
 		39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form5ViewController + Ext.swift"; sourceTree = "<group>"; };
 		39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGSubtitle.swift; sourceTree = "<group>"; };
+		39E4FCBE278B28BB00B4A018 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PayDaysViewController + Ext.swift"; sourceTree = "<group>"; };
 		39F54EC327736D06007F46C4 /* StartViewController + Ext2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartViewController + Ext2.swift"; sourceTree = "<group>"; };
 		39FA0826276D0D71006CDEE1 /* Form6ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form6ViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		09DBE02426D111F900218F87 /* Kindergeld */ = {
 			isa = PBXGroup;
 			children = (
+				39E4FCC0278B28C200B4A018 /* Model */,
 				3969A4AB27667A7E003A7928 /* ChildBenefitInfo.pdf */,
 				09DBE04F26D29E3E00218F87 /* View */,
 				09DBE03E26D13D4000218F87 /* Controller */,
@@ -221,6 +224,14 @@
 				09DBE09226E4F60600218F87 /* FormVC11.swift */,
 			);
 			path = FormsViewControllers;
+			sourceTree = "<group>";
+		};
+		39E4FCC0278B28C200B4A018 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39E4FCBE278B28BB00B4A018 /* SaveData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				09DBE03026D111F900218F87 /* Kindergeld.xcdatamodeld in Sources */,
 				09DBE09326E4F60600218F87 /* FormVC11.swift in Sources */,
 				09DBE08526DECE4800218F87 /* Form6ViewController.swift in Sources */,
+				39E4FCBF278B28BB00B4A018 /* SaveData.swift in Sources */,
 				09DBE08326DEC9AB00218F87 /* Form5ViewController.swift in Sources */,
 				3969A4B0276691FF003A7928 /* KGHelpButton.swift in Sources */,
 				39FA0827276D0D71006CDEE1 /* Form6ViewController + Ext.swift in Sources */,
