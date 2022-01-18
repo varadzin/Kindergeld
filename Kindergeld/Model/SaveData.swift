@@ -16,10 +16,9 @@ class SaveData {
         }
         let context = appDelegate.persistentContainer.viewContext
         let entityName = "Person"
-        
         guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)
         else { return }
+        let newUser =  NSManagedObject(entity: newEntity, insertInto: context)
+        newUser.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
     }
-    
-    
-}
+    }

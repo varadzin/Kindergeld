@@ -5,13 +5,14 @@
 //  Created by Frantisek Varadzin on 21/08/2021.
 //
 ///
-/// In this View
+/// In this View will User enter name, surename and maiden name and save it in Core data
 ///
-
-
 import UIKit
-
+protocol SaveEnteredInfosDelegate {
+    func saveApplicant(applicantFirstName: String, applicantSureName: String, applicantMaidenName: String )
+}
 class Form1ViewController: UIViewController {
+    var selectionDelegate: SaveEnteredInfosDelegate! = nil
     let titleKG = KGTitle()
     let subTitle = KGSubTitle()
     let helpButton = KGHelpButton(title: "        Help")
@@ -65,16 +66,19 @@ class Form1ViewController: UIViewController {
         nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
     }
     @objc func saveDataAndGoNext() {
-        var nameParent: String?
-        var sureNameParent: String?
-        var maidenNameParent: String?
+        var applicantFirstName: String?
+        var applicantSureName: String?
+        var applicantMaidenName: String?
         guard nameQ.text != nil else { return }
-        nameParent = nameQ.text!
+        applicantFirstName = nameQ.text!
         guard surenameQ.text != nil else { return }
-        sureNameParent = surenameQ.text!
+        applicantSureName = surenameQ.text!
         guard maidenNameQ.text != nil else { return }
-        maidenNameParent = maidenNameQ.text!
-        print(nameParent!, sureNameParent!, maidenNameParent!)
+        applicantMaidenName = maidenNameQ.text!
+        print(applicantFirstName!, applicantSureName!, applicantMaidenName!)
+        
+        
+        
         let nextVC = Form2ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }
