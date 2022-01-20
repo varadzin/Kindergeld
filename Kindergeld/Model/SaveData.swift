@@ -12,7 +12,6 @@ class SaveData: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveEnteredInfo()
-        saveApplicant(applicantFirstName: <#T##String#>, applicantSureName: <#T##String#>, applicantMaidenName: <#T##String#>)
     }
     func saveEnteredInfo() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
