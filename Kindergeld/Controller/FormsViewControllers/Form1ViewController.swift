@@ -76,9 +76,6 @@ class Form1ViewController: UIViewController {
         guard maidenNameQ.text != nil else { return }
         applicantMaidenName = maidenNameQ.text!
         print(applicantFirstName!, applicantSureName!, applicantMaidenName!)
-        
-        
-        
         let nextVC = Form2ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
     }

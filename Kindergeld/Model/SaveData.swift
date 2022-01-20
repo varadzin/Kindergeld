@@ -5,11 +5,15 @@
 //  Created by Frantisek Varadzin on 09.01.22.
 //
 
-import Foundation
 import CoreData
 import UIKit
 
-class SaveData {
+class SaveData: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        saveEnteredInfo()
+        saveApplicant(applicantFirstName: <#T##String#>, applicantSureName: <#T##String#>, applicantMaidenName: <#T##String#>)
+    }
     func saveEnteredInfo() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -18,7 +22,15 @@ class SaveData {
         let entityName = "Person"
         guard let newEntity = NSEntityDescription.entity(forEntityName: entityName, in: context)
         else { return }
-        let newUser =  NSManagedObject(entity: newEntity, insertInto: context)
-        newUser.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+//        let newUser =  NSManagedObject(entity: newEntity, insertInto: context)
+        // FormVC1
+        let destinationViewController = Form1ViewController()
+        destinationViewController.selectionDelegate = self
+        }
     }
+
+extension SaveData: SaveEnteredInfosDelegate {
+    func saveApplicant(applicantFirstName: String, applicantSureName: String, applicantMaidenName: String) {
+       print(applicantFirstName, applicantSureName, applicantMaidenName)
     }
+}
