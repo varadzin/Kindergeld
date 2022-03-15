@@ -10,14 +10,18 @@ class Form6ViewController: UIViewController {
     let helpButton = KGHelpButton(title: "        Help")
     let titleKG = KGTitle()
     let subTitle = KGSubTitle()
-    let spouseNameQ = KGTextField(placeholder: " First Name of spouse ")
-    let spouseSurenameQ = KGTextField(placeholder: " Name of spouse ")
-    let maidenSpouseNameQ = KGTextField(placeholder: " Maiden Name ")
+//    let spouseNameQ = KGTextField(placeholder: " First Name of spouse ")
+//    let spouseSurenameQ = KGTextField(placeholder: " Name of spouse ")
+//    let maidenSpouseNameQ = KGTextField(placeholder: " Maiden Name ")
     let simpleText = KGTextLabel()
     let datePicker = UIDatePicker()
     let spouseNationality = KGTextField(placeholder: "Nationality of spouse")
     let backButton = KGButton(title: "<<- back")
     let nextButton = KGButton(title: "next ->>")
+    let defaults = UserDefaults.standard
+    var birthdayOfSpouse = String()
+    var nationalityOfSpouse = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -62,11 +66,11 @@ class Form6ViewController: UIViewController {
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
-        let selectedDate: String = dateFormatter.string(from: sender.date)
-        print(selectedDate)
+        birthdayOfSpouse = dateFormatter.string(from: sender.date)
     }
     func configQ6() {
         view.addSubview(spouseNationality)
+        nationalityOfSpouse = spouseNationality.text!
         spouseNationality.keyboardType = .alphabet
     }
     func configBackButton() {
@@ -82,6 +86,8 @@ class Form6ViewController: UIViewController {
     }
     @objc func saveDataAndGoNext() {
         let nextVC = Form7ViewController()
+        defaults.set(birthdayOfSpouse, forKey: "birthdayOfSpouse")
+        defaults.set(nationalityOfSpouse, forKey: "nationalityOfSpouse")
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }

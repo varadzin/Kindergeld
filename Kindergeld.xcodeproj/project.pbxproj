@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		09DBE02626D111F900218F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE02526D111F900218F87 /* AppDelegate.swift */; };
 		09DBE02826D111F900218F87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE02726D111F900218F87 /* SceneDelegate.swift */; };
-		09DBE03026D111F900218F87 /* Kindergeld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE02E26D111F900218F87 /* Kindergeld.xcdatamodeld */; };
 		09DBE03226D111FE00218F87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DBE03126D111FE00218F87 /* Assets.xcassets */; };
 		09DBE03526D111FE00218F87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DBE03326D111FE00218F87 /* LaunchScreen.storyboard */; };
 		09DBE03D26D113B100218F87 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DBE03C26D113B100218F87 /* StartViewController.swift */; };
@@ -45,7 +44,7 @@
 		3969A4B62767FB26003A7928 /* Form3ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */; };
 		39C59C93276BFBCB0013052D /* Form5ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */; };
 		39E4FCBD27810FF200B4A018 /* KGSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */; };
-		39E4FCBF278B28BB00B4A018 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4FCBE278B28BB00B4A018 /* SaveData.swift */; };
+		39EC8F5527DF143300DD6C0E /* SavedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC8F5427DF143300DD6C0E /* SavedData.swift */; };
 		39F54EBE2771E6D0007F46C4 /* PayDaysViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */; };
 		39F54EC427736D06007F46C4 /* StartViewController + Ext2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EC327736D06007F46C4 /* StartViewController + Ext2.swift */; };
 		39FA0827276D0D71006CDEE1 /* Form6ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FA0826276D0D71006CDEE1 /* Form6ViewController + Ext.swift */; };
@@ -70,7 +69,6 @@
 		09DBE02226D111F900218F87 /* Kindergeld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kindergeld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DBE02526D111F900218F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09DBE02726D111F900218F87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		09DBE02F26D111F900218F87 /* Kindergeld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kindergeld.xcdatamodel; sourceTree = "<group>"; };
 		09DBE03126D111FE00218F87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09DBE03426D111FE00218F87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09DBE03626D111FE00218F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,7 +105,7 @@
 		3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form3ViewController + Ext.swift"; sourceTree = "<group>"; };
 		39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form5ViewController + Ext.swift"; sourceTree = "<group>"; };
 		39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGSubtitle.swift; sourceTree = "<group>"; };
-		39E4FCBE278B28BB00B4A018 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		39EC8F5427DF143300DD6C0E /* SavedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedData.swift; sourceTree = "<group>"; };
 		39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PayDaysViewController + Ext.swift"; sourceTree = "<group>"; };
 		39F54EC327736D06007F46C4 /* StartViewController + Ext2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartViewController + Ext2.swift"; sourceTree = "<group>"; };
 		39FA0826276D0D71006CDEE1 /* Form6ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form6ViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				09DBE03126D111FE00218F87 /* Assets.xcassets */,
 				09DBE03326D111FE00218F87 /* LaunchScreen.storyboard */,
 				09DBE03626D111FE00218F87 /* Info.plist */,
-				09DBE02E26D111F900218F87 /* Kindergeld.xcdatamodeld */,
 			);
 			path = Kindergeld;
 			sourceTree = "<group>";
@@ -229,7 +226,7 @@
 		39E4FCC0278B28C200B4A018 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				39E4FCBE278B28BB00B4A018 /* SaveData.swift */,
+				39EC8F5427DF143300DD6C0E /* SavedData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,10 +347,8 @@
 				09DBE05126D29E6A00218F87 /* KGTextField.swift in Sources */,
 				39FA082B276D3A85006CDEE1 /* Form8ViewController + Ext.swift in Sources */,
 				3969A4AE2766857F003A7928 /* InfoViewController + Ext.swift in Sources */,
-				09DBE03026D111F900218F87 /* Kindergeld.xcdatamodeld in Sources */,
 				09DBE09326E4F60600218F87 /* FormVC11.swift in Sources */,
 				09DBE08526DECE4800218F87 /* Form6ViewController.swift in Sources */,
-				39E4FCBF278B28BB00B4A018 /* SaveData.swift in Sources */,
 				09DBE08326DEC9AB00218F87 /* Form5ViewController.swift in Sources */,
 				3969A4B0276691FF003A7928 /* KGHelpButton.swift in Sources */,
 				39FA0827276D0D71006CDEE1 /* Form6ViewController + Ext.swift in Sources */,
@@ -372,6 +367,7 @@
 				39F54EC427736D06007F46C4 /* StartViewController + Ext2.swift in Sources */,
 				09DBE08B26E1481700218F87 /* Form8ViewController.swift in Sources */,
 				09DBE04E26D2773A00218F87 /* MoreInfoViewController.swift in Sources */,
+				39EC8F5527DF143300DD6C0E /* SavedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,19 +563,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		09DBE02E26D111F900218F87 /* Kindergeld.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				09DBE02F26D111F900218F87 /* Kindergeld.xcdatamodel */,
-			);
-			currentVersion = 09DBE02F26D111F900218F87 /* Kindergeld.xcdatamodel */;
-			path = Kindergeld.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 09DBE01A26D111F900218F87 /* Project object */;
 }

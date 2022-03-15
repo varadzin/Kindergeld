@@ -19,6 +19,9 @@ class Form2ViewController: UIViewController {
     let shortText = KGTextLabel()
     let nextButton = KGButton(title: "next ->>")
     let backButton = KGButton(title: "<<- back")
+    var dateOfBirthApplicant = "Moj datum"
+    var placeOfBirthApplicant = "Moje mesto"
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -60,6 +63,7 @@ class Form2ViewController: UIViewController {
         view.addSubview(placeBirthQ)
         placeBirthQ.keyboardType = .alphabet
     }
+    
     func configSexQ() {
         shortText.text = "Person making application is:"
         shortText.textColor = .label
@@ -93,6 +97,11 @@ class Form2ViewController: UIViewController {
     }
     @objc func saveDataAndGoNext() {
         let nextVC = Form3ViewController()
+        dateOfBirthApplicant = dateBirthQ.text!
+        defaults.set(dateOfBirthApplicant, forKey: "dateOfBirthApplicant")
+        placeOfBirthApplicant = placeBirthQ.text!
+        defaults.set(placeOfBirthApplicant, forKey: "placeOfBirthApplicant")
+        defaults.set(sexOfApplicant, forKey: "sexOfApplicant")
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }

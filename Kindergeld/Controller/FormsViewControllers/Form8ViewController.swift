@@ -17,6 +17,13 @@ class Form8ViewController: UIViewController {
     let accountNameQ = KGTextField(placeholder: "Account holder")
     let nextButton = KGButton(title: "next ->>")
     let backButton = KGButton(title: "<<- back")
+    let defaults = UserDefaults.standard
+    var ibanApplicant = String()
+    var bicApplicant = String()
+    var bankName = String()
+    var accountName = String()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -54,14 +61,18 @@ class Form8ViewController: UIViewController {
     }
     func configQ8() {
         view.addSubview(ibanQ)
+        ibanApplicant = ibanQ.text!
         ibanQ.keyboardType = .numbersAndPunctuation
         view.addSubview(bicQ)
+        bicApplicant = bicQ.text!
         bicQ.keyboardType = .alphabet
     }
     func configQ9() {
         view.addSubview(bankNameQ)
+        bankName = bankNameQ.text!
         bankNameQ.keyboardType = .numbersAndPunctuation
         view.addSubview(accountNameQ)
+        accountName = accountNameQ.text!
         accountNameQ.keyboardType = .alphabet
     }
     func configNextButton() {
@@ -77,6 +88,10 @@ class Form8ViewController: UIViewController {
     }
     @objc func saveDataAndGoNext() {
         let nextVC = Form9ViewController()
+        defaults.set(ibanApplicant, forKey: "ibanApplicant")
+        defaults.set(bicApplicant, forKey: "bicApplicant")
+        defaults.set(accountName, forKey: "accountName")
+        defaults.set(bankName, forKey: "bankName")
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }

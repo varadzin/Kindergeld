@@ -15,6 +15,9 @@ class Form7ViewController: UIViewController {
     let addressQ2 = KGTextField(placeholder: "postcode, city, country")
     let nextButton = KGButton(title: "next ->>")
     let backButton = KGButton(title: "<<- back")
+    let defaults = UserDefaults.standard
+    var addressOfSpouse = String()
+    var cityOfSpouse = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -50,8 +53,10 @@ class Form7ViewController: UIViewController {
     }
     func configQ7() {
         view.addSubview(addressQ)
+        addressOfSpouse = addressQ.text!
         addressQ.keyboardType = .numbersAndPunctuation
         view.addSubview(addressQ2)
+        cityOfSpouse = addressQ2.text!
         addressQ2.keyboardType = .alphabet
     }
     func configNextButton() {
@@ -67,6 +72,8 @@ class Form7ViewController: UIViewController {
     }
     @objc func saveDataAndGoNext() {
         let nextVC = Form8ViewController()
+        defaults.set(addressOfSpouse, forKey: "addressOfSpouse")
+        defaults.set(cityOfSpouse, forKey: "cityOfSpouse")
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }

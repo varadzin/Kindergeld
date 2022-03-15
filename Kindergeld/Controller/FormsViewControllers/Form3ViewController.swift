@@ -16,6 +16,11 @@ class Form3ViewController: UIViewController {
     let addressQ2 = KGTextField(placeholder: "postcode, city, country")
     let nextButton = KGButton(title: "next ->>")
     let backButton = KGButton(title: "<<- back")
+    let defaults = UserDefaults.standard
+    var nationalityOfApplicant = String()
+    var addressOfApplicant = String()
+    var cityOfApplicant = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -51,10 +56,13 @@ class Form3ViewController: UIViewController {
     }
     func configQ3() {
         view.addSubview(nationalityQ)
+        nationalityOfApplicant = nationalityQ.text!
         nationalityQ.keyboardType = .numbersAndPunctuation
         view.addSubview(addressQ)
+        addressOfApplicant = addressQ.text!
         addressQ.keyboardType = .alphabet
         view.addSubview(addressQ2)
+        cityOfApplicant = addressQ2.text!
         addressQ2.keyboardType = .alphabet
     }
     func configNextButton() {
@@ -69,7 +77,16 @@ class Form3ViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @objc func saveDataAndGoNext() {
+        defaults.set(nationalityOfApplicant, forKey: "nationalityOfApplicant")
+        defaults.set(addressOfApplicant, forKey: "addressOfApplicant")
+        defaults.set(cityOfApplicant, forKey: "cityOfApplicant")
         let nextVC = Form4ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
         }
+}
+extension Form3ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        saveDataAndGoNext()
+        return true
     }
+}

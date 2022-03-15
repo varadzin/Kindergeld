@@ -15,6 +15,9 @@ class Form4ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     let pickerArray = ["single", "married", "divorced", "widowed", "living in reg.civil partnership", "perm.separated"]
     let pickerView = UIPickerView()
     let sinceQ = KGTextField(placeholder: "Since:")
+    let defaults = UserDefaults.standard
+    var famillyStausApplicant = String()
+    var famillyStatusSince = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -98,6 +101,7 @@ class Form4ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let row = pickerArray[row]
+   famillyStausApplicant = row
         return row
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow pickedItem: Int, inComponent: Int) {
@@ -110,6 +114,7 @@ class Form4ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     func configQ4() {
         view.addSubview(sinceQ)
+        famillyStatusSince = sinceQ.text!
         sinceQ.keyboardType = .numbersAndPunctuation
         NSLayoutConstraint.activate([
             sinceQ.topAnchor.constraint(equalTo: pickerView.bottomAnchor, constant: 5),
@@ -145,6 +150,14 @@ class Form4ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     @objc func saveDataAndGoNext() {
         let nextVC = Form5ViewController()
+        defaults.set(famillyStausApplicant, forKey: "famillyStausApplicant")
+        defaults.set(famillyStatusSince, forKey: "famillyStatusSince")
         navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+extension Form4ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        saveDataAndGoNext()
+        return true
     }
 }

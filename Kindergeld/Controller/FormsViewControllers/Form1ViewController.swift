@@ -5,14 +5,10 @@
 //  Created by Frantisek Varadzin on 21/08/2021.
 //
 ///
-/// In this View will User enter name, surename and maiden name and save it in Core data
+/// In this View will User enter name, surename and maiden name and save it 
 ///
 import UIKit
-protocol SaveEnteredInfosDelegate {
-    func saveApplicant(applicantFirstName: String, applicantSureName: String, applicantMaidenName: String )
-}
 class Form1ViewController: UIViewController {
-    var selectionDelegate: SaveEnteredInfosDelegate! = nil
     let titleKG = KGTitle()
     let subTitle = KGSubTitle()
     let helpButton = KGHelpButton(title: "        Help")
@@ -20,6 +16,8 @@ class Form1ViewController: UIViewController {
     let surenameQ = KGTextField(placeholder: " Name ")
     let maidenNameQ = KGTextField(placeholder: " Maiden name / name from former marriage ")
     let nextButton = KGButton(title: "next ->>")
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -71,10 +69,14 @@ class Form1ViewController: UIViewController {
         var applicantMaidenName: String?
         guard nameQ.text != nil else { return }
         applicantFirstName = nameQ.text!
+        defaults.set(applicantFirstName, forKey: "applicantFirstName")
+        // Saving First Name of Applicant into UserDefaults
         guard surenameQ.text != nil else { return }
         applicantSureName = surenameQ.text!
+        defaults.set(applicantSureName, forKey: "applicantSureName")
         guard maidenNameQ.text != nil else { return }
         applicantMaidenName = maidenNameQ.text!
+        defaults.set(applicantMaidenName, forKey: "applicantMaidenName")
         print(applicantFirstName!, applicantSureName!, applicantMaidenName!)
         let nextVC = Form2ViewController()
         navigationController?.pushViewController(nextVC, animated: true)

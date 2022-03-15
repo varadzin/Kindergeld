@@ -16,6 +16,7 @@ class Form5ViewController: UIViewController {
     let maidenSpouseNameQ = KGTextField(placeholder: " Maiden name or name from former marriage ")
     let backButton = KGButton(title: "<<- back")
     let nextButton = KGButton(title: "next ->>")
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -74,10 +75,13 @@ class Form5ViewController: UIViewController {
         var maidenNameSpouse: String?
         guard spouseNameQ.text != nil else { return }
         nameSpouse = spouseNameQ.text!
+        defaults.set(nameSpouse, forKey: "nameSpouse")
         guard spouseSurenameQ.text != nil else { return }
         sureNameSpouse = spouseSurenameQ.text!
+        defaults.set(sureNameSpouse, forKey: "sureNameSpouse")
         guard maidenSpouseNameQ.text != nil else { return }
         maidenNameSpouse = maidenSpouseNameQ.text!
+        defaults.set(maidenNameSpouse, forKey: "maidenNameSpouse")
         print(nameSpouse!, sureNameSpouse!, maidenNameSpouse!)
         let nextVC = Form6ViewController()
         navigationController?.pushViewController(nextVC, animated: true)
