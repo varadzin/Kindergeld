@@ -36,6 +36,18 @@ class Form9ViewController: UIViewController {
     let labelThirdChild = UILabel()
     let labelFourthChild = UILabel()
     let scrollView = UIScrollView()
+    var nameOfFirstKidValue = String()
+    var sureNameOfFirstKidValue = String()
+    var nameOfSecondKidValue = String()
+    var sureNameOfSecondKidValue = String()
+    var nameOfThirdKidValue = String()
+    var sureNameOfThirdKidValue = String()
+    var nameOfFourthKidValue = String()
+    var sureNameOfFourthKidValue = String()
+    let defaults = UserDefaults.standard
+    let nextButton = KGButton(title: "next ->>")
+    let backButton = KGButton(title: "<<- back")
+    var positionOfNextButton = CGFloat()
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -46,7 +58,12 @@ class Form9ViewController: UIViewController {
         configNumberOfKids()
         show1KidOnly()
         layoutForm9ViewController()
+        configNextButton()
+        configBackButton()
+        layoutForm9ViewControllerB()
     }
+    
+    
     func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
@@ -78,13 +95,16 @@ class Form9ViewController: UIViewController {
         configNameOfFirstKid()
         configBoyGirlSegController1()
         hide2and3and4Kid()
+        positionOfNextButton = 25 // Defines positions of Back and Next Buttons, with regard of amout of kids
     }
     func show1_2Kids() {
         configNameOfSecondKid()
         configBoyGirlSegController2()
         unhide2Kid()
         hide3and4Kid()
-    }
+        positionOfNextButton = 160
+    
+        }
     func show1_2_3Kids() {
         configNameOfSecondKid()
         configBoyGirlSegController2()
@@ -130,10 +150,12 @@ class Form9ViewController: UIViewController {
         case 0:
             nOfKids = "1"
             hide2and3and4Kid()
+            
         case 1:
             nOfKids = "2"
             show1_2Kids()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 200)
+         
         case 2:
             nOfKids = "3"
             show1_2_3Kids()
@@ -184,5 +206,46 @@ class Form9ViewController: UIViewController {
         nameOfFourthKid.isHidden = false
         sureNameOfFourthKid.isHidden = false
         boyGirlFourthSegController.isHidden = false
+    }
+    func configNextButton() {
+        view.addSubview(nextButton)
+        nextButton.addTarget(self, action: #selector(saveDataAndGoNext), for: .touchUpInside)
+    }
+    func configBackButton() {
+        view.addSubview(backButton)
+        backButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+    }
+    @objc func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+    @objc func saveDataAndGoNext() {
+        let nextVC = Form9ViewController()
+        // Saving first and surename of all four Kids into user.defaults
+        nameOfFirstKidValue = nameOfFirstKid.text!
+        defaults.set(nameOfFirstKidValue, forKey: "nameOfFirstKidValue")
+        sureNameOfFirstKidValue = sureNameOfFirstKid.text!
+        defaults.set(sureNameOfFirstKidValue, forKey: "sureNameOfFirstKidValue")
+        nameOfSecondKidValue = nameOfSecondKid.text!
+        defaults.set(nameOfSecondKidValue, forKey: "nameOfSecondKidValue")
+        sureNameOfSecondKidValue = sureNameOfSecondKid.text!
+        defaults.set(sureNameOfSecondKidValue, forKey: "sureNameOfSecondKidValue")
+        nameOfThirdKidValue = nameOfThirdKid.text!
+        defaults.set(nameOfThirdKidValue, forKey: "nameOfThirdKidValue")
+        sureNameOfThirdKidValue = sureNameOfThirdKid.text!
+        defaults.set(sureNameOfThirdKidValue, forKey: "sureNameOfThirdKidValue")
+        nameOfFourthKidValue = nameOfFourthKid.text!
+        defaults.set(nameOfFourthKidValue, forKey: "nameOfFourthKidValue")
+        sureNameOfFourthKidValue = sureNameOfFourthKid.text!
+        defaults.set(sureNameOfFourthKidValue, forKey: "sureNameOfFourthKidValue")
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+
+
+
+extension Form9ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        saveDataAndGoNext()
+        return true
     }
 }

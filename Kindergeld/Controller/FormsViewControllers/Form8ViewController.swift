@@ -22,8 +22,6 @@ class Form8ViewController: UIViewController {
     var bicApplicant = String()
     var bankName = String()
     var accountName = String()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()

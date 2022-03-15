@@ -225,4 +225,20 @@ extension Form9ViewController {
             sexOfFourthChild = "Boy"
         }
     }
+    
+    func layoutForm9ViewControllerB() {
+        NSLayoutConstraint.activate([
+            nextButton.topAnchor.constraint(equalTo: sureNameOfFirstKid.bottomAnchor, constant: positionOfNextButton),
+            nextButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 200),
+            nextButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
+            nextButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        NSLayoutConstraint.activate([
+            backButton.topAnchor.constraint(equalTo: sureNameOfFirstKid.bottomAnchor, constant: positionOfNextButton),
+            backButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            backButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -200),
+            backButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
 }
