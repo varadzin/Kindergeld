@@ -62,8 +62,6 @@ class Form9ViewController: UIViewController {
         configBackButton()
         layoutForm9ViewControllerB()
     }
-    
-    
     func configViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.isNavigationBarHidden = true
@@ -103,8 +101,7 @@ class Form9ViewController: UIViewController {
         unhide2Kid()
         hide3and4Kid()
         positionOfNextButton = 160
-    
-        }
+    }
     func show1_2_3Kids() {
         configNameOfSecondKid()
         configBoyGirlSegController2()
@@ -150,12 +147,10 @@ class Form9ViewController: UIViewController {
         case 0:
             nOfKids = "1"
             hide2and3and4Kid()
-            
         case 1:
             nOfKids = "2"
             show1_2Kids()
             scrollView.contentSize =  CGSize(width: view.frame.width, height: view.frame.height + 200)
-         
         case 2:
             nOfKids = "3"
             show1_2_3Kids()
@@ -240,9 +235,6 @@ class Form9ViewController: UIViewController {
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
-
-
-
 extension Form9ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         saveDataAndGoNext()
