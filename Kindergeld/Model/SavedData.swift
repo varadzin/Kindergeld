@@ -4,7 +4,7 @@
 //
 //  Created by Frantisek Varadzin on 14.03.22.
 //
+///
+/// applicantFirstName, applicantSureName, applicantMaidenName - saved here
 
 import Foundation
-/// Saved Strings:
-/// applicantFirstName, applicantSureName, applicantMaidenName
