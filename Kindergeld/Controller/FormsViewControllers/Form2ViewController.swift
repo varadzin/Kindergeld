@@ -63,7 +63,6 @@ class Form2ViewController: UIViewController {
         view.addSubview(placeBirthQ)
         placeBirthQ.keyboardType = .alphabet
     }
-    
     func configSexQ() {
         shortText.text = "Person making application is:"
         shortText.textColor = .label

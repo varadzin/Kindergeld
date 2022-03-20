@@ -43,6 +43,9 @@
 		3969A4B42767F312003A7928 /* Form2ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B32767F312003A7928 /* Form2ViewController + Ext.swift */; };
 		3969A4B62767FB26003A7928 /* Form3ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */; };
 		39C59C93276BFBCB0013052D /* Form5ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */; };
+		39DF27FC27E74C680088E684 /* KGTextSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF27FB27E74C680088E684 /* KGTextSK.swift */; };
+		39DF27FE27E753500088E684 /* KGTextGE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF27FD27E753500088E684 /* KGTextGE.swift */; };
+		39DF280027E753A10088E684 /* KGTextEN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF27FF27E753A10088E684 /* KGTextEN.swift */; };
 		39E4FCBD27810FF200B4A018 /* KGSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */; };
 		39EC8F5527DF143300DD6C0E /* SavedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EC8F5427DF143300DD6C0E /* SavedData.swift */; };
 		39F54EBE2771E6D0007F46C4 /* PayDaysViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */; };
@@ -104,6 +107,9 @@
 		3969A4B32767F312003A7928 /* Form2ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form2ViewController + Ext.swift"; sourceTree = "<group>"; };
 		3969A4B52767FB26003A7928 /* Form3ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form3ViewController + Ext.swift"; sourceTree = "<group>"; };
 		39C59C92276BFBCB0013052D /* Form5ViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form5ViewController + Ext.swift"; sourceTree = "<group>"; };
+		39DF27FB27E74C680088E684 /* KGTextSK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGTextSK.swift; sourceTree = "<group>"; };
+		39DF27FD27E753500088E684 /* KGTextGE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGTextGE.swift; sourceTree = "<group>"; };
+		39DF27FF27E753A10088E684 /* KGTextEN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGTextEN.swift; sourceTree = "<group>"; };
 		39E4FCBC27810FF200B4A018 /* KGSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGSubtitle.swift; sourceTree = "<group>"; };
 		39EC8F5427DF143300DD6C0E /* SavedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedData.swift; sourceTree = "<group>"; };
 		39F54EBD2771E6D0007F46C4 /* PayDaysViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PayDaysViewController + Ext.swift"; sourceTree = "<group>"; };
@@ -227,6 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				39EC8F5427DF143300DD6C0E /* SavedData.swift */,
+				39DF27FB27E74C680088E684 /* KGTextSK.swift */,
+				39DF27FD27E753500088E684 /* KGTextGE.swift */,
+				39DF27FF27E753A10088E684 /* KGTextEN.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 				39132198277B6CE300542343 /* Form9ViewController.swift in Sources */,
 				09DBE04A26D15DF000218F87 /* OutputViewController.swift in Sources */,
 				09DBE05526D8070F00218F87 /* LanguageViewController.swift in Sources */,
+				39DF27FE27E753500088E684 /* KGTextGE.swift in Sources */,
 				09DBE07D26DBCF5000218F87 /* Form2ViewController.swift in Sources */,
 				3969A4B22766984B003A7928 /* Form1ViewController + Ext.swift in Sources */,
 				3969A4A527664AE0003A7928 /* StartViewController + Ext1.swift in Sources */,
@@ -346,11 +356,13 @@
 				3969A4B42767F312003A7928 /* Form2ViewController + Ext.swift in Sources */,
 				09DBE05126D29E6A00218F87 /* KGTextField.swift in Sources */,
 				39FA082B276D3A85006CDEE1 /* Form8ViewController + Ext.swift in Sources */,
+				39DF280027E753A10088E684 /* KGTextEN.swift in Sources */,
 				3969A4AE2766857F003A7928 /* InfoViewController + Ext.swift in Sources */,
 				09DBE09326E4F60600218F87 /* FormVC11.swift in Sources */,
 				09DBE08526DECE4800218F87 /* Form6ViewController.swift in Sources */,
 				09DBE08326DEC9AB00218F87 /* Form5ViewController.swift in Sources */,
 				3969A4B0276691FF003A7928 /* KGHelpButton.swift in Sources */,
+				39DF27FC27E74C680088E684 /* KGTextSK.swift in Sources */,
 				39FA0827276D0D71006CDEE1 /* Form6ViewController + Ext.swift in Sources */,
 				3969A4B62767FB26003A7928 /* Form3ViewController + Ext.swift in Sources */,
 				09DBE07926DA837A00218F87 /* KGTextLabel.swift in Sources */,

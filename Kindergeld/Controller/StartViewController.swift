@@ -18,6 +18,8 @@ class StartViewController: UIViewController {
     let GELabel = UILabel()
     let GBButton = UIButton()
     let GBLabel = UILabel()
+    let defaults = UserDefaults.standard
+    var selectedLanguage = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
@@ -57,7 +59,7 @@ class StartViewController: UIViewController {
         // Setting Button - SlovakiaFlag - chosed Slovak Language
         view.addSubview(SKButton)
         SKButton.setBackgroundImage(UIImage(named: "SlovakiaFlag"), for: .normal)
-        SKButton.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
+        SKButton.addTarget(self, action: #selector(goToInfoVCSlovak), for: .touchUpInside)
         view.addSubview(SKLabel)
         SKLabel.text = "Slovensky"
         SKLabel.textColor = .label
@@ -65,7 +67,7 @@ class StartViewController: UIViewController {
         // Setting Button - GEFlag - chosed Germany Language
         view.addSubview(GEButton)
         GEButton.setBackgroundImage(UIImage(named: "GermanyFlag"), for: .normal)
-        GEButton.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
+        GEButton.addTarget(self, action: #selector(goToInfoVCGerman), for: .touchUpInside)
         view.addSubview(GELabel)
         GELabel.text = "Deutsch"
         GELabel.textColor = .label
@@ -73,13 +75,27 @@ class StartViewController: UIViewController {
         // Setting Button - GBFlag - chosed English Language
         view.addSubview(GBButton)
         GBButton.setBackgroundImage(UIImage(named: "GBFlag"), for: .normal)
-        GBButton.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
+        GBButton.addTarget(self, action: #selector(goToInfoVCEnglish), for: .touchUpInside)
         view.addSubview(GBLabel)
         GBLabel.text = "English"
         GBLabel.textColor = .label
         GBLabel.font = UIFont(name: "Times New Roman", size: 14)
     }
-    @objc func goToInfoVC() {
+    @objc func goToInfoVCSlovak() {
+        selectedLanguage = "slovak"
+        defaults.set(selectedLanguage, forKey: "selectedLanguage")
+        navigationController?.pushViewController(CustomTabBar(), animated: true)
+    }
+    
+    @objc func goToInfoVCGerman() {
+        selectedLanguage = "german"
+        defaults.set(selectedLanguage, forKey: "selectedLanguage")
+        navigationController?.pushViewController(CustomTabBar(), animated: true)
+    }
+    
+    @objc func goToInfoVCEnglish() {
+        selectedLanguage = "english"
+        defaults.set(selectedLanguage, forKey: "selectedLanguage")
         navigationController?.pushViewController(CustomTabBar(), animated: true)
     }
 }
