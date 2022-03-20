@@ -31,37 +31,32 @@ class InfoViewController: UIViewController {
         case "slovak":
             titleKG.text = KGTextSK().infoViewTitleSK
             subTitle.text = KGTextSK().infoViewSubtitleSK
+            textField.text = KGTextSK().infoViewMainTextSK
         case "german":
             titleKG.text = KGTextGE().infoViewTitleGE
             subTitle.text = KGTextGE().infoViewSubtitleGE
+            textField.text = KGTextGE().infoViewMainTextGE
         default:
             titleKG.text = KGTextEN().infoViewTitleEN
             subTitle.text = KGTextEN().infoViewSubtitleEN
+            textField.text = KGTextEN().infoViewMainTextEN
         }
     }
     func configViewController() {
         view.backgroundColor = .systemBackground
+        navigationController?.isNavigationBarHidden = true
     }
     func configTitle() {
         view.addSubview(titleKG)
-//        titleKG.text = "Kindergeld - Child benefit"
     }
     func configSubTitle() {
         view.addSubview(subTitle)
-//        subTitle.text = "How can this App help you:"
     }
     func configTextField() {
         view.addSubview(textField)
         textField.font = UIFont(name: "Times New Roman", size: 18)
         textField.numberOfLines = 0
         textField.textAlignment = .center
-        textField.text = """
-With this App you can easily fill the Application for Child benefit in Germany.
-Enter all informations, answer all questions and when you are done just print the Application.
-If you are not sure with answer, please find HELP in top right corner.
-You agree that by using this App you have read, understood,
-and agree to be bound by all of these Terms and Conditions Use.
-"""
     }
     func configNextBtn() {
         view.addSubview(startButton)

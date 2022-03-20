@@ -11,22 +11,56 @@ import UIKit
 class Form1ViewController: UIViewController {
     let titleKG = KGTitle()
     let subTitle = KGSubTitle()
-    let helpButton = KGHelpButton(title: "        Help")
-    let nameQ = KGTextField(placeholder: " First name ")
-    let surenameQ = KGTextField(placeholder: " Name ")
-    let maidenNameQ = KGTextField(placeholder: " Maiden name / name from former marriage ")
-    let nextButton = KGButton(title: "next ->>")
+    var helpButton = KGHelpButton(title: String())
+    var nameQ = KGTextField(placeholder: String())
+    var surenameQ = KGTextField(placeholder: String())
+    var maidenNameQ = KGTextField(placeholder: String())
+    var nextButton = KGButton(title: String())
+    var selectedLanguage = String()
+    var helpTitle = String()
     let defaults = UserDefaults.standard
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
+        useSelectedLanguage()
         configHelpBtn()
-        configTitle()
+      configTitle()
         configSubTitle()
         configQ1()
         configNextButton()
         layoutForm1ViewController()
+    }
+    func useSelectedLanguage() {
+        selectedLanguage = defaults.string(forKey: "selectedLanguage")!
+        switch selectedLanguage {
+        case "slovak":
+            titleKG.text = KGTextSK().form1TitleSK
+            subTitle.text = KGTextSK().form1SubtitleSK
+            helpButton = KGHelpButton(title: KGTextSK().helpButtonTitleSK)
+            helpTitle = KGTextSK().helpTitleSK
+            nameQ = KGTextField(placeholder: KGTextSK().firstNameSK)
+            surenameQ = KGTextField(placeholder: KGTextSK().sureNameSK)
+            maidenNameQ = KGTextField(placeholder: KGTextSK().maidenNameSK)
+            nextButton = KGButton(title: KGTextSK().nextSK)
+        case "german":
+            titleKG.text = KGTextGE().form1TitleGE
+            subTitle.text = KGTextGE().form1SubtitleGE
+            helpButton = KGHelpButton(title: KGTextGE().helpButtonTitleGE)
+            helpTitle = KGTextGE().helpTitleGE
+            nameQ = KGTextField(placeholder: KGTextGE().firstNameGE)
+            surenameQ = KGTextField(placeholder: KGTextGE().sureNameGE)
+            maidenNameQ = KGTextField(placeholder: KGTextGE().maidenNameGE)
+            nextButton = KGButton(title: KGTextGE().nextGE)
+        default:
+            titleKG.text = KGTextEN().form1TitleEN
+            subTitle.text = KGTextEN().form1SubtitleEN
+            helpButton = KGHelpButton(title: KGTextEN().helpButtonTitleEN)
+            helpTitle = KGTextEN().helpTitleEN
+            nameQ = KGTextField(placeholder: KGTextEN().firstNameEN)
+            surenameQ = KGTextField(placeholder: KGTextEN().sureNameEN)
+            maidenNameQ = KGTextField(placeholder: KGTextEN().maidenNameEN)
+            nextButton = KGButton(title: KGTextEN().nextEN)
+        }
     }
     func configViewController() {
         view.backgroundColor = .systemBackground
@@ -39,15 +73,13 @@ class Form1ViewController: UIViewController {
     }
     func configTitle() {
         view.addSubview(titleKG)
-        titleKG.text = "Application for Child Benefit"
-    }
+       }
     func configSubTitle() {
         view.addSubview(subTitle)
-        subTitle.text = "Details of person making application"
-    }
+       }
     @objc func showExplanation() {
         let destVC = KGExplainViewController()
-        destVC.title = "Help"
+        destVC.title = helpTitle
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }

@@ -12,11 +12,17 @@ class KGTextGE {
     let infoViewSubtitleGE = "Wie kann Dir diese App helfen:"
     let infoViewMainTextGE = """
     Mit dieser App kannstu Du einfach den Antrag für Kindergeld ausfüllen.
-    Träg alle Informationen ein, beantworte alle Fragen
-    With this App you can easily fill the Application for Child benefit in Germany.
-    Enter all informations, answer all questions and when you are done just print the Application.
-    If you are not sure with answer, please find HELP in top right corner.
-    You agree that by using this App you have read, understood,
-    and agree to be bound by all of these Terms and Conditions Use.
-    """
+    Träg alle Informationen ein, beantworte alle Fragen und wenn Du fertig bist, einfach drucke den Antrag aus.
+    Wenn Du mit Antworten nicht sicher bist, nutze die Hilfe rechts oben.
+    Mit der Nutzung der App bestätigst Du, dass du die Bedigungen gelesen hast, Du verstehst und bist Du mit damit einverstanden.
+   """
+    // Form 1
+    let form1TitleGE = "Antrag auf Kindergeld"
+    let form1SubtitleGE = "Angaben zur antragstellenden Person"
+    let helpButtonTitleGE = "Hilfe"
+    let helpTitleGE = "Hilfe"
+    let firstNameGE = "Vorname"
+    let sureNameGE = "Familienname"
+    let maidenNameGE = " Geburtsname / Familienname aus früherer Ehe "
+    let nextGE = "weiter ->>"
     }

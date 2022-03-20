@@ -18,7 +18,7 @@ class KGExplainViewController: UIViewController {
         configDoneButton()
     }
     func configDoneButton() {
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = doneButton
         }
     @objc func dismissViewController() {
