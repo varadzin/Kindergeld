@@ -24,5 +24,8 @@ let helpButtonTitleSK = "Nápoveda"
     let sureNameSK = "Priezvisko"
     let maidenNameSK = "Rodné meno - meno za slobodna"
     let nextSK = "ďalej ->>"
+    let backSK = "<<- späť"
+    let manSK = "Muž"
+    let womanSK = "Žena"
 
 }

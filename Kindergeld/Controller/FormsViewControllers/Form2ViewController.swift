@@ -20,13 +20,16 @@ class Form2ViewController: UIViewController {
     var helpTitle = String()
     var nextButton = KGButton(title: String())
     var backButton = KGButton(title: String())
-    var dateOfBirthApplicant = "Moj datum"
-    var placeOfBirthApplicant = "Moje mesto"
+    var dateOfBirthApplicant = String()
+    var placeOfBirthApplicant = String()
     let defaults = UserDefaults.standard
     var selectedLanguage = String()
+    var man = String()
+    var woman = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
+        useSelectedLanguage()
         configHelpBtn()
         configTitle()
         configSubTitle()
@@ -45,21 +48,28 @@ class Form2ViewController: UIViewController {
             subTitle.text = KGTextSK().form1SubtitleSK
             helpButton = KGHelpButton(title: KGTextSK().helpButtonTitleSK)
             helpTitle = KGTextSK().helpTitleSK
-         
+         backButton = KGButton(title: KGTextSK().backSK)
             nextButton = KGButton(title: KGTextSK().nextSK)
+            woman = KGTextSK().womanSK
+            man = KGTextSK().manSK
         case "german":
             titleKG.text = KGTextGE().form1TitleGE
             subTitle.text = KGTextGE().form1SubtitleGE
             helpButton = KGHelpButton(title: KGTextGE().helpButtonTitleGE)
             helpTitle = KGTextGE().helpTitleGE
-            
+            backButton = KGButton(title: KGTextGE().backGE)
             nextButton = KGButton(title: KGTextGE().nextGE)
+            woman = KGTextGE().womanGE
+            man = KGTextGE().manGE
         default:
             titleKG.text = KGTextEN().form1TitleEN
             subTitle.text = KGTextEN().form1SubtitleEN
             helpButton = KGHelpButton(title: KGTextEN().helpButtonTitleEN)
             helpTitle = KGTextEN().helpTitleEN
             nextButton = KGButton(title: KGTextEN().nextEN)
+            backButton = KGButton(title: KGTextEN().backEN)
+            woman = KGTextEN().womanEN
+            man = KGTextEN().manEN
         }
     }
     func configViewController() {
@@ -72,15 +82,14 @@ class Form2ViewController: UIViewController {
     }
     func configTitle() {
         view.addSubview(titleKG)
-        titleKG.text = "Application for Child Benefit"
-    }
+        }
     func configSubTitle() {
         view.addSubview(subTitle)
-        subTitle.text = "Details of person making application"
+        
     }
     @objc func showExplanation() {
         let destVC = KGExplainViewController()
-        destVC.title = "Help"
+        destVC.title = helpTitle
         let navCon = UINavigationController(rootViewController: destVC)
         present(navCon, animated: true)
     }
@@ -94,7 +103,7 @@ class Form2ViewController: UIViewController {
         shortText.text = "Person making application is:"
         shortText.textColor = .label
         view.addSubview(shortText)
-        let items = ["Man", "Woman"]
+        let items = [man, woman]
         segController = UISegmentedControl(items: items)
         segController.selectedSegmentIndex = 0
         segController.addTarget(self, action: #selector(saveSex), for: .valueChanged)

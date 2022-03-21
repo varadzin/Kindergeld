@@ -26,4 +26,7 @@ and agree to be bound by all of these Terms and Conditions Use.
     let sureNameEN = "Surename"
     let maidenNameEN = " Maiden name / name from former marriage "
     let nextEN = "next ->>"
+    let backEN = "<<- back"
+    let manEN = "Man"
+    let womanEN = "Woman"
 }

@@ -25,4 +25,7 @@ class KGTextGE {
     let sureNameGE = "Familienname"
     let maidenNameGE = " Geburtsname / Familienname aus früherer Ehe "
     let nextGE = "weiter ->>"
+    let backGE = "<<- zurück"
+    let manGE = "Mann"
+    let womanGE = "Frau"
     }
