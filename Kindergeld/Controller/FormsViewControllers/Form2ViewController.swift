@@ -12,11 +12,12 @@ class Form2ViewController: UIViewController {
     let titleKG = KGTitle()
     let subTitle = KGSubTitle()
     var helpButton = KGHelpButton(title: String())
-    let dateBirthQ = KGTextField(placeholder: " Day of birth - DD.MM.RRRR ")
-    let placeBirthQ = KGTextField(placeholder: " Place of birth")
+    var dateBirthQ = KGTextField(placeholder: String())
+    var placeBirthQ = KGTextField(placeholder: String())
     var sexOfApplicant: String?
     var segController = UISegmentedControl()
-    let shortText = KGTextLabel()
+    let shortTextLabel = KGTextLabel()
+    var shortText = String()
     var helpTitle = String()
     var nextButton = KGButton(title: String())
     var backButton = KGButton(title: String())
@@ -52,6 +53,9 @@ class Form2ViewController: UIViewController {
             nextButton = KGButton(title: KGTextSK().nextSK)
             woman = KGTextSK().womanSK
             man = KGTextSK().manSK
+            dateBirthQ = KGTextField(placeholder: KGTextSK().dateOfBirthApplicantSK)
+            placeBirthQ = KGTextField(placeholder: KGTextSK().placeOfBirthApplicantSK)
+            shortText = KGTextSK().shortTextSK
         case "german":
             titleKG.text = KGTextGE().form1TitleGE
             subTitle.text = KGTextGE().form1SubtitleGE
@@ -61,6 +65,9 @@ class Form2ViewController: UIViewController {
             nextButton = KGButton(title: KGTextGE().nextGE)
             woman = KGTextGE().womanGE
             man = KGTextGE().manGE
+            dateBirthQ = KGTextField(placeholder: KGTextGE().dateOfBirthApplicantGE)
+            placeBirthQ = KGTextField(placeholder: KGTextGE().placeOfBirthApplicantGE)
+            shortText = KGTextGE().shortTextGE
         default:
             titleKG.text = KGTextEN().form1TitleEN
             subTitle.text = KGTextEN().form1SubtitleEN
@@ -70,6 +77,9 @@ class Form2ViewController: UIViewController {
             backButton = KGButton(title: KGTextEN().backEN)
             woman = KGTextEN().womanEN
             man = KGTextEN().manEN
+            dateBirthQ = KGTextField(placeholder: KGTextEN().dateOfBirthApplicantEN)
+            placeBirthQ = KGTextField(placeholder: KGTextEN().placeOfBirthApplicantEN)
+            shortText = KGTextEN().shortTextEN
         }
     }
     func configViewController() {
@@ -100,9 +110,10 @@ class Form2ViewController: UIViewController {
         placeBirthQ.keyboardType = .alphabet
     }
     func configSexQ() {
-        shortText.text = "Person making application is:"
-        shortText.textColor = .label
-        view.addSubview(shortText)
+        shortTextLabel.text = shortText
+        shortTextLabel.textColor = .label
+        shortTextLabel.adjustsFontSizeToFitWidth = true
+        view.addSubview(shortTextLabel)
         let items = [man, woman]
         segController = UISegmentedControl(items: items)
         segController.selectedSegmentIndex = 0

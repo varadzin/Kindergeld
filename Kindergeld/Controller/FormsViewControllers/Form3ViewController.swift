@@ -8,22 +8,28 @@
 import UIKit
 
 class Form3ViewController: UIViewController {
-    let helpButton = KGHelpButton(title: "        Help")
+    var helpButton = KGHelpButton(title: String())
     let titleKG = KGTitle()
     let subTitle = KGSubTitle()
-    let nationalityQ = KGTextField(placeholder: "Nationality")
-    let addressQ = KGTextField(placeholder: "Street, house number")
-    let addressQ2 = KGTextField(placeholder: "postcode, city, country")
-    let nextButton = KGButton(title: "next ->>")
-    let backButton = KGButton(title: "<<- back")
+    var nationalityQ = KGTextField(placeholder: String())
+    var nationalityPlaceholder = String()
+    var addressQ = KGTextField(placeholder: String())
+    var addressQPlaceholder = String()
+    var addressQ2 = KGTextField(placeholder: String())
+    var addressQ2Placeholder = String()
+    var nextButton = KGButton(title: String())
+    var backButton = KGButton(title: String())
     let defaults = UserDefaults.standard
     var nationalityOfApplicant = String()
     var addressOfApplicant = String()
     var cityOfApplicant = String()
+    var selectedLanguage = String()
+    var helpTitle = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewController()
+        useSelectedLanguage()
         configHelpBtn()
         configTitle()
         configSubTitle()
@@ -31,6 +37,37 @@ class Form3ViewController: UIViewController {
         configBackButton()
         configNextButton()
         layoutForm3ViewController()
+    }
+    func useSelectedLanguage() {
+        selectedLanguage = defaults.string(forKey: "selectedLanguage")!
+        switch selectedLanguage {
+        case "slovak":
+            titleKG.text = KGTextSK().form1TitleSK
+            subTitle.text = KGTextSK().form1SubtitleSK
+            helpButton = KGHelpButton(title: KGTextSK().helpButtonTitleSK)
+            helpTitle = KGTextSK().helpTitleSK
+         backButton = KGButton(title: KGTextSK().backSK)
+            nextButton = KGButton(title: KGTextSK().nextSK)
+        
+            nationalityQ = KGTextField(placeholder: KGTextSK().nationalitySK)
+         
+        case "german":
+            titleKG.text = KGTextGE().form1TitleGE
+            subTitle.text = KGTextGE().form1SubtitleGE
+            helpButton = KGHelpButton(title: KGTextGE().helpButtonTitleGE)
+            helpTitle = KGTextGE().helpTitleGE
+            backButton = KGButton(title: KGTextGE().backGE)
+            nextButton = KGButton(title: KGTextGE().nextGE)
+          
+        default:
+            titleKG.text = KGTextEN().form1TitleEN
+            subTitle.text = KGTextEN().form1SubtitleEN
+            helpButton = KGHelpButton(title: KGTextEN().helpButtonTitleEN)
+            helpTitle = KGTextEN().helpTitleEN
+            nextButton = KGButton(title: KGTextEN().nextEN)
+            backButton = KGButton(title: KGTextEN().backEN)
+          
+        }
     }
     func configViewController() {
         view.backgroundColor = .systemBackground

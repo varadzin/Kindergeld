@@ -17,7 +17,7 @@ If you are not sure with answer, please find HELP in top right corner.
 You agree that by using this App you have read, understood,
 and agree to be bound by all of these Terms and Conditions Use.
 """
-    // Form 1
+    // Forms
     let form1TitleEN = "Application for Child Benefit"
     let form1SubtitleEN = "Details of person making application"
     let helpButtonTitleEN = "Help"
@@ -29,4 +29,10 @@ and agree to be bound by all of these Terms and Conditions Use.
     let backEN = "<<- back"
     let manEN = "Man"
     let womanEN = "Woman"
+    let dateOfBirthApplicantEN = " Day of birth - DD.MM.RRRR "
+    let placeOfBirthApplicantEN = " Place of birth"
+    let shortTextEN = "Person making application is:"
+    let nationalityEN = "Nationality"
+    let addressEN = "Street, House number"
+    let address2EN = "Post code, Town, Country"
 }

@@ -41,16 +41,16 @@ extension Form2ViewController {
             placeBirthQ.heightAnchor.constraint(equalToConstant: 50)
         ])
         NSLayoutConstraint.activate([
-            shortText.topAnchor.constraint(equalTo: placeBirthQ.bottomAnchor, constant: 20),
-            shortText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            shortText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            shortText.heightAnchor.constraint(equalToConstant: 30)
+            shortTextLabel.topAnchor.constraint(equalTo: placeBirthQ.bottomAnchor, constant: 20),
+            shortTextLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            shortTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            shortTextLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
         }
     func layoutForm2ViewControllerB() {
         segController.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            segController.topAnchor.constraint(equalTo: shortText.bottomAnchor, constant: 10),
+            segController.topAnchor.constraint(equalTo: shortTextLabel.bottomAnchor, constant: 10),
             segController.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             segController.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             segController.heightAnchor.constraint(equalToConstant: 30)

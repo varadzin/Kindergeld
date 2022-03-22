@@ -16,7 +16,7 @@ class KGTextGE {
     Wenn Du mit Antworten nicht sicher bist, nutze die Hilfe rechts oben.
     Mit der Nutzung der App bestätigst Du, dass du die Bedigungen gelesen hast, Du verstehst und bist Du mit damit einverstanden.
    """
-    // Form 1
+    // Forms
     let form1TitleGE = "Antrag auf Kindergeld"
     let form1SubtitleGE = "Angaben zur antragstellenden Person"
     let helpButtonTitleGE = "Hilfe"
@@ -28,4 +28,10 @@ class KGTextGE {
     let backGE = "<<- zurück"
     let manGE = "Mann"
     let womanGE = "Frau"
+    let dateOfBirthApplicantGE = " Geburtsdatum - TT.MM.JJJJ "
+    let placeOfBirthApplicantGE = " Geburtsort"
+    let shortTextGE = " Geschlecht von der antragstellenden Person:"
+    let nationalityGE = "Staatsangehörigkeit"
+    let addressGE = "Straße mit Hausnummer"
+    let address2GE = "PLZ, Wohnort, Staat"
     }
